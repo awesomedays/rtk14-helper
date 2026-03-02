@@ -1604,3 +1604,99 @@ body {
   border-top: 1px solid var(--border);
   margin: 8px 0;
 }
+
+/* ===== Assignment Config Grid ===== */
+
+#assignment-config-section {
+  margin-bottom: 16px;
+}
+#assignment-config-section .admin-section__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn-reset {
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.btn-reset:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+.config-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 24px;
+}
+.config-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+}
+.config-label {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  min-width: 100px;
+  flex-shrink: 0;
+}
+.config-select,
+.config-input {
+  padding: 3px 6px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.82rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+.config-select {
+  min-width: 110px;
+}
+.config-input {
+  width: 64px;
+  text-align: center;
+}
+.config-sep {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ===== Unassigned Table ===== */
+
+.unassigned-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.unassigned-table th {
+  text-align: center;
+  padding: 4px 8px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.78rem;
+}
+.unassigned-table th:first-child {
+  text-align: left;
+}
+.unassigned-table td {
+  padding: 3px 8px;
+  text-align: center;
+}
+.unassigned-table td:first-child {
+  text-align: left;
+}
+.unassigned-table tr:hover {
+  background: var(--bg-hover);
+}
+
+@media (max-width: 768px) {
+  .config-grid {
+    grid-template-columns: 1fr;
+  }
+}

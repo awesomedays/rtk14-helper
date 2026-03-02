@@ -241,6 +241,58 @@
     <!-- 내정관리 탭 -->
     <section id="tab-admin" class="tab-content">
       <div class="admin-config">
+        <div class="admin-section" id="assignment-config-section">
+          <h3 class="admin-section__title">배정 설정 <button class="btn-reset" id="assignment-config-reset">기본값 복원</button></h3>
+          <div class="config-grid">
+            <div class="config-row">
+              <span class="config-label">내정풀 진입</span>
+              <select id="cfg-admin-pool-stat" class="config-select"></select>
+              <span class="config-sep">&ge;</span>
+              <input type="number" id="cfg-admin-pool-min" class="config-input" min="0" max="300">
+            </div>
+            <div class="config-row">
+              <span class="config-label">태수 선발</span>
+              <select id="cfg-governor-sort" class="config-select"></select>
+            </div>
+            <div class="config-row">
+              <span class="config-label">모병 개성</span>
+              <select id="cfg-recruit-trait" class="config-select config-select--trait"></select>
+            </div>
+            <div class="config-row">
+              <span class="config-label">모병 정렬</span>
+              <select id="cfg-recruit-sort" class="config-select"></select>
+            </div>
+            <div class="config-row">
+              <span class="config-label">훈련 개성</span>
+              <select id="cfg-train-trait" class="config-select config-select--trait"></select>
+            </div>
+            <div class="config-row">
+              <span class="config-label">훈련 정렬</span>
+              <select id="cfg-train-sort" class="config-select"></select>
+            </div>
+            <div class="config-row">
+              <span class="config-label">교역 개성</span>
+              <select id="cfg-trade-trait" class="config-select config-select--trait"></select>
+            </div>
+            <div class="config-row">
+              <span class="config-label">교역 정렬</span>
+              <select id="cfg-trade-sort" class="config-select"></select>
+            </div>
+            <div class="config-row">
+              <span class="config-label">교역 잔여 모드</span>
+              <select id="cfg-trade-overflow-mode" class="config-select"></select>
+            </div>
+            <div class="config-row" id="cfg-trade-target-row">
+              <span class="config-label">교역 목표값</span>
+              <input type="number" id="cfg-trade-target-value" class="config-input" min="0" max="300">
+            </div>
+            <div class="config-row">
+              <span class="config-label">나라당 최대 교역</span>
+              <input type="number" id="cfg-max-traders" class="config-input" min="1" max="20">
+              <span class="config-sep">명</span>
+            </div>
+          </div>
+        </div>
         <div class="admin-settings filter-bar">
           <div class="filter-group">
             <label>교역 국가</label>
@@ -283,7 +335,6 @@
     </div>
   </div>
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="app.bundle.js"></script>
 </body>
 </html>

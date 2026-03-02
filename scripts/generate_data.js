@@ -143,16 +143,16 @@ function generate() {
   output += '// Do not edit manually\n\n';
 
   // OFFICERS array
-  output += 'const OFFICERS = ' + JSON.stringify(officers, null, 2) + ';\n\n';
+  output += 'export const OFFICERS = ' + JSON.stringify(officers, null, 2) + ';\n\n';
 
   // CITIES array
-  output += 'const CITIES = ' + JSON.stringify(cities, null, 2) + ';\n\n';
+  output += 'export const CITIES = ' + JSON.stringify(cities, null, 2) + ';\n\n';
 
   // Derived lists
-  output += 'const CORPS_LIST = ' + JSON.stringify(corpsList) + ';\n';
-  output += 'const LOCATIONS_LIST = ' + JSON.stringify(locationsList) + ';\n';
-  output += 'const IDEOLOGIES_LIST = ' + JSON.stringify(ideologiesList) + ';\n';
-  output += 'const ALL_TRAITS = ' + JSON.stringify(allTraits) + ';\n';
+  output += 'export const CORPS_LIST = ' + JSON.stringify(corpsList) + ';\n';
+  output += 'export const LOCATIONS_LIST = ' + JSON.stringify(locationsList) + ';\n';
+  output += 'export const IDEOLOGIES_LIST = ' + JSON.stringify(ideologiesList) + ';\n';
+  output += 'export const ALL_TRAITS = ' + JSON.stringify(allTraits) + ';\n';
 
   fs.writeFileSync(OUTPUT, output, 'utf-8');
   console.log(`Written to ${OUTPUT}`);
