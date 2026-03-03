@@ -35851,6 +35851,7 @@ const KEYS = {
   summon: 'rtk14_summon',
   appointment: 'rtk14_appointment',
   assignmentConfig: 'rtk14_assignment_config',
+  theme: 'rtk14_theme',
 };
 
 const ALL_KEYS = Object.values(KEYS);
@@ -35903,6 +35904,10 @@ class PersistenceManager {
 
   saveAssignmentConfig() {
     localStorage.setItem(KEYS.assignmentConfig, JSON.stringify(this.state.assignmentConfig));
+  }
+
+  saveTheme(value) {
+    localStorage.setItem(KEYS.theme, value);
   }
 
   // ===== Load =====
@@ -35993,6 +35998,10 @@ class PersistenceManager {
         this.state.assignmentConfig = { ...DEFAULT_ASSIGNMENT_CONFIG, ...JSON.parse(saved) };
       }
     } catch (e) { /* ignore */ }
+  }
+
+  loadTheme() {
+    return localStorage.getItem(KEYS.theme); // 'dark' | 'light' | null
   }
 
   loadAll() {
@@ -37508,6 +37517,22 @@ function init() {
   document.getElementById('state-export').addEventListener('click', () => persistence.exportState());
   document.getElementById('state-import').addEventListener('change', (e) => {
     if (e.target.files[0]) persistence.importState(e.target.files[0]);
+  });
+
+  // Dark mode
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀️' : '🌙';
+    persistence.saveTheme(theme);
+  }
+
+  const savedTheme = persistence.loadTheme();
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(savedTheme ?? (prefersDark ? 'dark' : 'light'));
+
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
   });
 
   scoring.precomputeScores(OFFICERS);
