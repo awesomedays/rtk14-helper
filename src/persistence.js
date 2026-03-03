@@ -13,6 +13,7 @@ const KEYS = {
   summon: 'rtk14_summon',
   appointment: 'rtk14_appointment',
   assignmentConfig: 'rtk14_assignment_config',
+  theme: 'rtk14_theme',
 };
 
 const ALL_KEYS = Object.values(KEYS);
@@ -65,6 +66,10 @@ export class PersistenceManager {
 
   saveAssignmentConfig() {
     localStorage.setItem(KEYS.assignmentConfig, JSON.stringify(this.state.assignmentConfig));
+  }
+
+  saveTheme(value) {
+    localStorage.setItem(KEYS.theme, value);
   }
 
   // ===== Load =====
@@ -155,6 +160,10 @@ export class PersistenceManager {
         this.state.assignmentConfig = { ...DEFAULT_ASSIGNMENT_CONFIG, ...JSON.parse(saved) };
       }
     } catch (e) { /* ignore */ }
+  }
+
+  loadTheme() {
+    return localStorage.getItem(KEYS.theme); // 'dark' | 'light' | null
   }
 
   loadAll() {

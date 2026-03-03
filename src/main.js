@@ -23,6 +23,22 @@ function init() {
     if (e.target.files[0]) persistence.importState(e.target.files[0]);
   });
 
+  // Dark mode
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀️' : '🌙';
+    persistence.saveTheme(theme);
+  }
+
+  const savedTheme = persistence.loadTheme();
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(savedTheme ?? (prefersDark ? 'dark' : 'light'));
+
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
   scoring.precomputeScores(OFFICERS);
 
   // Populate dropdowns
