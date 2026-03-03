@@ -75,36 +75,6 @@
   --shadow-gold:        0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* 시스템 다크모드 자동 감지 (사용자 명시 토글이 없을 때) */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg-primary:    #191919;
-    --bg-secondary:  #2f2f2f;
-    --bg-tertiary:   #252525;
-    --bg-hover:      rgba(255, 255, 255, 0.055);
-    --bg-table-alt:  #2f2f2f;
-    --bg-input:      #252525;
-
-    --text-primary:   #e8e6e1;
-    --text-secondary: #a0a09d;
-    --text-muted:     #787774;
-
-    --border:      #373737;
-    --border-dark: #444444;
-
-    --shadow:    0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.4);
-
-    --accent-gold-bright: #e8e6e1;
-    --accent-gold-dim:    #787774;
-    --bg-dark:            #2f2f2f;
-    --bg-panel:           #191919;
-    --bg-panel-alt:       #2f2f2f;
-    --border-gold:        #373737;
-    --border-ornate:      #444444;
-    --shadow-gold:        0 1px 3px rgba(0, 0, 0, 0.3);
-  }
-}
 
 /* ===== Reset & Base ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
