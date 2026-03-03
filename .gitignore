@@ -1,4 +1,13 @@
-.claude/
+# Claude Code 세션 데이터 제외 (훅과 설정은 추적)
+.claude/backups/
+.claude/debug/
+.claude/plugins/
+.claude/projects/
+.claude/session-env/
+.claude/shell-snapshots/
+.claude/skills/
+.claude/telemetry/
+.claude/stop-hook-git-check.sh
 node_modules/
 .DS_Store
 Thumbs.db
