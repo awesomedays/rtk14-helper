@@ -20,7 +20,7 @@
 
 ### 웹에서 바로 사용
 GitHub Pages를 통해 접속할 수 있습니다:
-> https://awesomedays.github.io/RTK14Helper/
+> https://awesomedays.github.io/rtk14-helper/
 
 ### 로컬에서 사용
 `index.html` 파일을 브라우저에서 직접 열면 됩니다. 별도의 서버나 빌드 과정이 필요 없습니다.
