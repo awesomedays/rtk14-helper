@@ -14,6 +14,10 @@ export class AppState {
     this.compareIds = [];
     this.rosterIds = [];
     this.rosterSort = { key: 'name', dir: 'asc' };
+    this.rosterTraitFilters = [];
+    this.rosterFormationFilters = [];
+    this.rosterTacticsFilters = [];
+    this.officerTacticsOverrides = {};
     // 보유도시
     this.ownedCityIds = [];
     // 군단관리

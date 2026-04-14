@@ -13,6 +13,7 @@ const KEYS = {
   summon: 'rtk14_summon',
   appointment: 'rtk14_appointment',
   assignmentConfig: 'rtk14_assignment_config',
+  tacticsOverrides: 'rtk14_officer_tactics',
   theme: 'rtk14_theme',
 };
 
@@ -66,6 +67,10 @@ export class PersistenceManager {
 
   saveAssignmentConfig() {
     localStorage.setItem(KEYS.assignmentConfig, JSON.stringify(this.state.assignmentConfig));
+  }
+
+  saveTacticsOverrides() {
+    localStorage.setItem(KEYS.tacticsOverrides, JSON.stringify(this.state.officerTacticsOverrides));
   }
 
   saveTheme(value) {
@@ -166,6 +171,13 @@ export class PersistenceManager {
     return localStorage.getItem(KEYS.theme); // 'dark' | 'light' | null
   }
 
+  loadTacticsOverrides() {
+    try {
+      const saved = localStorage.getItem(KEYS.tacticsOverrides);
+      if (saved) this.state.officerTacticsOverrides = JSON.parse(saved);
+    } catch (e) { /* ignore */ }
+  }
+
   loadAll() {
     this.loadRoster();
     this.loadCities();
@@ -177,6 +189,7 @@ export class PersistenceManager {
     this.loadSummon();
     this.loadAppointment();
     this.loadAssignmentConfig();
+    this.loadTacticsOverrides();
   }
 
   // ===== Export / Import =====

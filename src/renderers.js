@@ -1,7 +1,7 @@
 // ===== UI RENDERER =====
 
 import { AFFAIRS_CONFIG, THRESHOLDS, TRADE_NATION_NAMES, LIMITS, SORT_KEYS, TRADE_OVERFLOW_MODES, DEFAULT_ASSIGNMENT_CONFIG } from './config.js';
-import { OFFICERS, CITIES, ALL_TRAITS } from '../data.js';
+import { OFFICERS, CITIES, ALL_TRAITS, TRAITS_META, FORMATIONS_META, TACTICS_META } from '../data.js';
 import { getCityRegionSlots } from './assignment.js';
 
 export class UIRenderer {
@@ -24,6 +24,49 @@ export class UIRenderer {
     if (val >= THRESHOLDS.statHigh) return 'stat-high';
     if (val >= THRESHOLDS.statMid) return 'stat-mid';
     return 'stat-low';
+  }
+
+  getSumStatClass(val) {
+    if (val >= THRESHOLDS.statHigh) return 'stat-sum-high';
+    if (val >= THRESHOLDS.statMid) return 'stat-sum-mid';
+    return 'stat-sum-low';
+  }
+
+  traitBadgeHtml(traitName, overrideCls, label) {
+    const meta = TRAITS_META[traitName];
+    const tierCls = meta ? `trait-badge--${meta.tier}` : 'trait-badge--normal';
+    const tooltip = meta && meta.desc ? meta.desc.replace(/"/g, '&quot;') : '';
+    const cls = overrideCls || tierCls;
+    const text = label || traitName;
+    return `<span class="trait-badge ${cls}" data-tooltip="${tooltip}" data-trait="${traitName}">${text}</span>`;
+  }
+
+  formationBadgeHtml(name) {
+    const meta = FORMATIONS_META[name];
+    const tooltip = meta ? `기동: ${meta.mobility}\n공군: ${meta.attack}\n공성: ${meta.siege}\n파성: ${meta.breach}\n방어: ${meta.defense}` : '';
+    const siege = ['충차', '정란', '투석'];
+    const etc = ['사이'];
+    const catCls = siege.includes(name) ? 'formation-badge--siege' : etc.includes(name) ? 'formation-badge--etc' : '';
+    return `<span class="formation-badge ${catCls}" data-formation="${name}" data-formation-tooltip="${tooltip.replace(/"/g, '&quot;')}">${name}</span>`;
+  }
+
+  getOfficerTactics(officer) {
+    const base = officer.tactics || [];
+    const added = this.state.officerTacticsOverrides[officer.id] || [];
+    return [...base, ...added];
+  }
+
+  tacticBadgeHtml(name) {
+    const meta = TACTICS_META[name];
+    if (!meta) return `<span class="tactic-badge" data-tactic="${name}">${name}</span>`;
+
+    const e1Label = meta.effect2 ? '효과1' : '효과';
+    const lines = [`의존: ${meta.stat}`, `거점: ${meta.siege ? 'O' : 'X'}`, `쿨타임: ${meta.cooldown}`, `${e1Label}: ${meta.effect1}`];
+    if (meta.effect2) lines.push(`효과2: ${meta.effect2}`);
+
+    const tooltip = lines.join('\n');
+    const uniqueCls = meta.unique ? 'tactic-badge--unique' : '';
+    return `<span class="tactic-badge ${uniqueCls}" data-tactic="${name}" data-tactic-tooltip="${tooltip.replace(/"/g, '&quot;')}">${name}</span>`;
   }
 
   corpsStatClass(val) {
@@ -63,9 +106,7 @@ export class UIRenderer {
 
   renderTraitBadges(officer, affairKey) {
     if (!affairKey) {
-      return officer.traits.map(t =>
-        `<span class="trait-badge trait-badge--normal">${t}</span>`
-      ).join('');
+      return officer.traits.map(t => this.traitBadgeHtml(t)).join('');
     }
     const config = AFFAIRS_CONFIG[affairKey];
     const bonuses = config.traitBonuses;
@@ -75,8 +116,7 @@ export class UIRenderer {
       .filter(t => t in bonuses)
       .map(t => {
         const cls = keyTraits.includes(t) ? 'trait-badge--key' : 'trait-badge--support';
-        const bonus = bonuses[t];
-        return `<span class="trait-badge ${cls}">${t} +${bonus}</span>`;
+        return this.traitBadgeHtml(t, cls, `${t} +${bonuses[t]}`);
       }).join('');
   }
 
@@ -141,7 +181,7 @@ export class UIRenderer {
       <td class="col-stat ${this.getStatClass(o.politics)}">${o.politics}</td>
       <td class="col-stat ${this.getStatClass(o.charm)}">${o.charm}</td>
       <td class="col-total ${this.getStatClass(o.total / 5)}">${o.total}</td>
-      <td><div class="trait-badges">${o.traits.map(t => `<span class="trait-badge trait-badge--normal">${t}</span>`).join('')}</div></td>
+      <td><div class="trait-badges">${o.traits.map(t => this.traitBadgeHtml(t)).join('')}</div></td>
       <td>${o.corps || '재야'}</td>
     </tr>`;
     }).join('');
@@ -238,7 +278,7 @@ export class UIRenderer {
       html += `<tr><td>${i === 0 ? '' : ''}</td>`;
       html += selected.map(o => {
         const t = o.traits[i] || '';
-        return `<td>${t ? `<span class="trait-badge trait-badge--normal">${t}</span>` : ''}</td>`;
+        return `<td>${t ? this.traitBadgeHtml(t) : ''}</td>`;
       }).join('');
       html += '</tr>';
     }
@@ -250,34 +290,113 @@ export class UIRenderer {
   // ===== Roster Tab =====
 
   renderRoster() {
-    const officers = this.state.rosterIds
+    let officers = this.state.rosterIds
       .map(id => OFFICERS.find(o => o.id === id))
       .filter(Boolean);
 
+    const totalCount = officers.length;
+    const filters = this.state.rosterTraitFilters;
+    const formationFilters = this.state.rosterFormationFilters;
+    const tacticsFilters = this.state.rosterTacticsFilters;
+    const hasFilter = filters.length > 0 || formationFilters.length > 0 || tacticsFilters.length > 0;
+
+    if (filters.length > 0) {
+      officers = officers.filter(o => filters.every(f => o.traits.includes(f)));
+    }
+    if (formationFilters.length > 0) {
+      officers = officers.filter(o => formationFilters.every(f => o.formations.includes(f)));
+    }
+    if (tacticsFilters.length > 0) {
+      officers = officers.filter(o => {
+        const tactics = this.getOfficerTactics(o);
+        return tacticsFilters.every(f => tactics.includes(f));
+      });
+    }
+
     const sorted = this.officerService.sortOfficers(officers, this.state.rosterSort.key, this.state.rosterSort.dir, this.state.currentAffair);
 
-    document.getElementById('roster-count').textContent = `보유 무장: ${sorted.length}명`;
+    const rosterCount = document.getElementById('roster-count');
+    if (hasFilter) {
+      rosterCount.innerHTML = `보유 무장: <strong class="filter-count">${sorted.length}명</strong> / ${totalCount}명`;
+    } else {
+      rosterCount.textContent = `보유 무장: ${totalCount}명`;
+    }
+
+    const tagsContainer = document.getElementById('roster-filter-tags');
+    tagsContainer.innerHTML = filters.map(f => {
+      const meta = TRAITS_META[f];
+      const tierCls = meta ? `filter-tag--${meta.tier}` : '';
+      return `<span class="filter-tag ${tierCls}"><span class="filter-tag__name">${f}</span><button class="filter-tag__close" data-trait="${f}">&times;</button></span>`;
+    }).join('');
+
+    const formationTagsContainer = document.getElementById('roster-formation-filter-tags');
+    formationTagsContainer.innerHTML = formationFilters.map(f =>
+      `<span class="filter-tag filter-tag--formation"><span class="filter-tag__name">${f}</span><button class="filter-tag__close" data-formation="${f}">&times;</button></span>`
+    ).join('');
+
+    const tacticsTagsContainer = document.getElementById('roster-tactics-filter-tags');
+    tacticsTagsContainer.innerHTML = tacticsFilters.map(f => {
+      const meta = TACTICS_META[f];
+      const cls = meta && meta.unique ? 'filter-tag--tactic-unique' : 'filter-tag--tactic';
+      return `<span class="filter-tag ${cls}"><span class="filter-tag__name">${f}</span><button class="filter-tag__close" data-tactic="${f}">&times;</button></span>`;
+    }).join('');
 
     const tbody = document.getElementById('roster-tbody');
     if (sorted.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="10" style="text-align:center;padding:24px;color:var(--text-muted)">무장을 검색하여 추가해주세요.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="11" style="text-align:center;padding:24px;color:var(--text-muted)">' +
+        (hasFilter ? '해당 조건을 만족하는 무장이 없습니다.' : '무장을 검색하여 추가해주세요.') + '</td></tr>';
       return;
     }
 
-    tbody.innerHTML = sorted.map(o => `<tr>
+    tbody.innerHTML = sorted.map(o => {
+      const badgeHtml = o.traits.map(t => {
+        const html = this.traitBadgeHtml(t);
+        if (filters.length > 0 && filters.includes(t)) {
+          return html.replace('class="trait-badge', 'class="trait-badge trait-badge--active');
+        }
+        return html;
+      }).join('');
+
+      const formationHtml = o.formations.map(f => {
+        const html = this.formationBadgeHtml(f);
+        if (formationFilters.length > 0 && formationFilters.includes(f)) {
+          return html.replace('class="formation-badge', 'class="formation-badge formation-badge--active');
+        }
+        return html;
+      }).join('');
+
+      const allTactics = this.getOfficerTactics(o);
+      const baseCount = o.tactics.length;
+      const tacticHtml = allTactics.map((t, i) => {
+        let html = this.tacticBadgeHtml(t);
+        if (tacticsFilters.length > 0 && tacticsFilters.includes(t)) {
+          html = html.replace('class="tactic-badge', 'class="tactic-badge tactic-badge--active');
+        }
+        if (i >= baseCount) {
+          html = html.replace('class="tactic-badge', 'class="tactic-badge tactic-badge--added');
+          const closeBtn = `<button class="tactic-remove-btn" data-officer-id="${o.id}" data-tactic="${t}">&times;</button>`;
+          html = html.replace('</span>', closeBtn + '</span>');
+        }
+        return html;
+      }).join('');
+      const addBtn = allTactics.length < 10
+        ? `<button class="tactic-add-btn" data-officer-id="${o.id}">+</button>` : '';
+
+      return `<tr class="has-row-remove">
     <td><span class="officer-name" data-id="${o.id}">${o.name}</span></td>
-    <td class="col-stat-sm ${this.getStatClass(o.leadership)}">${o.leadership}</td>
+    <td class="col-stat-sm col-group-start ${this.getStatClass(o.leadership)}">${o.leadership}</td>
     <td class="col-stat-sm ${this.getStatClass(o.power)}">${o.power}</td>
     <td class="col-stat-sm ${this.getStatClass(o.intelligence)}">${o.intelligence}</td>
     <td class="col-stat-sm ${this.getStatClass(o.politics)}">${o.politics}</td>
     <td class="col-stat-sm ${this.getStatClass(o.charm)}">${o.charm}</td>
-    <td class="col-stat ${this.getStatClass((o.leadership + o.power) / 2)}">${o.leadership + o.power}</td>
-    <td class="col-stat ${this.getStatClass((o.intelligence + o.politics) / 2)}">${o.intelligence + o.politics}</td>
-    <td><div class="trait-badges">${o.traits.map(t =>
-      `<span class="trait-badge trait-badge--normal">${t}</span>`
-    ).join('')}</div></td>
-    <td style="text-align:center"><button class="roster-remove" data-id="${o.id}">&times;</button></td>
-  </tr>`).join('');
+    <td class="col-stat col-group-start ${this.getSumStatClass((o.leadership + o.power) / 2)}">${o.leadership + o.power}</td>
+    <td class="col-stat ${this.getSumStatClass((o.intelligence + o.politics) / 2)}">${o.intelligence + o.politics}</td>
+    <td class="col-group-start"><div class="trait-badges">${badgeHtml}</div></td>
+    <td class="col-group-start"><div class="formation-badges">${formationHtml}</div></td>
+    <td class="col-group-start"><div class="tactic-badges">${tacticHtml}${addBtn}</div></td>
+    <td class="cell-row-remove"><button class="row-remove" data-id="${o.id}">&times;</button></td>
+  </tr>`;
+    }).join('');
 
     this.updateSortIndicators('roster-table', this.state.rosterSort);
   }
@@ -293,20 +412,20 @@ export class UIRenderer {
 
     const tbody = document.getElementById('cities-tbody');
     if (cities.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:24px;color:var(--text-muted)">도시를 검색하여 추가해주세요.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:24px;color:var(--text-muted)">도시를 검색하여 추가해주세요.</td></tr>';
       return;
     }
 
-    tbody.innerHTML = cities.map((c, i) => `<tr>
-    <td style="text-align:center;font-weight:700;color:var(--accent-gold-bright)">${i + 1}</td>
+    tbody.innerHTML = cities.map((c, i) => `<tr class="has-row-remove">
+    <td style="font-weight:700;color:var(--accent-gold-bright)">${i + 1}</td>
     <td>${c.name}</td>
     <td class="col-stat">${c.province}</td>
     <td class="col-stat">${c.regionSlots}</td>
-    <td style="text-align:center">
+    <td>
       <button class="city-move-up" data-id="${c.id}" ${i === 0 ? 'disabled' : ''}>&#9650;</button>
       <button class="city-move-down" data-id="${c.id}" ${i === cities.length - 1 ? 'disabled' : ''}>&#9660;</button>
     </td>
-    <td style="text-align:center"><button class="roster-remove" data-id="${c.id}">&times;</button></td>
+    <td class="cell-row-remove"><button class="row-remove" data-id="${c.id}">&times;</button></td>
   </tr>`).join('');
   }
 
@@ -957,7 +1076,7 @@ export class UIRenderer {
     <div class="modal-section">
       <div class="modal-section__title">개성</div>
       <div class="trait-badges">
-        ${o.traits.length ? o.traits.map(t => `<span class="trait-badge trait-badge--normal">${t}</span>`).join('') : '<span style="color:var(--text-muted)">없음</span>'}
+        ${o.traits.length ? o.traits.map(t => this.traitBadgeHtml(t)).join('') : '<span style="color:var(--text-muted)">없음</span>'}
       </div>
     </div>
     <div class="modal-section">

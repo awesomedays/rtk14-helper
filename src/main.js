@@ -1,6 +1,6 @@
 // ===== APPLICATION ENTRY POINT =====
 
-import { OFFICERS, CITIES, CORPS_LIST, LOCATIONS_LIST, IDEOLOGIES_LIST, ALL_TRAITS } from '../data.js';
+import { OFFICERS, CITIES, CORPS_LIST, LOCATIONS_LIST, IDEOLOGIES_LIST, ALL_TRAITS, FORMATIONS_META, TACTICS_META, ALL_TACTICS_LIST } from '../data.js';
 import { AFFAIRS_CONFIG, PAGE_SIZE, TAB_CATEGORIES, THRESHOLDS, LIMITS, DEFAULT_ASSIGNMENT_CONFIG } from './config.js';
 import { state } from './state.js';
 import { PersistenceManager } from './persistence.js';
@@ -26,7 +26,7 @@ function init() {
   // Dark mode
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀️' : '🌙';
+    document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀️ 라이트모드' : '🌙 다크모드';
     persistence.saveTheme(theme);
   }
 
@@ -54,9 +54,16 @@ function init() {
   function renderSubTabs(category) {
     const container = document.getElementById('tabs-sub');
     const tabs = TAB_CATEGORIES[category];
-    container.innerHTML = tabs.map((t, i) =>
-      `<button class="tab-sub${i === 0 ? ' active' : ''}" data-tab="${t.id}">${t.label}</button>`
-    ).join('');
+    let html = '';
+    let prevGroup = null;
+    tabs.forEach((t, i) => {
+      if (t.group && prevGroup && t.group !== prevGroup) {
+        html += '<span class="tab-sub-divider"></span>';
+      }
+      prevGroup = t.group || null;
+      html += `<button class="tab-sub${i === 0 ? ' active' : ''}" data-tab="${t.id}">${t.label}</button>`;
+    });
+    container.innerHTML = html;
   }
 
   const tabScrollPositions = {};
@@ -219,6 +226,64 @@ function init() {
     }
   });
 
+  // ===== Trait Tooltip =====
+
+  const tooltip = document.getElementById('trait-tooltip');
+
+  function positionTooltip(anchorEl) {
+    const rect = anchorEl.getBoundingClientRect();
+    let left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2;
+    let top = rect.top - tooltip.offsetHeight - 6;
+    if (left < 4) left = 4;
+    if (left + tooltip.offsetWidth > window.innerWidth - 4) left = window.innerWidth - tooltip.offsetWidth - 4;
+    if (top < 4) top = rect.bottom + 6;
+    tooltip.style.left = left + 'px';
+    tooltip.style.top = top + 'px';
+  }
+
+  document.addEventListener('mouseenter', (e) => {
+    const badge = e.target.closest('.trait-badge[data-tooltip]');
+    if (badge && badge.dataset.tooltip) {
+      tooltip.textContent = badge.dataset.tooltip;
+      tooltip.classList.add('show');
+      positionTooltip(badge);
+      return;
+    }
+
+    const formBadge = e.target.closest('.formation-badge[data-formation-tooltip]');
+    if (formBadge && formBadge.dataset.formationTooltip) {
+      const lines = formBadge.dataset.formationTooltip.split('\n');
+      tooltip.innerHTML = '<table class="tooltip-table">' +
+        lines.map(line => {
+          const [label, value] = line.split(': ');
+          return `<tr><td class="tooltip-table__label">${label}</td><td class="tooltip-table__value">${value}</td></tr>`;
+        }).join('') + '</table>';
+      tooltip.classList.add('show');
+      positionTooltip(formBadge);
+      return;
+    }
+
+    const tacticBadgeEl = e.target.closest('.tactic-badge[data-tactic-tooltip]');
+    if (tacticBadgeEl && tacticBadgeEl.dataset.tacticTooltip) {
+      const lines = tacticBadgeEl.dataset.tacticTooltip.split('\n');
+      tooltip.innerHTML = '<table class="tooltip-table">' +
+        lines.map(line => {
+          const idx = line.indexOf(': ');
+          const label = line.substring(0, idx);
+          const value = line.substring(idx + 2);
+          return `<tr><td class="tooltip-table__label">${label}</td><td class="tooltip-table__value">${value}</td></tr>`;
+        }).join('') + '</table>';
+      tooltip.classList.add('show');
+      positionTooltip(tacticBadgeEl);
+    }
+  }, true);
+
+  document.addEventListener('mouseleave', (e) => {
+    if (e.target.closest('.trait-badge[data-tooltip]') || e.target.closest('.formation-badge[data-formation-tooltip]') || e.target.closest('.tactic-badge[data-tactic-tooltip]')) {
+      tooltip.classList.remove('show');
+    }
+  }, true);
+
   // ===== Modal =====
 
   document.getElementById('modal-close').addEventListener('click', () => renderer.closeModal());
@@ -226,7 +291,50 @@ function init() {
     if (e.target === e.currentTarget) renderer.closeModal();
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') renderer.closeModal();
+    if (e.key === 'Escape') {
+      renderer.closeModal();
+      document.getElementById('settings-overlay').classList.remove('show');
+      closeConfirm();
+    }
+  });
+
+  // ===== Settings Modal =====
+
+  document.getElementById('settings-open').addEventListener('click', () => {
+    document.getElementById('settings-overlay').classList.add('show');
+  });
+  document.getElementById('settings-close').addEventListener('click', () => {
+    document.getElementById('settings-overlay').classList.remove('show');
+  });
+  document.getElementById('settings-overlay').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+      document.getElementById('settings-overlay').classList.remove('show');
+    }
+  });
+
+  // ===== Confirm Modal =====
+
+  let confirmCallback = null;
+  const confirmOverlay = document.getElementById('confirm-overlay');
+
+  function showConfirm(message, onConfirm) {
+    document.getElementById('confirm-message').textContent = message;
+    confirmCallback = onConfirm;
+    confirmOverlay.classList.add('show');
+  }
+
+  function closeConfirm() {
+    confirmOverlay.classList.remove('show');
+    confirmCallback = null;
+  }
+
+  document.getElementById('confirm-ok').addEventListener('click', () => {
+    if (confirmCallback) confirmCallback();
+    closeConfirm();
+  });
+  document.getElementById('confirm-cancel').addEventListener('click', closeConfirm);
+  confirmOverlay.addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) closeConfirm();
   });
 
   // ===== Compare tab =====
@@ -379,12 +487,290 @@ function init() {
   });
 
   document.getElementById('roster-tbody').addEventListener('click', (e) => {
-    const btn = e.target.closest('.roster-remove');
-    if (!btn) return;
-    const id = parseInt(btn.dataset.id);
-    state.rosterIds = state.rosterIds.filter(x => x !== id);
-    persistence.saveRoster();
+    const btn = e.target.closest('.row-remove');
+    if (btn) {
+      const id = parseInt(btn.dataset.id);
+      state.rosterIds = state.rosterIds.filter(x => x !== id);
+      persistence.saveRoster();
+      renderer.renderRoster();
+      return;
+    }
+
+    const badge = e.target.closest('.trait-badge');
+    if (badge && badge.dataset.trait) {
+      const trait = badge.dataset.trait;
+      const idx = state.rosterTraitFilters.indexOf(trait);
+      if (idx >= 0) {
+        state.rosterTraitFilters.splice(idx, 1);
+      } else {
+        state.rosterTraitFilters.push(trait);
+      }
+      renderer.renderRoster();
+      return;
+    }
+
+    const formBadge = e.target.closest('.formation-badge');
+    if (formBadge && formBadge.dataset.formation) {
+      const formation = formBadge.dataset.formation;
+      const idx = state.rosterFormationFilters.indexOf(formation);
+      if (idx >= 0) {
+        state.rosterFormationFilters.splice(idx, 1);
+      } else {
+        state.rosterFormationFilters.push(formation);
+      }
+      renderer.renderRoster();
+      return;
+    }
+
+    const tacticRemoveBtn = e.target.closest('.tactic-remove-btn');
+    if (tacticRemoveBtn) {
+      const officerId = parseInt(tacticRemoveBtn.dataset.officerId);
+      const tactic = tacticRemoveBtn.dataset.tactic;
+      const overrides = state.officerTacticsOverrides[officerId] || [];
+      const idx = overrides.indexOf(tactic);
+      if (idx >= 0) overrides.splice(idx, 1);
+      if (overrides.length === 0) delete state.officerTacticsOverrides[officerId];
+      else state.officerTacticsOverrides[officerId] = overrides;
+      persistence.saveTacticsOverrides();
+      renderer.renderRoster();
+      return;
+    }
+
+    const tacticBadge = e.target.closest('.tactic-badge');
+    if (tacticBadge && tacticBadge.dataset.tactic) {
+      const tactic = tacticBadge.dataset.tactic;
+      const idx = state.rosterTacticsFilters.indexOf(tactic);
+      if (idx >= 0) state.rosterTacticsFilters.splice(idx, 1);
+      else state.rosterTacticsFilters.push(tactic);
+      renderer.renderRoster();
+      return;
+    }
+
+    const addBtn = e.target.closest('.tactic-add-btn');
+    if (addBtn) {
+      showTacticAddPopup(parseInt(addBtn.dataset.officerId), addBtn);
+    }
+  });
+
+  document.getElementById('roster-filter-tags').addEventListener('click', (e) => {
+    const closeBtn = e.target.closest('.filter-tag__close');
+    if (!closeBtn) return;
+    const trait = closeBtn.dataset.trait;
+    const idx = state.rosterTraitFilters.indexOf(trait);
+    if (idx >= 0) state.rosterTraitFilters.splice(idx, 1);
     renderer.renderRoster();
+  });
+
+  document.getElementById('roster-formation-filter-tags').addEventListener('click', (e) => {
+    const closeBtn = e.target.closest('.filter-tag__close');
+    if (!closeBtn) return;
+    const formation = closeBtn.dataset.formation;
+    const idx = state.rosterFormationFilters.indexOf(formation);
+    if (idx >= 0) state.rosterFormationFilters.splice(idx, 1);
+    renderer.renderRoster();
+  });
+
+  document.getElementById('roster-tactics-filter-tags').addEventListener('click', (e) => {
+    const closeBtn = e.target.closest('.filter-tag__close');
+    if (!closeBtn) return;
+    const tactic = closeBtn.dataset.tactic;
+    const idx = state.rosterTacticsFilters.indexOf(tactic);
+    if (idx >= 0) state.rosterTacticsFilters.splice(idx, 1);
+    renderer.renderRoster();
+  });
+
+  // ===== Header Filter Search (개성/진형/전법) =====
+
+  function initFilterSearch({ inputId, autocompleteId, allItems, getFilters, addFilter }) {
+    const input = document.getElementById(inputId);
+    const acList = document.getElementById(autocompleteId);
+    let acIndex = -1;
+
+    input.addEventListener('click', (e) => e.stopPropagation());
+
+    input.addEventListener('input', () => {
+      acIndex = -1;
+      const q = input.value.trim().toLowerCase();
+      if (!q) { acList.innerHTML = ''; acList.classList.remove('show'); return; }
+
+      const currentFilters = getFilters();
+      const matches = allItems
+        .filter(name => name.toLowerCase().includes(q) && !currentFilters.includes(name))
+        .slice(0, 8);
+
+      if (!matches.length) { acList.innerHTML = ''; acList.classList.remove('show'); return; }
+
+      acList.innerHTML = matches.map(name =>
+        `<div class="autocomplete-item" data-name="${name}"><span>${name}</span></div>`
+      ).join('');
+      acList.classList.add('show');
+    });
+
+    input.addEventListener('compositionend', () => {
+      input.dispatchEvent(new Event('input'));
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.isComposing) return;
+      const items = acList.querySelectorAll('.autocomplete-item');
+
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const target = acIndex >= 0 ? items[acIndex] : items[0];
+        if (target) target.click();
+        return;
+      }
+      if (!items.length) return;
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        acIndex = Math.min(acIndex + 1, items.length - 1);
+        items.forEach((el, i) => el.classList.toggle('active', i === acIndex));
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        acIndex = Math.max(acIndex - 1, 0);
+        items.forEach((el, i) => el.classList.toggle('active', i === acIndex));
+      } else if (e.key === 'Escape') {
+        acList.classList.remove('show');
+        acIndex = -1;
+      }
+    });
+
+    acList.addEventListener('click', (e) => {
+      const item = e.target.closest('.autocomplete-item');
+      if (!item) return;
+      addFilter(item.dataset.name);
+      input.value = '';
+      acList.innerHTML = '';
+      acList.classList.remove('show');
+      renderer.renderRoster();
+    });
+  }
+
+  const ALL_FORMATIONS = Object.keys(FORMATIONS_META);
+
+  initFilterSearch({
+    inputId: 'trait-filter-input',
+    autocompleteId: 'trait-filter-autocomplete',
+    allItems: ALL_TRAITS,
+    getFilters: () => state.rosterTraitFilters,
+    addFilter: (name) => {
+      if (!state.rosterTraitFilters.includes(name)) state.rosterTraitFilters.push(name);
+    }
+  });
+
+  initFilterSearch({
+    inputId: 'formation-filter-input',
+    autocompleteId: 'formation-filter-autocomplete',
+    allItems: ALL_FORMATIONS,
+    getFilters: () => state.rosterFormationFilters,
+    addFilter: (name) => {
+      if (!state.rosterFormationFilters.includes(name)) state.rosterFormationFilters.push(name);
+    }
+  });
+
+  initFilterSearch({
+    inputId: 'tactic-filter-input',
+    autocompleteId: 'tactic-filter-autocomplete',
+    allItems: ALL_TACTICS_LIST,
+    getFilters: () => state.rosterTacticsFilters,
+    addFilter: (name) => {
+      if (!state.rosterTacticsFilters.includes(name)) state.rosterTacticsFilters.push(name);
+    }
+  });
+
+  // ===== Tactic Add Popup =====
+
+  const tacticPopup = document.getElementById('tactic-add-popup');
+  const tacticAddInput = document.getElementById('tactic-add-input');
+  const tacticAddAc = document.getElementById('tactic-add-autocomplete');
+  let tacticAddAcIndex = -1;
+
+  function showTacticAddPopup(officerId, anchorEl) {
+    tacticPopup.dataset.officerId = officerId;
+    tacticAddInput.value = '';
+    tacticAddAc.innerHTML = '';
+    tacticAddAc.classList.remove('show');
+    tacticPopup.classList.add('show');
+
+    const rect = anchorEl.getBoundingClientRect();
+    tacticPopup.style.left = rect.left + 'px';
+    tacticPopup.style.top = (rect.bottom + 4) + 'px';
+
+    tacticAddInput.focus();
+  }
+
+  tacticAddInput.addEventListener('click', (e) => e.stopPropagation());
+
+  tacticAddInput.addEventListener('input', () => {
+    tacticAddAcIndex = -1;
+    const q = tacticAddInput.value.trim().toLowerCase();
+    if (!q) { tacticAddAc.innerHTML = ''; tacticAddAc.classList.remove('show'); return; }
+
+    const officerId = parseInt(tacticPopup.dataset.officerId);
+    const officer = OFFICERS.find(o => o.id === officerId);
+    const existing = officer ? [...officer.tactics, ...(state.officerTacticsOverrides[officerId] || [])] : [];
+
+    const matches = ALL_TACTICS_LIST
+      .filter(name => name.toLowerCase().includes(q) && !existing.includes(name))
+      .slice(0, 8);
+
+    if (!matches.length) { tacticAddAc.innerHTML = ''; tacticAddAc.classList.remove('show'); return; }
+
+    tacticAddAc.innerHTML = matches.map(name =>
+      `<div class="autocomplete-item" data-name="${name}"><span>${name}</span></div>`
+    ).join('');
+    tacticAddAc.classList.add('show');
+  });
+
+  tacticAddInput.addEventListener('compositionend', () => {
+    tacticAddInput.dispatchEvent(new Event('input'));
+  });
+
+  tacticAddInput.addEventListener('keydown', (e) => {
+    if (e.isComposing) return;
+    const items = tacticAddAc.querySelectorAll('.autocomplete-item');
+
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const target = tacticAddAcIndex >= 0 ? items[tacticAddAcIndex] : items[0];
+      if (target) target.click();
+      return;
+    }
+    if (!items.length) return;
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      tacticAddAcIndex = Math.min(tacticAddAcIndex + 1, items.length - 1);
+      items.forEach((el, i) => el.classList.toggle('active', i === tacticAddAcIndex));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      tacticAddAcIndex = Math.max(tacticAddAcIndex - 1, 0);
+      items.forEach((el, i) => el.classList.toggle('active', i === tacticAddAcIndex));
+    } else if (e.key === 'Escape') {
+      tacticPopup.classList.remove('show');
+    }
+  });
+
+  tacticAddAc.addEventListener('click', (e) => {
+    const item = e.target.closest('.autocomplete-item');
+    if (!item) return;
+    const officerId = parseInt(tacticPopup.dataset.officerId);
+    const name = item.dataset.name;
+    if (!state.officerTacticsOverrides[officerId]) state.officerTacticsOverrides[officerId] = [];
+    state.officerTacticsOverrides[officerId].push(name);
+    persistence.saveTacticsOverrides();
+    tacticPopup.classList.remove('show');
+    renderer.renderRoster();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.th-filter__search')) {
+      document.getElementById('trait-filter-autocomplete').classList.remove('show');
+      document.getElementById('formation-filter-autocomplete').classList.remove('show');
+      document.getElementById('tactic-filter-autocomplete').classList.remove('show');
+    }
+    if (!e.target.closest('.tactic-add-popup') && !e.target.closest('.tactic-add-btn')) {
+      tacticPopup.classList.remove('show');
+    }
   });
 
   document.getElementById('roster-table').addEventListener('click', (e) => {
@@ -401,9 +787,11 @@ function init() {
 
   document.getElementById('roster-clear').addEventListener('click', () => {
     if (state.rosterIds.length === 0) return;
-    state.rosterIds = [];
-    persistence.saveRoster();
-    renderer.renderRoster();
+    showConfirm('보유 무장을 모두 초기화하시겠습니까?', () => {
+      state.rosterIds = [];
+      persistence.saveRoster();
+      renderer.renderRoster();
+    });
   });
 
   // ===== Cities Tab =====
@@ -492,7 +880,7 @@ function init() {
   document.getElementById('cities-tbody').addEventListener('click', (e) => {
     const moveUp = e.target.closest('.city-move-up');
     const moveDown = e.target.closest('.city-move-down');
-    const remove = e.target.closest('.roster-remove');
+    const remove = e.target.closest('.row-remove');
 
     if (moveUp) {
       const id = parseInt(moveUp.dataset.id);
@@ -522,9 +910,11 @@ function init() {
 
   document.getElementById('cities-clear').addEventListener('click', () => {
     if (state.ownedCityIds.length === 0) return;
-    state.ownedCityIds = [];
-    persistence.saveCities();
-    renderer.renderCities();
+    showConfirm('보유 도시를 모두 초기화하시겠습니까?', () => {
+      state.ownedCityIds = [];
+      persistence.saveCities();
+      renderer.renderCities();
+    });
   });
 
   // ===== Corps Tab =====

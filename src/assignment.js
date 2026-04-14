@@ -134,14 +134,16 @@ export class AssignmentEngine {
       return true;
     });
 
-    // Step 4: 교역 개성 → 교역 풀
-    pool = pool.filter(o => {
-      if (cfg.tradeTrait && o.traits.includes(cfg.tradeTrait)) {
-        tradePool.push(o);
-        return false;
-      }
-      return true;
-    });
+    // Step 4: 교역 개성 → 교역 풀 (교역국이 있을 때만)
+    if (activeNations.length > 0) {
+      pool = pool.filter(o => {
+        if (cfg.tradeTrait && o.traits.includes(cfg.tradeTrait)) {
+          tradePool.push(o);
+          return false;
+        }
+        return true;
+      });
+    }
 
     // Step 5: 모병 잔여 슬롯 채움
     const recruitRemain = Math.max(0, recruitN - recruitPool.length);

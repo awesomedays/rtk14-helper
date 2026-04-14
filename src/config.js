@@ -55,12 +55,12 @@ export const PAGE_SIZE = 50;
 
 export const TAB_CATEGORIES = {
   current: [
-    { id: 'roster', label: '보유무장' },
-    { id: 'cities', label: '보유도시' },
-    { id: 'corps', label: '군단관리' },
-    { id: 'admin', label: '내정관리' },
-    { id: 'summon', label: '호출현황' },
-    { id: 'appointment', label: '임명현황' }
+    { id: 'roster', label: '보유무장', group: '보유' },
+    { id: 'cities', label: '보유도시', group: '보유' },
+    { id: 'corps', label: '군단관리', group: '관리' },
+    { id: 'admin', label: '내정관리', group: '관리' },
+    { id: 'summon', label: '호출현황', group: '현황' },
+    { id: 'appointment', label: '임명현황', group: '현황' }
   ],
   all: [
     { id: 'search', label: '무장 검색' },

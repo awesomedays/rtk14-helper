@@ -19,17 +19,10 @@
   <header class="header">
     <div class="header__row">
       <h1 class="header__title">삼국지 14 내정도우미</h1>
-      <div class="state-sync">
-        <button class="btn-state" id="theme-toggle" title="다크모드 전환">🌙</button>
-        <button class="btn-state" id="state-export" title="상태 내보내기">내보내기</button>
-        <label class="btn-state btn-state--import" title="상태 가져오기">
-          가져오기
-          <input type="file" id="state-import" accept=".json" hidden>
-        </label>
-      </div>
+      <button class="btn-settings" id="settings-open" title="설정">⚙</button>
     </div>
     <nav class="tabs-top" id="tabs-top">
-      <button class="tab-top active" data-category="current">현재</button>
+      <button class="tab-top active" data-category="current">현황</button>
       <button class="tab-top" data-category="all">전체</button>
     </nav>
     <nav class="tabs-sub" id="tabs-sub">
@@ -163,34 +156,55 @@
     <section id="tab-roster" class="tab-content active">
       <div class="roster-add">
         <div class="compare-search-wrap">
-          <label>무장 추가</label>
           <input type="text" id="roster-input" placeholder="이름 검색..." autocomplete="off">
           <div class="autocomplete-list" id="roster-autocomplete"></div>
         </div>
       </div>
 
-      <div class="result-count" id="roster-count"></div>
+      <div class="result-count-row">
+        <span id="roster-count"></span>
+        <span class="filter-tags" id="roster-filter-tags"></span>
+        <span class="filter-tags" id="roster-formation-filter-tags"></span>
+        <span class="filter-tags" id="roster-tactics-filter-tags"></span>
+        <button class="btn-reset-inline" id="roster-clear">초기화</button>
+      </div>
       <div class="table-wrap">
         <table class="data-table" id="roster-table">
           <thead>
             <tr>
               <th class="col-name sortable" data-sort="name">무장</th>
-              <th class="col-stat-sm sortable" data-sort="leadership">통솔</th>
+              <th class="col-stat-sm col-group-start sortable" data-sort="leadership">통솔</th>
               <th class="col-stat-sm sortable" data-sort="power">무력</th>
               <th class="col-stat-sm sortable" data-sort="intelligence">지력</th>
               <th class="col-stat-sm sortable" data-sort="politics">정치</th>
               <th class="col-stat-sm sortable" data-sort="charm">매력</th>
-              <th class="col-stat sortable" data-sort="lp">통무</th>
+              <th class="col-stat col-group-start sortable" data-sort="lp">통무</th>
               <th class="col-stat sortable" data-sort="ip">지정</th>
-              <th class="col-traits-sm">개성</th>
-              <th style="width:50px">삭제</th>
+              <th class="col-traits-sm col-group-start th-filter">
+                <div class="th-filter__label">개성</div>
+                <div class="th-filter__search">
+                  <input type="text" class="th-filter__input" id="trait-filter-input" placeholder="검색..." autocomplete="off">
+                  <div class="autocomplete-list" id="trait-filter-autocomplete"></div>
+                </div>
+              </th>
+              <th class="col-traits-sm col-group-start th-filter">
+                <div class="th-filter__label">진형</div>
+                <div class="th-filter__search">
+                  <input type="text" class="th-filter__input" id="formation-filter-input" placeholder="검색..." autocomplete="off">
+                  <div class="autocomplete-list" id="formation-filter-autocomplete"></div>
+                </div>
+              </th>
+              <th class="col-traits-sm col-group-start th-filter">
+                <div class="th-filter__label">전법</div>
+                <div class="th-filter__search">
+                  <input type="text" class="th-filter__input" id="tactic-filter-input" placeholder="검색..." autocomplete="off">
+                  <div class="autocomplete-list" id="tactic-filter-autocomplete"></div>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody id="roster-tbody"></tbody>
         </table>
-      </div>
-      <div style="margin-top:12px; text-align:right;">
-        <button class="btn-reset" id="roster-clear">전체 초기화</button>
       </div>
     </section>
 
@@ -198,30 +212,28 @@
     <section id="tab-cities" class="tab-content">
       <div class="cities-add">
         <div class="compare-search-wrap">
-          <label>도시 추가</label>
           <input type="text" id="cities-input" placeholder="도시명 검색..." autocomplete="off">
           <div class="autocomplete-list" id="cities-autocomplete"></div>
         </div>
       </div>
 
-      <div class="result-count" id="cities-count"></div>
+      <div class="result-count-row">
+        <span id="cities-count"></span>
+        <button class="btn-reset-inline" id="cities-clear">초기화</button>
+      </div>
       <div class="table-wrap">
         <table class="data-table" id="cities-table">
           <thead>
             <tr>
               <th style="width:70px">우선순위</th>
-              <th class="col-name">도시</th>
-              <th class="col-stat">주</th>
-              <th class="col-stat">지역내정인원</th>
+              <th style="width:90px">도시</th>
+              <th style="width:70px">주</th>
+              <th style="width:90px">지역내정</th>
               <th style="width:90px">순서변경</th>
-              <th style="width:50px">삭제</th>
             </tr>
           </thead>
           <tbody id="cities-tbody"></tbody>
         </table>
-      </div>
-      <div style="margin-top:12px; text-align:right;">
-        <button class="btn-reset" id="cities-clear">전체 초기화</button>
       </div>
     </section>
 
@@ -346,6 +358,47 @@
       <div class="modal__content" id="modal-content"></div>
     </div>
   </div>
+
+  <!-- 설정 모달 -->
+  <div class="modal-overlay" id="settings-overlay">
+    <div class="modal settings-modal">
+      <button class="modal__close" id="settings-close">&times;</button>
+      <div class="modal__content">
+        <div class="modal-header">
+          <h2>설정</h2>
+        </div>
+        <div class="settings-list">
+          <button class="settings-item" id="theme-toggle">🌙 다크모드</button>
+          <button class="settings-item" id="state-export">내보내기</button>
+          <label class="settings-item">
+            가져오기
+            <input type="file" id="state-import" accept=".json" hidden>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 컨펌 모달 -->
+  <div class="modal-overlay" id="confirm-overlay">
+    <div class="modal confirm-modal">
+      <div class="modal__content">
+        <div class="confirm-message" id="confirm-message"></div>
+        <div class="confirm-actions">
+          <button class="btn-confirm-cancel" id="confirm-cancel">취소</button>
+          <button class="btn-confirm-ok" id="confirm-ok">초기화</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 전법 추가 팝업 -->
+  <div class="tactic-add-popup" id="tactic-add-popup">
+    <input type="text" class="th-filter__input" id="tactic-add-input" placeholder="전법 검색..." autocomplete="off">
+    <div class="autocomplete-list" id="tactic-add-autocomplete"></div>
+  </div>
+
+  <div class="tooltip" id="trait-tooltip"></div>
 
   <script src="app.bundle.js"></script>
 </body>

@@ -7,7 +7,13 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const PK_CSV = path.join(ROOT, 'data', 'RTK14_characters_PK.csv');
 const CITIES_CSV = path.join(ROOT, 'data', 'RTK_cities.csv');
+const TRAITS_CSV = path.join(ROOT, 'data', 'RTK14_characters_trait.csv');
+const FORMATIONS_CSV = path.join(ROOT, 'data', 'RTK14_characters_PK_formation.csv');
+const TACTICS_CSV = path.join(ROOT, 'data', 'RTK14_characters_tactics.csv');
 const OUTPUT = path.join(ROOT, 'data.js');
+
+const FORMATION_NAMES = ['어린','봉시','안행','방원','학익','장사','추행','정란','충차','투석','사이'];
+const COL_FORMATION_START = 47;
 
 // ===== PK CSV 컬럼 인덱스 =====
 const COL = {
@@ -67,6 +73,13 @@ function parseCharacters() {
       if (cols[i] && cols[i].trim()) traits.push(cols[i].trim());
     }
 
+    const formations = [];
+    for (let i = 0; i < FORMATION_NAMES.length; i++) {
+      if (cols[COL_FORMATION_START + i] && cols[COL_FORMATION_START + i].trim() === '1') {
+        formations.push(FORMATION_NAMES[i]);
+      }
+    }
+
     const officer = {
       id: parseInt(cols[COL.id]) || 0,
       name: (cols[COL.name] || '').trim(),
@@ -89,6 +102,7 @@ function parseCharacters() {
       tactics,
       traitCount: traits.length,
       traits,
+      formations,
     };
 
     officers.push(officer);
@@ -106,6 +120,119 @@ function parseCharacters() {
     ideologiesList: [...ideologySet].sort(),
     allTraits: [...traitSet].sort(),
   };
+}
+
+// ===== Parse Trait Metadata =====
+function parseTraitsMeta() {
+  const raw = fs.readFileSync(TRAITS_CSV, 'utf-8');
+  const lines = raw.split(/\r?\n/).filter(l => l.trim());
+  const map = {};
+
+  for (const line of lines.slice(1)) {
+    // 쌍따옴표 내 쉼표를 처리하는 파싱
+    const cols = [];
+    let current = '';
+    let inQuotes = false;
+    for (const ch of line) {
+      if (ch === '"') { inQuotes = !inQuotes; continue; }
+      if (ch === ',' && !inQuotes) { cols.push(current); current = ''; continue; }
+      current += ch;
+    }
+    cols.push(current);
+
+    const name = (cols[0] || '').trim();
+    if (!name) continue;
+    map[name] = {
+      tier: (cols[1] || '').trim(),
+      desc: (cols[2] || '').trim(),
+    };
+  }
+
+  return map;
+}
+
+// ===== Parse Formations Metadata =====
+function parseFormationsMeta() {
+  const raw = fs.readFileSync(FORMATIONS_CSV, 'utf-8');
+  const lines = raw.split(/\r?\n/).filter(l => l.trim());
+  const map = {};
+
+  for (const line of lines.slice(1)) {
+    const cols = [];
+    let current = '';
+    let inQuotes = false;
+    for (const ch of line) {
+      if (ch === '"') { inQuotes = !inQuotes; continue; }
+      if (ch === ',' && !inQuotes) { cols.push(current); current = ''; continue; }
+      current += ch;
+    }
+    cols.push(current);
+
+    const name = (cols[0] || '').trim();
+    if (!name || !FORMATION_NAMES.includes(name)) continue;
+    map[name] = {
+      type: (cols[1] || '').trim(),
+      desc: (cols[2] || '').trim(),
+      cost: parseInt(cols[3]) || 0,
+      range: (cols[4] || '').trim() === 'TRUE',
+      mobility: (cols[5] || '').trim(),
+      attack: (cols[6] || '').trim(),
+      siege: (cols[7] || '').trim(),
+      breach: (cols[8] || '').trim(),
+      defense: (cols[9] || '').trim(),
+    };
+  }
+
+  return map;
+}
+
+// ===== Parse Tactics Metadata =====
+function parseTacticsMeta() {
+  const raw = fs.readFileSync(TACTICS_CSV, 'utf-8');
+  const lines = raw.split(/\r?\n/).filter(l => l.trim());
+  const map = {};
+
+  function parseQuotedLine(line) {
+    const cols = [];
+    let current = '';
+    let inQuotes = false;
+    for (const ch of line) {
+      if (ch === '"') { inQuotes = !inQuotes; continue; }
+      if (ch === ',' && !inQuotes) { cols.push(current); current = ''; continue; }
+      current += ch;
+    }
+    cols.push(current);
+    return cols;
+  }
+
+  function formatEffect(name, range, value, duration) {
+    if (!name) return '';
+    const parts = [name.trim()];
+    if (range && range.trim()) parts.push('범위' + range.trim());
+    if (value && value.trim()) parts.push(value.trim());
+    if (duration && duration.trim()) parts.push(duration.trim());
+    return parts.join(' ');
+  }
+
+  for (const line of lines.slice(1)) {
+    const c = parseQuotedLine(line);
+    const name = (c[0] || '').trim();
+    if (!name) continue;
+    const effect1 = (c[7] || '').trim();
+    const effect2 = (c[11] || '').trim();
+    map[name] = {
+      unique: (c[1] || '').trim() === 'TRUE',
+      owner: (c[2] || '').trim(),
+      system: (c[3] || '').trim(),
+      stat: (c[4] || '').trim(),
+      siege: (c[5] || '').trim() === 'TRUE',
+      cooldown: (c[6] || '').trim(),
+      effect1,
+      effect2,
+    };
+  }
+
+  return map;
 }
 
 // ===== Parse Cities =====
@@ -135,8 +262,11 @@ function parseCities() {
 function generate() {
   const { officers, corpsList, locationsList, ideologiesList, allTraits } = parseCharacters();
   const cities = parseCities();
+  const traitsMeta = parseTraitsMeta();
+  const formationsMeta = parseFormationsMeta();
+  const tacticsMeta = parseTacticsMeta();
 
-  console.log(`Parsed ${officers.length} officers, ${cities.length} cities`);
+  console.log(`Parsed ${officers.length} officers, ${cities.length} cities, ${Object.keys(traitsMeta).length} trait metadata`);
   console.log(`Corps: ${corpsList.length}, Locations: ${locationsList.length}, Ideologies: ${ideologiesList.length}, Traits: ${allTraits.length}`);
 
   let output = '// Auto-generated from RTK14_characters_PK.csv + RTK_cities.csv\n';
@@ -153,6 +283,10 @@ function generate() {
   output += 'export const LOCATIONS_LIST = ' + JSON.stringify(locationsList) + ';\n';
   output += 'export const IDEOLOGIES_LIST = ' + JSON.stringify(ideologiesList) + ';\n';
   output += 'export const ALL_TRAITS = ' + JSON.stringify(allTraits) + ';\n';
+  output += 'export const TRAITS_META = ' + JSON.stringify(traitsMeta, null, 2) + ';\n';
+  output += 'export const FORMATIONS_META = ' + JSON.stringify(formationsMeta, null, 2) + ';\n';
+  output += 'export const TACTICS_META = ' + JSON.stringify(tacticsMeta) + ';\n';
+  output += 'export const ALL_TACTICS_LIST = ' + JSON.stringify(Object.keys(tacticsMeta).sort()) + ';\n';
 
   fs.writeFileSync(OUTPUT, output, 'utf-8');
   console.log(`Written to ${OUTPUT}`);
