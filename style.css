@@ -293,10 +293,13 @@ body {
   flex-wrap: wrap;
   gap: 12px;
   align-items: flex-end;
-  margin-bottom: 16px;
-  padding: 14px 18px;
+  margin-bottom: 32px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  padding: 20px 18px;
   background: var(--bg-primary);
-  border-radius: var(--radius);
 }
 
 .filter-group { display: flex; flex-direction: column; gap: 4px; }
@@ -318,6 +321,7 @@ body {
   padding: 6px 10px;
   border-radius: var(--radius-sm);
   min-width: 100px;
+  text-align: center;
 }
 
 .filter-group input[type="number"] { width: 80px; }
@@ -1424,53 +1428,96 @@ tr:hover .row-remove {
 .corps-card {
   background: var(--bg-primary);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 16px;
-  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 44px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
 }
-.corps-card--점령 { border-left: 4px solid #eb5757; }
-.corps-card--전투 { border-left: 4px solid #f2994a; }
-.corps-card--방어 { border-left: 4px solid #2eaadc; }
 
 .corps-card__header {
+  height: 135px;
+  padding: 20px 16px 15px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.corps-card--점령 .corps-card__header { background: rgba(235, 87, 87, 0.3); }
+.corps-card--전투 .corps-card__header { background: rgba(242, 153, 74, 0.3); }
+.corps-card--방어 .corps-card__header { background: rgba(46, 170, 220, 0.3); }
+
+[data-theme="dark"] .corps-card--점령 .corps-card__header { background: rgba(235, 87, 87, 0.15); }
+[data-theme="dark"] .corps-card--전투 .corps-card__header { background: rgba(242, 153, 74, 0.15); }
+[data-theme="dark"] .corps-card--방어 .corps-card__header { background: rgba(46, 170, 220, 0.15); }
+
+.corps-card__header-row1 {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: -16px -16px 12px -16px;
-  padding: 12px 16px;
-  border-radius: 6px 6px 0 0;
-  border-bottom: 1px solid var(--border);
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  height: 50px;
+  margin-bottom: 15px;
 }
-.corps-card--점령 .corps-card__header { background: rgba(235, 87, 87, 0.04); }
-.corps-card--전투 .corps-card__header { background: rgba(242, 153, 74, 0.04); }
-.corps-card--방어 .corps-card__header { background: rgba(46, 170, 220, 0.04); }
+
+.corps-card__header-row1 .corps-card__delete {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.corps-card__header:hover .corps-card__delete {
+  opacity: 1;
+}
+
+.corps-card__header-row2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  height: 35px;
+}
+.corps-card__header-row2 > *:not(:last-child)::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background: var(--border-dark);
+  margin-left: 16px;
+  vertical-align: middle;
+}
 
 .corps-card__name {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: var(--text-primary);
   margin: 0;
-  flex: 1;
   font-weight: 700;
 }
 
 .corps-card__count {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  height: 28px;
+  line-height: 28px;
 }
 
 .corps-card__delete {
-  background: none;
-  border: 1px solid var(--accent-red);
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
   color: var(--accent-red);
-  font-family: inherit;
-  font-size: 0.8rem;
-  padding: 3px 10px;
+  font-size: 0.85rem;
+  padding: 2px 6px;
   border-radius: var(--radius);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: opacity 0.15s, color 0.15s, background 0.15s;
 }
 .corps-card__delete:hover {
+  color: var(--accent-red-bright);
   background: rgba(235, 87, 87, 0.06);
 }
 
@@ -1497,15 +1544,11 @@ tr:hover .row-remove {
 /* Corps city selector */
 .corps-city-selector {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 10px;
-  padding: 8px 0 8px;
-  margin-bottom: 4px;
 }
 .corps-city-field {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
 }
 .corps-city-field label {
   font-size: 0.75rem;
@@ -1514,9 +1557,10 @@ tr:hover .row-remove {
 .corps-city-field select {
   font-family: inherit;
   font-size: 0.85rem;
-  padding: 4px 8px;
+  padding: 0 8px;
+  height: 28px;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background: var(--bg-input);
   color: var(--text-primary);
 }
@@ -1531,6 +1575,7 @@ tr:hover .row-remove {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 32px;
 }
 
 .corps-search-wrap {
@@ -1542,6 +1587,7 @@ tr:hover .row-remove {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  justify-content: center;
 }
 
 .corps-member {
@@ -1552,6 +1598,8 @@ tr:hover .row-remove {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  width: 280px;
+  white-space: nowrap;
 }
 
 .corps-member__stats {
@@ -1582,15 +1630,16 @@ tr:hover .row-remove {
 /* Rank add input row */
 .corps-rank-add {
   display: flex;
+  align-items: center;
   gap: 8px;
-  margin-bottom: 12px;
 }
 .corps-rank-input {
   flex: 1;
   max-width: 200px;
   font-family: inherit;
   font-size: 0.85rem;
-  padding: 5px 10px;
+  padding: 0 10px;
+  height: 28px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg-input);
@@ -1602,8 +1651,9 @@ tr:hover .row-remove {
   color: #ffffff;
   font-family: inherit;
   font-size: 0.8rem;
-  padding: 5px 12px;
-  border-radius: var(--radius);
+  padding: 0 12px;
+  height: 28px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.15s;
 }
@@ -1613,42 +1663,72 @@ tr:hover .row-remove {
 
 /* Rank section */
 .corps-rank {
-  margin-bottom: 12px;
-  padding: 8px 0 8px 12px;
-  border-left: 3px solid var(--border-dark);
+  display: flex;
+  gap: 16px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  position: relative;
 }
-.corps-card--점령 .corps-rank { border-left-color: rgba(235, 87, 87, 0.5); }
-.corps-card--전투 .corps-rank { border-left-color: rgba(242, 153, 74, 0.5); }
-.corps-card--방어 .corps-rank { border-left-color: rgba(46, 170, 220, 0.5); }
-.corps-rank__header {
+.corps-card--점령 .corps-rank { background: rgba(235, 87, 87, 0.12); }
+.corps-card--전투 .corps-rank { background: rgba(242, 153, 74, 0.12); }
+.corps-card--방어 .corps-rank { background: rgba(46, 170, 220, 0.12); }
+
+[data-theme="dark"] .corps-card--점령 .corps-rank { background: rgba(235, 87, 87, 0.08); }
+[data-theme="dark"] .corps-card--전투 .corps-rank { background: rgba(242, 153, 74, 0.08); }
+[data-theme="dark"] .corps-card--방어 .corps-rank { background: rgba(46, 170, 220, 0.08); }
+.corps-rank__delete {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  color: var(--accent-red);
+  font-size: 0.85rem;
+  padding: 2px 6px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+}
+.corps-rank:hover .corps-rank__delete {
+  opacity: 1;
+}
+.corps-rank__delete:hover {
+  color: var(--accent-red-bright);
+  background: rgba(235, 87, 87, 0.06);
+}
+
+.corps-rank__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 144px;
+  border-right: 1px solid var(--border);
+  padding-right: 16px;
+}
+.corps-rank__meta {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 6px;
 }
 .corps-rank__name {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 .corps-rank__count {
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+
+.corps-rank__right {
   flex: 1;
-}
-.corps-rank__delete {
-  background: none;
-  border: 1px solid var(--accent-red);
-  color: var(--accent-red);
-  font-family: inherit;
-  font-size: 0.75rem;
-  padding: 2px 8px;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.corps-rank__delete:hover {
-  background: rgba(235, 87, 87, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Rank body — horizontal layout with search at right */
