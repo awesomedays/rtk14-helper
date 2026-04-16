@@ -1,6 +1,6 @@
 // ===== APPLICATION ENTRY POINT =====
 
-import { OFFICERS, CITIES, CORPS_LIST, LOCATIONS_LIST, IDEOLOGIES_LIST, ALL_TRAITS, FORMATIONS_META, TACTICS_META, ALL_TACTICS_LIST } from '../data.js';
+import { OFFICERS, CITIES, CORPS_LIST, LOCATIONS_LIST, IDEOLOGIES_LIST, ALL_TRAITS, FORMATIONS_META, TACTICS_META, ALL_TACTICS_LIST, RELATIONSHIPS } from '../data.js';
 import { AFFAIRS_CONFIG, PAGE_SIZE, TAB_CATEGORIES, THRESHOLDS, LIMITS, DEFAULT_ASSIGNMENT_CONFIG } from './config.js';
 import { state } from './state.js';
 import { PersistenceManager } from './persistence.js';
@@ -549,6 +549,23 @@ function init() {
     const addBtn = e.target.closest('.tactic-add-btn');
     if (addBtn) {
       showTacticAddPopup(parseInt(addBtn.dataset.officerId), addBtn);
+      return;
+    }
+
+    const moreBtn = e.target.closest('.relation-more-btn');
+    if (moreBtn) {
+      renderer.showRelationsModal(parseInt(moreBtn.dataset.officerId));
+      return;
+    }
+
+    const relBadge = e.target.closest('.relation-badge');
+    if (relBadge && relBadge.dataset.id) {
+      e.stopPropagation(); // officer-name 모달 오픈 방지
+      const id = parseInt(relBadge.dataset.id);
+      const idx = state.rosterRelationFilters.indexOf(id);
+      if (idx >= 0) state.rosterRelationFilters.splice(idx, 1);
+      else state.rosterRelationFilters.push(id);
+      renderer.renderRoster();
     }
   });
 
@@ -579,7 +596,16 @@ function init() {
     renderer.renderRoster();
   });
 
-  // ===== Header Filter Search (개성/진형/전법) =====
+  document.getElementById('roster-relation-filter-tags').addEventListener('click', (e) => {
+    const closeBtn = e.target.closest('.filter-tag__close');
+    if (!closeBtn) return;
+    const id = parseInt(closeBtn.dataset.relationId);
+    const idx = state.rosterRelationFilters.indexOf(id);
+    if (idx >= 0) state.rosterRelationFilters.splice(idx, 1);
+    renderer.renderRoster();
+  });
+
+  // ===== Header Filter Search (개성/진형/전법/관계) =====
 
   function initFilterSearch({ inputId, autocompleteId, allItems, getFilters, addFilter }) {
     const input = document.getElementById(inputId);
@@ -678,6 +704,74 @@ function init() {
     }
   });
 
+  // Relation filter search (ID-based, not name-based)
+  {
+    const input = document.getElementById('relation-filter-input');
+    const acList = document.getElementById('relation-filter-autocomplete');
+    let acIndex = -1;
+
+    input.addEventListener('click', (e) => e.stopPropagation());
+
+    input.addEventListener('input', () => {
+      acIndex = -1;
+      const q = input.value.trim().toLowerCase();
+      if (!q) { acList.innerHTML = ''; acList.classList.remove('show'); return; }
+
+      const rosterOfficers = state.rosterIds
+        .map(id => OFFICERS.find(o => o.id === id))
+        .filter(Boolean);
+      const matches = rosterOfficers
+        .filter(o => o.name.toLowerCase().includes(q) && !state.rosterRelationFilters.includes(o.id))
+        .slice(0, 8);
+
+      if (!matches.length) { acList.innerHTML = ''; acList.classList.remove('show'); return; }
+
+      acList.innerHTML = matches.map(o =>
+        `<div class="autocomplete-item" data-id="${o.id}"><span>${o.name}</span></div>`
+      ).join('');
+      acList.classList.add('show');
+    });
+
+    input.addEventListener('compositionend', () => {
+      input.dispatchEvent(new Event('input'));
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.isComposing) return;
+      const items = acList.querySelectorAll('.autocomplete-item');
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const target = acIndex >= 0 ? items[acIndex] : items[0];
+        if (target) target.click();
+        return;
+      }
+      if (!items.length) return;
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        acIndex = Math.min(acIndex + 1, items.length - 1);
+        items.forEach((el, i) => el.classList.toggle('active', i === acIndex));
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        acIndex = Math.max(acIndex - 1, 0);
+        items.forEach((el, i) => el.classList.toggle('active', i === acIndex));
+      } else if (e.key === 'Escape') {
+        acList.classList.remove('show');
+        acIndex = -1;
+      }
+    });
+
+    acList.addEventListener('click', (e) => {
+      const item = e.target.closest('.autocomplete-item');
+      if (!item) return;
+      const id = parseInt(item.dataset.id);
+      if (!state.rosterRelationFilters.includes(id)) state.rosterRelationFilters.push(id);
+      input.value = '';
+      acList.innerHTML = '';
+      acList.classList.remove('show');
+      renderer.renderRoster();
+    });
+  }
+
   // ===== Tactic Add Popup =====
 
   const tacticPopup = document.getElementById('tactic-add-popup');
@@ -767,6 +861,7 @@ function init() {
       document.getElementById('trait-filter-autocomplete').classList.remove('show');
       document.getElementById('formation-filter-autocomplete').classList.remove('show');
       document.getElementById('tactic-filter-autocomplete').classList.remove('show');
+      document.getElementById('relation-filter-autocomplete').classList.remove('show');
     }
     if (!e.target.closest('.tactic-add-popup') && !e.target.closest('.tactic-add-btn')) {
       tacticPopup.classList.remove('show');

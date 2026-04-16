@@ -10,6 +10,7 @@ const CITIES_CSV = path.join(ROOT, 'data', 'RTK_cities.csv');
 const TRAITS_CSV = path.join(ROOT, 'data', 'RTK14_characters_trait.csv');
 const FORMATIONS_CSV = path.join(ROOT, 'data', 'RTK14_characters_PK_formation.csv');
 const TACTICS_CSV = path.join(ROOT, 'data', 'RTK14_characters_tactics.csv');
+const REL_CSV = path.join(ROOT, 'data', 'RTK14_characters_relationships.csv');
 const OUTPUT = path.join(ROOT, 'data.js');
 
 const FORMATION_NAMES = ['어린','봉시','안행','방원','학익','장사','추행','정란','충차','투석','사이'];
@@ -235,6 +236,30 @@ function parseTacticsMeta() {
   return map;
 }
 
+// ===== Parse Relationships =====
+function parseRelationships() {
+  const raw = fs.readFileSync(REL_CSV, 'utf-8');
+  const lines = raw.split(/\r?\n/).filter(l => l.trim());
+  const map = {};
+
+  for (const line of lines.slice(1)) {
+    const m = line.match(/^(\d+),/);
+    if (!m) continue;
+    const id = parseInt(m[1]);
+    const quoteStart = line.indexOf('"');
+    const quoteEnd = line.lastIndexOf('"');
+    if (quoteStart < 0 || quoteEnd <= quoteStart) continue;
+    const rest = line.substring(quoteStart + 1, quoteEnd);
+    const friends = rest.split(',').map(s => {
+      const match = s.trim().match(/^(.+)#(\d+)$/);
+      return match ? parseInt(match[2]) : null;
+    }).filter(Boolean);
+    if (friends.length > 0) map[id] = friends;
+  }
+
+  return map;
+}
+
 // ===== Parse Cities =====
 function parseCities() {
   const raw = fs.readFileSync(CITIES_CSV, 'utf-8');
@@ -265,6 +290,7 @@ function generate() {
   const traitsMeta = parseTraitsMeta();
   const formationsMeta = parseFormationsMeta();
   const tacticsMeta = parseTacticsMeta();
+  const relationships = parseRelationships();
 
   console.log(`Parsed ${officers.length} officers, ${cities.length} cities, ${Object.keys(traitsMeta).length} trait metadata`);
   console.log(`Corps: ${corpsList.length}, Locations: ${locationsList.length}, Ideologies: ${ideologiesList.length}, Traits: ${allTraits.length}`);
@@ -287,6 +313,7 @@ function generate() {
   output += 'export const FORMATIONS_META = ' + JSON.stringify(formationsMeta, null, 2) + ';\n';
   output += 'export const TACTICS_META = ' + JSON.stringify(tacticsMeta) + ';\n';
   output += 'export const ALL_TACTICS_LIST = ' + JSON.stringify(Object.keys(tacticsMeta).sort()) + ';\n';
+  output += 'export const RELATIONSHIPS = ' + JSON.stringify(relationships) + ';\n';
 
   fs.writeFileSync(OUTPUT, output, 'utf-8');
   console.log(`Written to ${OUTPUT}`);

@@ -1,7 +1,7 @@
 // ===== UI RENDERER =====
 
 import { AFFAIRS_CONFIG, THRESHOLDS, TRADE_NATION_NAMES, LIMITS, SORT_KEYS, TRADE_OVERFLOW_MODES, DEFAULT_ASSIGNMENT_CONFIG } from './config.js';
-import { OFFICERS, CITIES, ALL_TRAITS, TRAITS_META, FORMATIONS_META, TACTICS_META } from '../data.js';
+import { OFFICERS, CITIES, ALL_TRAITS, TRAITS_META, FORMATIONS_META, TACTICS_META, RELATIONSHIPS } from '../data.js';
 import { getCityRegionSlots } from './assignment.js';
 
 export class UIRenderer {
@@ -54,6 +54,19 @@ export class UIRenderer {
     const base = officer.tactics || [];
     const added = this.state.officerTacticsOverrides[officer.id] || [];
     return [...base, ...added];
+  }
+
+  getOfficerRelations(officer) {
+    const relIds = RELATIONSHIPS[officer.id] || [];
+    const rosterSet = new Set(this.state.rosterIds);
+    return relIds
+      .filter(id => rosterSet.has(id))
+      .map(id => OFFICERS.find(o => o.id === id))
+      .filter(Boolean);
+  }
+
+  relationBadgeHtml(officer) {
+    return `<span class="relation-badge officer-name" data-id="${officer.id}" data-relation="${officer.name}">${officer.name}</span>`;
   }
 
   tacticBadgeHtml(name) {
@@ -298,7 +311,8 @@ export class UIRenderer {
     const filters = this.state.rosterTraitFilters;
     const formationFilters = this.state.rosterFormationFilters;
     const tacticsFilters = this.state.rosterTacticsFilters;
-    const hasFilter = filters.length > 0 || formationFilters.length > 0 || tacticsFilters.length > 0;
+    const relationFilters = this.state.rosterRelationFilters;
+    const hasFilter = filters.length > 0 || formationFilters.length > 0 || tacticsFilters.length > 0 || relationFilters.length > 0;
 
     if (filters.length > 0) {
       officers = officers.filter(o => filters.every(f => o.traits.includes(f)));
@@ -310,6 +324,12 @@ export class UIRenderer {
       officers = officers.filter(o => {
         const tactics = this.getOfficerTactics(o);
         return tacticsFilters.every(f => tactics.includes(f));
+      });
+    }
+    if (relationFilters.length > 0) {
+      officers = officers.filter(o => {
+        const relIds = RELATIONSHIPS[o.id] || [];
+        return relationFilters.every(f => relIds.includes(f));
       });
     }
 
@@ -341,9 +361,16 @@ export class UIRenderer {
       return `<span class="filter-tag ${cls}"><span class="filter-tag__name">${f}</span><button class="filter-tag__close" data-tactic="${f}">&times;</button></span>`;
     }).join('');
 
+    const relationTagsContainer = document.getElementById('roster-relation-filter-tags');
+    relationTagsContainer.innerHTML = relationFilters.map(id => {
+      const o = OFFICERS.find(x => x.id === id);
+      const name = o ? o.name : id;
+      return `<span class="filter-tag filter-tag--relation"><span class="filter-tag__name">${name}</span><button class="filter-tag__close" data-relation-id="${id}">&times;</button></span>`;
+    }).join('');
+
     const tbody = document.getElementById('roster-tbody');
     if (sorted.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="11" style="text-align:center;padding:24px;color:var(--text-muted)">' +
+      tbody.innerHTML = '<tr><td colspan="12" style="text-align:center;padding:24px;color:var(--text-muted)">' +
         (hasFilter ? '해당 조건을 만족하는 무장이 없습니다.' : '무장을 검색하여 추가해주세요.') + '</td></tr>';
       return;
     }
@@ -382,6 +409,18 @@ export class UIRenderer {
       const addBtn = allTactics.length < 10
         ? `<button class="tactic-add-btn" data-officer-id="${o.id}">+</button>` : '';
 
+      const relations = this.getOfficerRelations(o);
+      const visibleRelations = relations.slice(0, 6);
+      const relationHtml = visibleRelations.map(r => {
+        let html = this.relationBadgeHtml(r);
+        if (relationFilters.length > 0 && relationFilters.includes(r.id)) {
+          html = html.replace('class="relation-badge', 'class="relation-badge relation-badge--active');
+        }
+        return html;
+      }).join('');
+      const moreBtn = relations.length > 6
+        ? `<button class="relation-more-btn" data-officer-id="${o.id}">+${relations.length - 6}</button>` : '';
+
       return `<tr class="has-row-remove">
     <td><span class="officer-name" data-id="${o.id}">${o.name}</span></td>
     <td class="col-stat-sm col-group-start ${this.getStatClass(o.leadership)}">${o.leadership}</td>
@@ -394,6 +433,7 @@ export class UIRenderer {
     <td class="col-group-start"><div class="trait-badges">${badgeHtml}</div></td>
     <td class="col-group-start"><div class="formation-badges">${formationHtml}</div></td>
     <td class="col-group-start"><div class="tactic-badges">${tacticHtml}${addBtn}</div></td>
+    <td class="col-group-start"><div class="relation-badges">${relationHtml}${moreBtn}</div></td>
     <td class="cell-row-remove"><button class="row-remove" data-id="${o.id}">&times;</button></td>
   </tr>`;
     }).join('');
@@ -1103,5 +1143,22 @@ export class UIRenderer {
 
   closeModal() {
     document.getElementById('modal-overlay').classList.remove('show');
+  }
+
+  showRelationsModal(officerId) {
+    const officer = OFFICERS.find(o => o.id === officerId);
+    if (!officer) return;
+    const relations = this.getOfficerRelations(officer);
+    const content = document.getElementById('modal-content');
+
+    content.innerHTML = `
+    <div class="modal-header" style="text-align:center">
+      <h2>${officer.name}의 관계 무장 (${relations.length}명)</h2>
+    </div>
+    <div class="relation-modal-list">
+      ${relations.map(r => `<span class="relation-badge officer-name" data-id="${r.id}">${r.name}</span>`).join('')}
+    </div>`;
+
+    document.getElementById('modal-overlay').classList.add('show');
   }
 }

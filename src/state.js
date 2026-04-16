@@ -17,6 +17,7 @@ export class AppState {
     this.rosterTraitFilters = [];
     this.rosterFormationFilters = [];
     this.rosterTacticsFilters = [];
+    this.rosterRelationFilters = [];
     this.officerTacticsOverrides = {};
     // 보유도시
     this.ownedCityIds = [];
