@@ -1966,12 +1966,27 @@ tr:hover .row-remove {
 
 /* ===== Admin Tab ===== */
 .admin-config {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 20px;
   margin-bottom: 24px;
+}
+
+.admin-section,
+#admin-city-slots {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 30px;
   box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+#admin-city-slots:empty {
+  display: none;
+}
+#admin-city-slots .admin-section {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 /* ===== Collapsible Sections ===== */
@@ -1985,9 +2000,9 @@ tr:hover .row-remove {
   display: inline-block;
   width: 0;
   height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 6px solid var(--text-secondary);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 9px solid var(--text-secondary);
   transition: transform 0.2s ease;
   flex-shrink: 0;
   margin-right: 4px;
@@ -2005,6 +2020,22 @@ tr:hover .row-remove {
 
 .collapsible-section.collapsed .collapsible-section__body {
   grid-template-rows: 0fr;
+}
+.collapsible-section.collapsed {
+  padding-bottom: 0;
+}
+.collapsible-section.collapsed > .admin-section__title {
+  margin-bottom: 0;
+  border-bottom: none;
+  border-radius: 8px;
+}
+#admin-city-slots:has(.collapsible-section.collapsed) {
+  padding-bottom: 0;
+}
+#admin-city-slots:has(.collapsible-section.collapsed) .admin-section__title {
+  margin-bottom: 0;
+  border-bottom: none;
+  border-radius: 8px;
 }
 
 .collapsible-section__inner {
@@ -2138,17 +2169,38 @@ tr:hover .row-remove {
 
 .trade-manual-autocomplete.show { display: block; }
 
-.admin-section {
-  margin-bottom: 24px;
-}
-
 .admin-section__title {
+  background: var(--bg-secondary);
   font-size: 1.1rem;
   color: var(--text-primary);
-  margin: 0 0 12px 0;
-  padding-left: 12px;
-  border-left: 3px solid var(--accent-blue);
   font-weight: 700;
+  margin: -20px -30px 20px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+}
+#assignment-config-section > .admin-section__title {
+  background: rgba(155, 81, 224, 0.18);
+}
+[data-theme="dark"] #assignment-config-section > .admin-section__title {
+  background: rgba(155, 81, 224, 0.12);
+}
+#admin-city-slots > .admin-section > .admin-section__title {
+  background: rgba(224, 81, 155, 0.18);
+}
+[data-theme="dark"] #admin-city-slots > .admin-section > .admin-section__title {
+  background: rgba(224, 81, 155, 0.12);
+}
+.admin-section__title .btn-reset {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .admin-group {
@@ -2465,11 +2517,6 @@ tr:hover .row-remove {
 
 #assignment-config-section {
   margin-bottom: 16px;
-}
-#assignment-config-section .admin-section__title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
 }
 .btn-reset {
   font-size: 0.75rem;
