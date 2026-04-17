@@ -482,26 +482,24 @@ export class UIRenderer {
     container.innerHTML = this.state.corps.map(corps => {
       const totalMembers = (corps.ranks || []).reduce((sum, r) => sum + r.memberIds.length, 0);
 
-      const rankSections = (corps.ranks || []).length > 0
-        ? corps.ranks.map(rank => {
+      const rankSections = (corps.ranks || []).map(rank => {
             const members = rank.memberIds
               .map(id => OFFICERS.find(o => o.id === id))
               .filter(Boolean);
 
-            const memberRows = members.map((o, i) => `<div class="corps-member">
+            const memberRows = members.map(o => `<div class="corps-member" data-officer-id="${o.id}">
+              <span class="corps-member__drag-handle">&#8286;&#8286;</span>
               <span class="officer-name" data-id="${o.id}">${o.name}</span>
-              <span class="corps-member__stats">통<span class="${this.corpsStatClass(o.leadership)}">${o.leadership}</span> 무<span class="${this.corpsStatClass(o.power)}">${o.power}</span> 지<span class="${this.corpsStatClass(o.intelligence)}">${o.intelligence}</span> 정<span class="${this.corpsStatClass(o.politics)}">${o.politics}</span></span>
-              <button class="corps-member-up" data-corps-id="${corps.id}" data-rank-id="${rank.id}" data-officer-id="${o.id}" ${i === 0 ? 'disabled' : ''}>&#9650;</button>
-              <button class="corps-member-down" data-corps-id="${corps.id}" data-rank-id="${rank.id}" data-officer-id="${o.id}" ${i === members.length - 1 ? 'disabled' : ''}>&#9660;</button>
+              <span class="corps-member__stats"><span class="${this.corpsStatClass(o.leadership)}">${o.leadership}</span><span class="${this.corpsStatClass(o.power)}">${o.power}</span><span class="${this.corpsStatClass(o.intelligence)}">${o.intelligence}</span><span class="${this.corpsStatClass(o.politics)}">${o.politics}</span></span>
               <button class="corps-member__remove" data-corps-id="${corps.id}" data-rank-id="${rank.id}" data-officer-id="${o.id}">&times;</button>
             </div>`).join('');
 
             return `<div class="corps-rank" data-rank-id="${rank.id}">
-            <button class="corps-rank__delete" data-corps-id="${corps.id}" data-rank-id="${rank.id}">&times;</button>
             <div class="corps-rank__left">
               <div class="corps-rank__meta">
                 <span class="corps-rank__name">${rank.name}</span>
                 <span class="corps-rank__count">${members.length}명</span>
+                <button class="corps-rank__delete" data-corps-id="${corps.id}" data-rank-id="${rank.id}">&times;</button>
               </div>
               <div class="compare-search-wrap corps-search-wrap">
                 <input type="text" class="corps-member-input" data-corps-id="${corps.id}" data-rank-id="${rank.id}" placeholder="무장 검색..." autocomplete="off">
@@ -509,11 +507,10 @@ export class UIRenderer {
               </div>
             </div>
             <div class="corps-rank__right">
-              <div class="corps-card__member-list">${memberRows}</div>
+              <div class="corps-card__member-list" data-corps-id="${corps.id}" data-rank-id="${rank.id}">${memberRows}</div>
             </div>
           </div>`;
-          }).join('')
-        : '<p class="corps-empty-msg">직급을 추가해주세요.</p>';
+          }).join('');
 
       // City selector options
       const ownedCities = this.state.ownedCityIds
@@ -546,21 +543,23 @@ export class UIRenderer {
       return `<div class="corps-card corps-card--${corps.role}" data-corps-id="${corps.id}">
       <div class="corps-card__header">
         <div class="corps-card__header-row1">
-          <h3 class="corps-card__name">${corps.name}</h3>
-          <span class="role-badge role-badge--${corps.role}">${corps.role}</span>
-          <button class="corps-card__delete" data-corps-id="${corps.id}">&times;</button>
+          <div class="corps-card__title-group">
+            <h3 class="corps-card__name">${corps.name}</h3>
+            <span class="role-badge role-badge--${corps.role}">${corps.role}</span>
+            <button class="corps-card__delete" data-corps-id="${corps.id}">&times;</button>
+          </div>
         </div>
         <div class="corps-card__header-row2">
           <span class="corps-card__count">${totalMembers}명</span>
           ${citySelector}
-          <div class="corps-rank-add">
-            <input type="text" class="corps-rank-input" data-corps-id="${corps.id}" placeholder="직급명..." autocomplete="off">
-            <button class="corps-rank-add-btn" data-corps-id="${corps.id}">직급 추가</button>
-          </div>
         </div>
       </div>
       <div class="corps-card__body">
         ${rankSections}
+        <div class="corps-rank-add">
+          <input type="text" class="corps-rank-input" data-corps-id="${corps.id}" placeholder="직급명..." autocomplete="off">
+          <button class="corps-rank-add-btn" data-corps-id="${corps.id}">직급 추가</button>
+        </div>
       </div>
     </div>`;
     }).join('');

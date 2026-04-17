@@ -41997,26 +41997,24 @@ class UIRenderer {
     container.innerHTML = this.state.corps.map(corps => {
       const totalMembers = (corps.ranks || []).reduce((sum, r) => sum + r.memberIds.length, 0);
 
-      const rankSections = (corps.ranks || []).length > 0
-        ? corps.ranks.map(rank => {
+      const rankSections = (corps.ranks || []).map(rank => {
             const members = rank.memberIds
               .map(id => OFFICERS.find(o => o.id === id))
               .filter(Boolean);
 
-            const memberRows = members.map((o, i) => `<div class="corps-member">
+            const memberRows = members.map(o => `<div class="corps-member" data-officer-id="${o.id}">
+              <span class="corps-member__drag-handle">&#8286;&#8286;</span>
               <span class="officer-name" data-id="${o.id}">${o.name}</span>
-              <span class="corps-member__stats">통<span class="${this.corpsStatClass(o.leadership)}">${o.leadership}</span> 무<span class="${this.corpsStatClass(o.power)}">${o.power}</span> 지<span class="${this.corpsStatClass(o.intelligence)}">${o.intelligence}</span> 정<span class="${this.corpsStatClass(o.politics)}">${o.politics}</span></span>
-              <button class="corps-member-up" data-corps-id="${corps.id}" data-rank-id="${rank.id}" data-officer-id="${o.id}" ${i === 0 ? 'disabled' : ''}>&#9650;</button>
-              <button class="corps-member-down" data-corps-id="${corps.id}" data-rank-id="${rank.id}" data-officer-id="${o.id}" ${i === members.length - 1 ? 'disabled' : ''}>&#9660;</button>
+              <span class="corps-member__stats"><span class="${this.corpsStatClass(o.leadership)}">${o.leadership}</span><span class="${this.corpsStatClass(o.power)}">${o.power}</span><span class="${this.corpsStatClass(o.intelligence)}">${o.intelligence}</span><span class="${this.corpsStatClass(o.politics)}">${o.politics}</span></span>
               <button class="corps-member__remove" data-corps-id="${corps.id}" data-rank-id="${rank.id}" data-officer-id="${o.id}">&times;</button>
             </div>`).join('');
 
             return `<div class="corps-rank" data-rank-id="${rank.id}">
-            <button class="corps-rank__delete" data-corps-id="${corps.id}" data-rank-id="${rank.id}">&times;</button>
             <div class="corps-rank__left">
               <div class="corps-rank__meta">
                 <span class="corps-rank__name">${rank.name}</span>
                 <span class="corps-rank__count">${members.length}명</span>
+                <button class="corps-rank__delete" data-corps-id="${corps.id}" data-rank-id="${rank.id}">&times;</button>
               </div>
               <div class="compare-search-wrap corps-search-wrap">
                 <input type="text" class="corps-member-input" data-corps-id="${corps.id}" data-rank-id="${rank.id}" placeholder="무장 검색..." autocomplete="off">
@@ -42024,11 +42022,10 @@ class UIRenderer {
               </div>
             </div>
             <div class="corps-rank__right">
-              <div class="corps-card__member-list">${memberRows}</div>
+              <div class="corps-card__member-list" data-corps-id="${corps.id}" data-rank-id="${rank.id}">${memberRows}</div>
             </div>
           </div>`;
-          }).join('')
-        : '<p class="corps-empty-msg">직급을 추가해주세요.</p>';
+          }).join('');
 
       // City selector options
       const ownedCities = this.state.ownedCityIds
@@ -42061,21 +42058,23 @@ class UIRenderer {
       return `<div class="corps-card corps-card--${corps.role}" data-corps-id="${corps.id}">
       <div class="corps-card__header">
         <div class="corps-card__header-row1">
-          <h3 class="corps-card__name">${corps.name}</h3>
-          <span class="role-badge role-badge--${corps.role}">${corps.role}</span>
-          <button class="corps-card__delete" data-corps-id="${corps.id}">&times;</button>
+          <div class="corps-card__title-group">
+            <h3 class="corps-card__name">${corps.name}</h3>
+            <span class="role-badge role-badge--${corps.role}">${corps.role}</span>
+            <button class="corps-card__delete" data-corps-id="${corps.id}">&times;</button>
+          </div>
         </div>
         <div class="corps-card__header-row2">
           <span class="corps-card__count">${totalMembers}명</span>
           ${citySelector}
-          <div class="corps-rank-add">
-            <input type="text" class="corps-rank-input" data-corps-id="${corps.id}" placeholder="직급명..." autocomplete="off">
-            <button class="corps-rank-add-btn" data-corps-id="${corps.id}">직급 추가</button>
-          </div>
         </div>
       </div>
       <div class="corps-card__body">
         ${rankSections}
+        <div class="corps-rank-add">
+          <input type="text" class="corps-rank-input" data-corps-id="${corps.id}" placeholder="직급명..." autocomplete="off">
+          <button class="corps-rank-add-btn" data-corps-id="${corps.id}">직급 추가</button>
+        </div>
       </div>
     </div>`;
     }).join('');
@@ -43691,6 +43690,55 @@ function init() {
 
   // ===== Corps Tab =====
 
+  function handleCorpsMemberDrop(evt) {
+    const fromList = evt.from;
+    const toList = evt.to;
+    const fromCorpsId = parseInt(fromList.dataset.corpsId);
+    const toCorpsId = parseInt(toList.dataset.corpsId);
+
+    if (fromCorpsId !== toCorpsId) {
+      renderCorpsListAndBind();
+      return;
+    }
+
+    const fromRankId = parseInt(fromList.dataset.rankId);
+    const toRankId = parseInt(toList.dataset.rankId);
+    const officerId = parseInt(evt.item.dataset.officerId);
+    const corps = state.corps.find(c => c.id === fromCorpsId);
+    if (!corps) { renderCorpsListAndBind(); return; }
+    const fromRank = corps.ranks.find(r => r.id === fromRankId);
+    const toRank = corps.ranks.find(r => r.id === toRankId);
+    if (!fromRank || !toRank) { renderCorpsListAndBind(); return; }
+
+    const srcIdx = fromRank.memberIds.indexOf(officerId);
+    if (srcIdx === -1) { renderCorpsListAndBind(); return; }
+    fromRank.memberIds.splice(srcIdx, 1);
+    toRank.memberIds.splice(evt.newIndex, 0, officerId);
+
+    persistence.saveCorps();
+    renderCorpsListAndBind();
+  }
+
+  function initCorpsSortables() {
+    if (typeof Sortable === 'undefined') return;
+    document.querySelectorAll('.corps-card__member-list').forEach(listEl => {
+      new Sortable(listEl, {
+        group: 'corps-members',
+        handle: '.corps-member__drag-handle',
+        animation: 150,
+        ghostClass: 'sortable-ghost',
+        chosenClass: 'sortable-chosen',
+        dragClass: 'sortable-drag',
+        onEnd: handleCorpsMemberDrop,
+      });
+    });
+  }
+
+  function renderCorpsListAndBind(focusTarget) {
+    renderer.renderCorpsList(focusTarget);
+    initCorpsSortables();
+  }
+
   const addCorps = () => {
     const nameInput = document.getElementById('corps-name-input');
     const name = nameInput.value.trim();
@@ -43710,7 +43758,7 @@ function init() {
     });
     persistence.saveCorps();
     nameInput.value = '';
-    renderer.renderCorpsList();
+    renderCorpsListAndBind();
   };
   document.getElementById('corps-add-btn').addEventListener('click', addCorps);
   document.getElementById('corps-name-input').addEventListener('keydown', (e) => {
@@ -43729,7 +43777,7 @@ function init() {
       const corpsId = parseInt(deleteBtn.dataset.corpsId);
       state.corps = state.corps.filter(c => c.id !== corpsId);
       persistence.saveCorps();
-      renderer.renderCorpsList();
+      renderCorpsListAndBind();
       return;
     }
 
@@ -43746,7 +43794,7 @@ function init() {
       }
       corps.ranks.push({ id: corps.rankNextId++, name, memberIds: [] });
       persistence.saveCorps();
-      renderer.renderCorpsList();
+      renderCorpsListAndBind();
       return;
     }
 
@@ -43759,47 +43807,7 @@ function init() {
       if (corps) {
         corps.ranks = corps.ranks.filter(r => r.id !== rankId);
         persistence.saveCorps();
-        renderer.renderCorpsList();
-      }
-      return;
-    }
-
-    // Move member up
-    const moveUp = e.target.closest('.corps-member-up');
-    if (moveUp) {
-      const corpsId = parseInt(moveUp.dataset.corpsId);
-      const rankId = parseInt(moveUp.dataset.rankId);
-      const officerId = parseInt(moveUp.dataset.officerId);
-      const corps = state.corps.find(c => c.id === corpsId);
-      const rank = corps && corps.ranks.find(r => r.id === rankId);
-      if (rank) {
-        const idx = rank.memberIds.indexOf(officerId);
-        if (idx > 0) {
-          [rank.memberIds[idx - 1], rank.memberIds[idx]] =
-            [rank.memberIds[idx], rank.memberIds[idx - 1]];
-          persistence.saveCorps();
-          renderer.renderCorpsList();
-        }
-      }
-      return;
-    }
-
-    // Move member down
-    const moveDown = e.target.closest('.corps-member-down');
-    if (moveDown) {
-      const corpsId = parseInt(moveDown.dataset.corpsId);
-      const rankId = parseInt(moveDown.dataset.rankId);
-      const officerId = parseInt(moveDown.dataset.officerId);
-      const corps = state.corps.find(c => c.id === corpsId);
-      const rank = corps && corps.ranks.find(r => r.id === rankId);
-      if (rank) {
-        const idx = rank.memberIds.indexOf(officerId);
-        if (idx < rank.memberIds.length - 1) {
-          [rank.memberIds[idx], rank.memberIds[idx + 1]] =
-            [rank.memberIds[idx + 1], rank.memberIds[idx]];
-          persistence.saveCorps();
-          renderer.renderCorpsList();
-        }
+        renderCorpsListAndBind();
       }
       return;
     }
@@ -43815,7 +43823,7 @@ function init() {
       if (rank) {
         rank.memberIds = rank.memberIds.filter(id => id !== officerId);
         persistence.saveCorps();
-        renderer.renderCorpsList({ corpsId, rankId });
+        renderCorpsListAndBind({ corpsId, rankId });
       }
       return;
     }
@@ -43831,7 +43839,7 @@ function init() {
       if (rank && !rank.memberIds.includes(officerId)) {
         rank.memberIds.push(officerId);
         persistence.saveCorps();
-        renderer.renderCorpsList({ corpsId, rankId });
+        renderCorpsListAndBind({ corpsId, rankId });
       }
     }
   });
@@ -44160,7 +44168,7 @@ function init() {
   renderer.renderSearchTable();
   renderer.renderRoster();
   renderer.renderCities();
-  renderer.renderCorpsList();
+  renderCorpsListAndBind();
   renderer.renderAdminCitySlots();
   renderer.renderTradeConfig();
   renderer.renderAssignmentConfig();

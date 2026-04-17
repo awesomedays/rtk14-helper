@@ -1594,13 +1594,20 @@ tr:hover .row-remove {
   margin-bottom: 15px;
 }
 
-.corps-card__header-row1 .corps-card__delete {
+.corps-card__title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+.corps-card__title-group .corps-card__delete {
   position: absolute;
-  right: 0;
+  left: 100%;
   top: 50%;
   transform: translateY(-50%);
+  margin-left: 8px;
   opacity: 0;
-  transition: opacity 0.15s;
+  transition: opacity 0.15s, color 0.15s, background 0.15s;
 }
 .corps-card__header:hover .corps-card__delete {
   opacity: 1;
@@ -1714,12 +1721,27 @@ tr:hover .row-remove {
   max-width: 300px;
 }
 
+.corps-member-autocomplete .autocomplete-item > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.corps-member-autocomplete .autocomplete-item__stats {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 /* Corps member list — horizontal layout */
 .corps-card__member-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
+}
+.corps-card__member-list:empty {
+  min-height: 40px;
+  width: 100%;
 }
 
 .corps-member {
@@ -1730,13 +1752,27 @@ tr:hover .row-remove {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  width: 280px;
+  width: 220px;
   white-space: nowrap;
+}
+.corps-member .officer-name {
+  width: 48px;
+  flex-shrink: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .corps-member__stats {
   font-size: 0.8rem;
   color: var(--text-muted);
+  width: 100px;
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 25px);
+  white-space: nowrap;
+}
+.corps-member__stats > span {
+  text-align: center;
 }
 
 .corps-member__remove {
@@ -1752,18 +1788,16 @@ tr:hover .row-remove {
   color: var(--accent-red);
 }
 
-.corps-empty-msg {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  margin: 0;
-  padding: 4px 8px;
-}
 
 /* Rank add input row */
 .corps-rank-add {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+.corps-card__body > .corps-rank-add {
+  align-self: center;
+  margin-top: 8px;
 }
 .corps-rank-input {
   flex: 1;
@@ -1811,8 +1845,10 @@ tr:hover .row-remove {
 [data-theme="dark"] .corps-card--방어 .corps-rank { background: rgba(46, 170, 220, 0.08); }
 .corps-rank__delete {
   position: absolute;
-  right: 8px;
-  top: 8px;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 8px;
   background: var(--bg-primary);
   border: 1px solid var(--border);
   color: var(--accent-red);
@@ -1821,7 +1857,7 @@ tr:hover .row-remove {
   border-radius: var(--radius);
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.15s, color 0.15s;
+  transition: opacity 0.15s, color 0.15s, background 0.15s;
 }
 .corps-rank:hover .corps-rank__delete {
   opacity: 1;
@@ -1837,7 +1873,7 @@ tr:hover .row-remove {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 200px;
+  width: 180px;
   flex-shrink: 0;
   border-right: 1px solid var(--border);
   padding-right: 16px;
@@ -1846,6 +1882,7 @@ tr:hover .row-remove {
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 }
 .corps-rank__name {
   font-size: 0.95rem;
@@ -1880,28 +1917,31 @@ tr:hover .row-remove {
   flex-shrink: 0;
 }
 
-/* Member reorder buttons */
-.corps-member-up,
-.corps-member-down {
-  background: none;
-  border: 1px solid var(--border);
+/* Drag handle */
+.corps-member__drag-handle {
+  cursor: grab;
   color: var(--text-muted);
-  font-size: 0.7rem;
-  padding: 1px 4px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.15s;
+  font-size: 1rem;
+  user-select: none;
+  touch-action: none;
+  padding: 0 2px;
+  flex-shrink: 0;
   line-height: 1;
 }
-.corps-member-up:hover:not(:disabled),
-.corps-member-down:hover:not(:disabled) {
-  border-color: var(--accent-blue);
-  color: var(--accent-blue);
+.corps-member__drag-handle:active {
+  cursor: grabbing;
 }
-.corps-member-up:disabled,
-.corps-member-down:disabled {
-  opacity: 0.3;
-  cursor: default;
+
+/* SortableJS state classes */
+.sortable-ghost {
+  opacity: 0.4;
+  background: var(--bg-hover);
+}
+.sortable-chosen {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.sortable-drag {
+  opacity: 0.9;
 }
 
 /* Stat highlighting for corps members */
@@ -2234,9 +2274,6 @@ tr:hover .row-remove {
 @media (max-width: 900px) {
   .corps-card {
     max-width: 100%;
-  }
-  .corps-member {
-    width: 100%;
   }
   .corps-card__body {
     padding: 16px;

@@ -1016,6 +1016,55 @@ function init() {
 
   // ===== Corps Tab =====
 
+  function handleCorpsMemberDrop(evt) {
+    const fromList = evt.from;
+    const toList = evt.to;
+    const fromCorpsId = parseInt(fromList.dataset.corpsId);
+    const toCorpsId = parseInt(toList.dataset.corpsId);
+
+    if (fromCorpsId !== toCorpsId) {
+      renderCorpsListAndBind();
+      return;
+    }
+
+    const fromRankId = parseInt(fromList.dataset.rankId);
+    const toRankId = parseInt(toList.dataset.rankId);
+    const officerId = parseInt(evt.item.dataset.officerId);
+    const corps = state.corps.find(c => c.id === fromCorpsId);
+    if (!corps) { renderCorpsListAndBind(); return; }
+    const fromRank = corps.ranks.find(r => r.id === fromRankId);
+    const toRank = corps.ranks.find(r => r.id === toRankId);
+    if (!fromRank || !toRank) { renderCorpsListAndBind(); return; }
+
+    const srcIdx = fromRank.memberIds.indexOf(officerId);
+    if (srcIdx === -1) { renderCorpsListAndBind(); return; }
+    fromRank.memberIds.splice(srcIdx, 1);
+    toRank.memberIds.splice(evt.newIndex, 0, officerId);
+
+    persistence.saveCorps();
+    renderCorpsListAndBind();
+  }
+
+  function initCorpsSortables() {
+    if (typeof Sortable === 'undefined') return;
+    document.querySelectorAll('.corps-card__member-list').forEach(listEl => {
+      new Sortable(listEl, {
+        group: 'corps-members',
+        handle: '.corps-member__drag-handle',
+        animation: 150,
+        ghostClass: 'sortable-ghost',
+        chosenClass: 'sortable-chosen',
+        dragClass: 'sortable-drag',
+        onEnd: handleCorpsMemberDrop,
+      });
+    });
+  }
+
+  function renderCorpsListAndBind(focusTarget) {
+    renderer.renderCorpsList(focusTarget);
+    initCorpsSortables();
+  }
+
   const addCorps = () => {
     const nameInput = document.getElementById('corps-name-input');
     const name = nameInput.value.trim();
@@ -1035,7 +1084,7 @@ function init() {
     });
     persistence.saveCorps();
     nameInput.value = '';
-    renderer.renderCorpsList();
+    renderCorpsListAndBind();
   };
   document.getElementById('corps-add-btn').addEventListener('click', addCorps);
   document.getElementById('corps-name-input').addEventListener('keydown', (e) => {
@@ -1054,7 +1103,7 @@ function init() {
       const corpsId = parseInt(deleteBtn.dataset.corpsId);
       state.corps = state.corps.filter(c => c.id !== corpsId);
       persistence.saveCorps();
-      renderer.renderCorpsList();
+      renderCorpsListAndBind();
       return;
     }
 
@@ -1071,7 +1120,7 @@ function init() {
       }
       corps.ranks.push({ id: corps.rankNextId++, name, memberIds: [] });
       persistence.saveCorps();
-      renderer.renderCorpsList();
+      renderCorpsListAndBind();
       return;
     }
 
@@ -1084,47 +1133,7 @@ function init() {
       if (corps) {
         corps.ranks = corps.ranks.filter(r => r.id !== rankId);
         persistence.saveCorps();
-        renderer.renderCorpsList();
-      }
-      return;
-    }
-
-    // Move member up
-    const moveUp = e.target.closest('.corps-member-up');
-    if (moveUp) {
-      const corpsId = parseInt(moveUp.dataset.corpsId);
-      const rankId = parseInt(moveUp.dataset.rankId);
-      const officerId = parseInt(moveUp.dataset.officerId);
-      const corps = state.corps.find(c => c.id === corpsId);
-      const rank = corps && corps.ranks.find(r => r.id === rankId);
-      if (rank) {
-        const idx = rank.memberIds.indexOf(officerId);
-        if (idx > 0) {
-          [rank.memberIds[idx - 1], rank.memberIds[idx]] =
-            [rank.memberIds[idx], rank.memberIds[idx - 1]];
-          persistence.saveCorps();
-          renderer.renderCorpsList();
-        }
-      }
-      return;
-    }
-
-    // Move member down
-    const moveDown = e.target.closest('.corps-member-down');
-    if (moveDown) {
-      const corpsId = parseInt(moveDown.dataset.corpsId);
-      const rankId = parseInt(moveDown.dataset.rankId);
-      const officerId = parseInt(moveDown.dataset.officerId);
-      const corps = state.corps.find(c => c.id === corpsId);
-      const rank = corps && corps.ranks.find(r => r.id === rankId);
-      if (rank) {
-        const idx = rank.memberIds.indexOf(officerId);
-        if (idx < rank.memberIds.length - 1) {
-          [rank.memberIds[idx], rank.memberIds[idx + 1]] =
-            [rank.memberIds[idx + 1], rank.memberIds[idx]];
-          persistence.saveCorps();
-          renderer.renderCorpsList();
-        }
+        renderCorpsListAndBind();
       }
       return;
     }
@@ -1140,7 +1149,7 @@ function init() {
       if (rank) {
         rank.memberIds = rank.memberIds.filter(id => id !== officerId);
         persistence.saveCorps();
-        renderer.renderCorpsList({ corpsId, rankId });
+        renderCorpsListAndBind({ corpsId, rankId });
       }
       return;
     }
@@ -1156,7 +1165,7 @@ function init() {
       if (rank && !rank.memberIds.includes(officerId)) {
         rank.memberIds.push(officerId);
         persistence.saveCorps();
-        renderer.renderCorpsList({ corpsId, rankId });
+        renderCorpsListAndBind({ corpsId, rankId });
       }
     }
   });
@@ -1485,7 +1494,7 @@ function init() {
   renderer.renderSearchTable();
   renderer.renderRoster();
   renderer.renderCities();
-  renderer.renderCorpsList();
+  renderCorpsListAndBind();
   renderer.renderAdminCitySlots();
   renderer.renderTradeConfig();
   renderer.renderAssignmentConfig();
