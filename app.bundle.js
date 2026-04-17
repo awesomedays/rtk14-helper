@@ -43691,7 +43691,7 @@ function init() {
 
   // ===== Corps Tab =====
 
-  document.getElementById('corps-add-btn').addEventListener('click', () => {
+  const addCorps = () => {
     const nameInput = document.getElementById('corps-name-input');
     const name = nameInput.value.trim();
     if (!name) {
@@ -43711,6 +43711,13 @@ function init() {
     persistence.saveCorps();
     nameInput.value = '';
     renderer.renderCorpsList();
+  };
+  document.getElementById('corps-add-btn').addEventListener('click', addCorps);
+  document.getElementById('corps-name-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      addCorps();
+    }
   });
 
   const corpsList = document.getElementById('corps-list');
@@ -43888,7 +43895,7 @@ function init() {
     acList.innerHTML = matches.map(o =>
       `<div class="autocomplete-item" data-corps-id="${corpsId}" data-rank-id="${rankId}" data-officer-id="${o.id}">
         <span>${o.name}</span>
-        <span class="autocomplete-item__stats">통${o.leadership} 무${o.power} 지${o.intelligence} 정${o.politics}</span>
+        <span class="autocomplete-item__stats">${o.leadership} ${o.power} ${o.intelligence} ${o.politics}</span>
       </div>`
     ).join('');
     acList.classList.add('show');
