@@ -50,13 +50,20 @@ export class OfficerService {
   }
 
   getSearchFilters() {
+    const affMin = parseInt(document.getElementById('search-affinity-min').value);
+    const affMax = parseInt(document.getElementById('search-affinity-max').value);
+    const yearMin = parseInt(document.getElementById('search-appear-min').value);
+    const yearMax = parseInt(document.getElementById('search-appear-max').value);
     return {
       name: document.getElementById('search-name').value.trim(),
-      gender: document.getElementById('search-gender').value,
-      ideology: document.getElementById('search-ideology').value,
-      corps: document.getElementById('search-corps').value,
       location: document.getElementById('search-location').value,
-      trait: document.getElementById('search-trait').value
+      trait: document.getElementById('search-trait').value,
+      formation: document.getElementById('search-formation').value,
+      tactic: document.getElementById('search-tactic').value,
+      affinityMin: isNaN(affMin) ? null : affMin,
+      affinityMax: isNaN(affMax) ? null : affMax,
+      appearMin: isNaN(yearMin) ? null : yearMin,
+      appearMax: isNaN(yearMax) ? null : yearMax,
     };
   }
 
@@ -73,11 +80,14 @@ export class OfficerService {
   filterForSearch(officers, filters) {
     return officers.filter(o => {
       if (!matchesName(o, filters.name)) return false;
-      if (filters.gender && o.gender !== filters.gender) return false;
-      if (filters.ideology && o.ideology !== filters.ideology) return false;
-      if (filters.corps && o.corps !== filters.corps) return false;
       if (filters.location && o.location !== filters.location) return false;
       if (filters.trait && !o.traits.includes(filters.trait)) return false;
+      if (filters.formation && !(o.formations || []).includes(filters.formation)) return false;
+      if (filters.tactic && !(o.tactics || []).includes(filters.tactic)) return false;
+      if (filters.affinityMin !== null && o.affinity < filters.affinityMin) return false;
+      if (filters.affinityMax !== null && o.affinity > filters.affinityMax) return false;
+      if (filters.appearMin !== null && o.appearYear < filters.appearMin) return false;
+      if (filters.appearMax !== null && o.appearYear > filters.appearMax) return false;
       return true;
     });
   }

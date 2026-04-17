@@ -41130,13 +41130,20 @@ class OfficerService {
   }
 
   getSearchFilters() {
+    const affMin = parseInt(document.getElementById('search-affinity-min').value);
+    const affMax = parseInt(document.getElementById('search-affinity-max').value);
+    const yearMin = parseInt(document.getElementById('search-appear-min').value);
+    const yearMax = parseInt(document.getElementById('search-appear-max').value);
     return {
       name: document.getElementById('search-name').value.trim(),
-      gender: document.getElementById('search-gender').value,
-      ideology: document.getElementById('search-ideology').value,
-      corps: document.getElementById('search-corps').value,
       location: document.getElementById('search-location').value,
-      trait: document.getElementById('search-trait').value
+      trait: document.getElementById('search-trait').value,
+      formation: document.getElementById('search-formation').value,
+      tactic: document.getElementById('search-tactic').value,
+      affinityMin: isNaN(affMin) ? null : affMin,
+      affinityMax: isNaN(affMax) ? null : affMax,
+      appearMin: isNaN(yearMin) ? null : yearMin,
+      appearMax: isNaN(yearMax) ? null : yearMax,
     };
   }
 
@@ -41153,11 +41160,14 @@ class OfficerService {
   filterForSearch(officers, filters) {
     return officers.filter(o => {
       if (!matchesName(o, filters.name)) return false;
-      if (filters.gender && o.gender !== filters.gender) return false;
-      if (filters.ideology && o.ideology !== filters.ideology) return false;
-      if (filters.corps && o.corps !== filters.corps) return false;
       if (filters.location && o.location !== filters.location) return false;
       if (filters.trait && !o.traits.includes(filters.trait)) return false;
+      if (filters.formation && !(o.formations || []).includes(filters.formation)) return false;
+      if (filters.tactic && !(o.tactics || []).includes(filters.tactic)) return false;
+      if (filters.affinityMin !== null && o.affinity < filters.affinityMin) return false;
+      if (filters.affinityMax !== null && o.affinity > filters.affinityMax) return false;
+      if (filters.appearMin !== null && o.appearYear < filters.appearMin) return false;
+      if (filters.appearMax !== null && o.appearYear > filters.appearMax) return false;
       return true;
     });
   }
@@ -42709,10 +42719,10 @@ function init() {
   // Populate dropdowns
   renderer.populateDropdown('opt-corps', CORPS_LIST);
   renderer.populateDropdown('opt-location', LOCATIONS_LIST);
-  renderer.populateDropdown('search-corps', CORPS_LIST);
   renderer.populateDropdown('search-location', LOCATIONS_LIST);
-  renderer.populateDropdown('search-ideology', IDEOLOGIES_LIST);
   renderer.populateDropdown('search-trait', ALL_TRAITS);
+  renderer.populateDropdown('search-formation', Object.keys(FORMATIONS_META));
+  renderer.populateDropdown('search-tactic', ALL_TACTICS_LIST);
 
   // ===== 2-tier tab system =====
 
@@ -42846,8 +42856,11 @@ function init() {
   searchNameInput.addEventListener('input', handleSearchInput);
   searchNameInput.addEventListener('compositionend', handleSearchInput);
 
-  ['search-gender', 'search-ideology', 'search-corps', 'search-location', 'search-trait'].forEach(id => {
-    document.getElementById(id).addEventListener('change', () => {
+  ['search-location', 'search-trait', 'search-formation', 'search-tactic',
+   'search-affinity-min', 'search-affinity-max', 'search-appear-min', 'search-appear-max'].forEach(id => {
+    const el = document.getElementById(id);
+    const eventType = el.tagName === 'SELECT' ? 'change' : 'input';
+    el.addEventListener(eventType, () => {
       state.searchShown = PAGE_SIZE;
       renderer.renderSearchTable();
     });
@@ -42855,11 +42868,10 @@ function init() {
 
   document.getElementById('search-reset').addEventListener('click', () => {
     searchNameInput.value = '';
-    document.getElementById('search-gender').value = '';
-    document.getElementById('search-ideology').value = '';
-    document.getElementById('search-corps').value = '';
-    document.getElementById('search-location').value = '';
-    document.getElementById('search-trait').value = '';
+    ['search-location', 'search-trait', 'search-formation', 'search-tactic',
+     'search-affinity-min', 'search-affinity-max', 'search-appear-min', 'search-appear-max'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
     state.searchShown = PAGE_SIZE;
     renderer.renderSearchTable();
   });

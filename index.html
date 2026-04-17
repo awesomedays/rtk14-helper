@@ -82,36 +82,48 @@
 
     <!-- 무장 검색 탭 -->
     <section id="tab-search" class="tab-content">
-      <div class="filter-bar">
-        <div class="filter-group filter-group--wide">
-          <label for="search-name">이름 검색</label>
-          <input type="text" id="search-name" placeholder="이름 또는 초성 (예: ㅈㄱㄹ)">
+      <div class="filter-bar search-filter-bar">
+        <div class="filter-row">
+          <div class="filter-group filter-group--wide">
+            <label for="search-name">이름 검색</label>
+            <input type="text" id="search-name" placeholder="이름 또는 초성 (예: ㅈㄱㄹ)">
+          </div>
+          <button class="btn-reset" id="search-reset">초기화</button>
         </div>
-        <div class="filter-group">
-          <label for="search-gender">성별</label>
-          <select id="search-gender">
-            <option value="">전체</option>
-            <option value="남">남</option>
-            <option value="여">여</option>
-          </select>
+        <div class="filter-row">
+          <div class="filter-group">
+            <label for="search-trait">개성</label>
+            <select id="search-trait"><option value="">전체</option></select>
+          </div>
+          <div class="filter-group">
+            <label for="search-formation">진형</label>
+            <select id="search-formation"><option value="">전체</option></select>
+          </div>
+          <div class="filter-group">
+            <label for="search-tactic">전법</label>
+            <select id="search-tactic"><option value="">전체</option></select>
+          </div>
+          <div class="filter-group">
+            <label for="search-location">소재</label>
+            <select id="search-location"><option value="">전체</option></select>
+          </div>
+          <div class="filter-group">
+            <label>등장년</label>
+            <div class="range-inputs">
+              <input type="number" id="search-appear-min" min="184" max="350" placeholder="184">
+              <span class="range-sep">~</span>
+              <input type="number" id="search-appear-max" min="184" max="350" placeholder="350">
+            </div>
+          </div>
+          <div class="filter-group">
+            <label>상성</label>
+            <div class="range-inputs">
+              <input type="number" id="search-affinity-min" min="0" max="149" placeholder="0">
+              <span class="range-sep">~</span>
+              <input type="number" id="search-affinity-max" min="0" max="149" placeholder="149">
+            </div>
+          </div>
         </div>
-        <div class="filter-group">
-          <label for="search-ideology">주의</label>
-          <select id="search-ideology"><option value="">전체</option></select>
-        </div>
-        <div class="filter-group">
-          <label for="search-corps">군단</label>
-          <select id="search-corps"><option value="">전체</option></select>
-        </div>
-        <div class="filter-group">
-          <label for="search-location">소재</label>
-          <select id="search-location"><option value="">전체</option></select>
-        </div>
-        <div class="filter-group">
-          <label for="search-trait">개성</label>
-          <select id="search-trait"><option value="">전체</option></select>
-        </div>
-        <button class="btn-reset" id="search-reset">초기화</button>
       </div>
 
       <div class="result-count" id="search-count"></div>
@@ -154,6 +166,7 @@
 
     <!-- 보유 무장 탭 -->
     <section id="tab-roster" class="tab-content active">
+      <div class="roster-scroll-area">
       <div class="roster-add">
         <div class="compare-search-wrap">
           <input type="text" id="roster-input" placeholder="이름 검색..." autocomplete="off">
@@ -213,6 +226,7 @@
           </thead>
           <tbody id="roster-tbody"></tbody>
         </table>
+      </div>
       </div>
     </section>
 

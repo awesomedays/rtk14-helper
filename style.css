@@ -302,8 +302,37 @@ body {
   background: var(--bg-primary);
 }
 
+.search-filter-bar {
+  flex-direction: column;
+  max-width: 900px;
+}
+.search-filter-bar .filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+}
+
+.range-inputs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.range-inputs input[type="number"] {
+  width: 70px;
+  min-width: 0;
+}
+.range-sep {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
 .filter-group { display: flex; flex-direction: column; gap: 4px; }
 .filter-group--wide { flex: 1; min-width: 200px; }
+
+.search-filter-bar .filter-group--wide { flex: 0 0 auto; width: 300px; }
 
 .filter-group label {
   font-size: 0.8rem;
@@ -369,7 +398,7 @@ body {
 
 .btn-reset-inline {
   font-family: inherit;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   padding: 2px 8px;
   border: 1px solid var(--border-dark);
   border-radius: var(--radius-sm);
@@ -444,6 +473,26 @@ body {
 /* ===== Data Table ===== */
 .table-wrap { overflow-x: auto; }
 
+#tab-roster .table-wrap { overflow: visible; }
+
+.roster-scroll-area {
+  max-height: calc(100vh - 200px);
+  overflow: auto;
+  scrollbar-width: none;
+}
+#tab-roster .roster-add,
+#tab-roster .result-count-row {
+  position: sticky;
+  left: 0;
+  width: calc(min(100vw, 1400px) - 48px);
+  max-width: 100%;
+  background: var(--bg-secondary);
+  z-index: 4;
+}
+.roster-scroll-area::-webkit-scrollbar {
+  display: none;
+}
+
 .data-table {
   width: max-content;
   min-width: 100%;
@@ -454,15 +503,16 @@ body {
 }
 
 .data-table th {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   color: var(--text-secondary);
   font-weight: 600;
   text-align: center;
   padding: 10px 12px;
-  border-bottom: 1px solid var(--border-dark);
+  border-bottom: 2px solid var(--border-dark);
   white-space: nowrap;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 
 .data-table th.sortable {
@@ -484,6 +534,29 @@ body {
 
 .data-table tbody tr:nth-child(even) { background: var(--bg-table-alt); }
 .data-table tbody tr:hover { background: var(--bg-hover); }
+
+/* ===== Roster Table — Sticky First Column ===== */
+#roster-table tbody td { background: var(--bg-secondary); }
+#roster-table tbody td:first-child { background: var(--bg-primary); }
+#roster-table tbody tr:hover td {
+  background: linear-gradient(var(--bg-hover), var(--bg-hover)), var(--bg-secondary);
+}
+#roster-table tbody tr:hover td:first-child {
+  background: linear-gradient(var(--bg-hover), var(--bg-hover)), var(--bg-primary);
+}
+
+#roster-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  border-right: 1px solid var(--border-dark);
+}
+#roster-table tbody td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  border-right: 1px solid var(--border-dark);
+}
 
 .col-group-start {
   border-left: 1px solid var(--border-dark);

@@ -44,10 +44,10 @@ function init() {
   // Populate dropdowns
   renderer.populateDropdown('opt-corps', CORPS_LIST);
   renderer.populateDropdown('opt-location', LOCATIONS_LIST);
-  renderer.populateDropdown('search-corps', CORPS_LIST);
   renderer.populateDropdown('search-location', LOCATIONS_LIST);
-  renderer.populateDropdown('search-ideology', IDEOLOGIES_LIST);
   renderer.populateDropdown('search-trait', ALL_TRAITS);
+  renderer.populateDropdown('search-formation', Object.keys(FORMATIONS_META));
+  renderer.populateDropdown('search-tactic', ALL_TACTICS_LIST);
 
   // ===== 2-tier tab system =====
 
@@ -181,8 +181,11 @@ function init() {
   searchNameInput.addEventListener('input', handleSearchInput);
   searchNameInput.addEventListener('compositionend', handleSearchInput);
 
-  ['search-gender', 'search-ideology', 'search-corps', 'search-location', 'search-trait'].forEach(id => {
-    document.getElementById(id).addEventListener('change', () => {
+  ['search-location', 'search-trait', 'search-formation', 'search-tactic',
+   'search-affinity-min', 'search-affinity-max', 'search-appear-min', 'search-appear-max'].forEach(id => {
+    const el = document.getElementById(id);
+    const eventType = el.tagName === 'SELECT' ? 'change' : 'input';
+    el.addEventListener(eventType, () => {
       state.searchShown = PAGE_SIZE;
       renderer.renderSearchTable();
     });
@@ -190,11 +193,10 @@ function init() {
 
   document.getElementById('search-reset').addEventListener('click', () => {
     searchNameInput.value = '';
-    document.getElementById('search-gender').value = '';
-    document.getElementById('search-ideology').value = '';
-    document.getElementById('search-corps').value = '';
-    document.getElementById('search-location').value = '';
-    document.getElementById('search-trait').value = '';
+    ['search-location', 'search-trait', 'search-formation', 'search-tactic',
+     'search-affinity-min', 'search-affinity-max', 'search-appear-min', 'search-appear-max'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
     state.searchShown = PAGE_SIZE;
     renderer.renderSearchTable();
   });
