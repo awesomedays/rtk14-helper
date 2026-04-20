@@ -15,6 +15,7 @@ const KEYS = {
   assignmentConfig: 'rtk14_assignment_config',
   tacticsOverrides: 'rtk14_officer_tactics',
   theme: 'rtk14_theme',
+  searchFilters: 'rtk14_search_filters',
 };
 
 const ALL_KEYS = Object.values(KEYS);
@@ -71,6 +72,13 @@ export class PersistenceManager {
 
   saveTacticsOverrides() {
     localStorage.setItem(KEYS.tacticsOverrides, JSON.stringify(this.state.officerTacticsOverrides));
+  }
+
+  saveSearchFilters() {
+    localStorage.setItem(KEYS.searchFilters, JSON.stringify({
+      hideDummy: this.state.searchHideDummy,
+      hideEthnic: this.state.searchHideEthnic,
+    }));
   }
 
   saveTheme(value) {
@@ -178,6 +186,17 @@ export class PersistenceManager {
     } catch (e) { /* ignore */ }
   }
 
+  loadSearchFilters() {
+    try {
+      const saved = localStorage.getItem(KEYS.searchFilters);
+      if (saved) {
+        const data = JSON.parse(saved);
+        if (typeof data.hideDummy === 'boolean') this.state.searchHideDummy = data.hideDummy;
+        if (typeof data.hideEthnic === 'boolean') this.state.searchHideEthnic = data.hideEthnic;
+      }
+    } catch (e) { /* ignore */ }
+  }
+
   loadAll() {
     this.loadRoster();
     this.loadCities();
@@ -190,6 +209,7 @@ export class PersistenceManager {
     this.loadAppointment();
     this.loadAssignmentConfig();
     this.loadTacticsOverrides();
+    this.loadSearchFilters();
   }
 
   // ===== Export / Import =====

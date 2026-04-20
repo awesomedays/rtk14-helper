@@ -3,6 +3,13 @@
 import { AFFAIRS_CONFIG } from './config.js';
 import { state } from './state.js';
 
+const ETHNIC_TRAITS = ['남만', '오환', '선비', '산월'];
+
+function isEthnicOfficer(o) {
+  if (o.location === '강' || o.faction === '강') return true;
+  return (o.traits || []).some(t => ETHNIC_TRAITS.includes(t));
+}
+
 // ===== Korean Initial Consonant Search =====
 
 const INITIAL_CONSONANTS = [
@@ -80,6 +87,8 @@ export class OfficerService {
 
   filterForSearch(officers, filters) {
     return officers.filter(o => {
+      if (state.searchHideDummy && o.status === '무효') return false;
+      if (state.searchHideEthnic && isEthnicOfficer(o)) return false;
       if (!matchesName(o, filters.name)) return false;
       if (filters.location && o.location !== filters.location) return false;
       if (filters.affinityMin !== null && o.affinity < filters.affinityMin) return false;

@@ -320,6 +320,23 @@ body {
   flex: 0 0 auto;
   width: 320px;
 }
+.search-toggle-row {
+  justify-content: center;
+  gap: 20px;
+}
+.search-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+.search-toggle input[type="checkbox"] {
+  accent-color: var(--accent-blue);
+  cursor: pointer;
+}
 
 .range-inputs {
   display: flex;

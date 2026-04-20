@@ -21,6 +21,8 @@ export class AppState {
     this.searchTraitFilters = [];
     this.searchFormationFilters = [];
     this.searchTacticsFilters = [];
+    this.searchHideDummy = true;
+    this.searchHideEthnic = false;
     this.officerTacticsOverrides = {};
     // 보유도시
     this.ownedCityIds = [];

@@ -20,6 +20,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -52,6 +53,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "한중",
     "location": "한중",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -86,6 +88,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -118,6 +121,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -147,6 +151,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "진정",
@@ -181,6 +186,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "평원",
     "location": "평원",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "철벽"
@@ -211,6 +217,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "도발"
@@ -241,6 +248,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "업화"
@@ -271,6 +279,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -304,6 +313,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -335,6 +345,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -363,6 +374,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -396,6 +408,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "정란",
@@ -429,6 +442,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -461,6 +475,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -492,6 +507,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "확호부동",
@@ -532,6 +548,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -566,6 +583,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "남피",
     "location": "남피",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "급습"
@@ -599,6 +617,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -633,6 +652,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -671,6 +691,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "고무",
@@ -705,6 +726,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "고무",
@@ -739,6 +761,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -773,6 +796,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -805,6 +829,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "재야",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -835,6 +860,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -867,6 +893,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -895,6 +922,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "고무",
@@ -930,6 +958,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -967,6 +996,7 @@ export const OFFICERS = [
     "corps": "마등",
     "faction": "무위",
     "location": "무위",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -1000,6 +1030,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -1035,6 +1066,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 5,
     "tactics": [
       "원가영광",
@@ -1075,6 +1107,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -1105,6 +1138,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -1143,6 +1177,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 5,
     "tactics": [
       "원가위광",
@@ -1184,6 +1219,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "투석"
@@ -1214,6 +1250,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -1251,6 +1288,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "한중",
     "location": "한중",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "치료",
@@ -1285,6 +1323,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -1317,6 +1356,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "저지",
@@ -1350,6 +1390,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "기계구조",
@@ -1384,6 +1425,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -1419,6 +1461,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -1449,6 +1492,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "정란"
@@ -1483,6 +1527,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "돌격",
@@ -1524,6 +1569,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "급습",
@@ -1558,6 +1604,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "호뢰관",
     "location": "호뢰관",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -1593,6 +1640,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무릉",
     "location": "무릉",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -1621,6 +1669,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "평원",
     "location": "평원",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -1655,6 +1704,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "고무",
@@ -1689,6 +1739,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "철벽",
@@ -1722,6 +1773,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "분전",
@@ -1760,6 +1812,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -1793,6 +1846,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "치료",
@@ -1828,6 +1882,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -1862,6 +1917,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "업",
     "location": "업",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -1893,6 +1949,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -1926,6 +1983,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "도발",
@@ -1962,6 +2020,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -1994,6 +2053,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "제사",
@@ -2036,6 +2096,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -2070,6 +2131,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "진류",
     "location": "진류",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -2104,6 +2166,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "업화",
@@ -2140,6 +2203,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "혼란"
@@ -2172,6 +2236,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장사",
     "location": "장사",
+    "status": "재야",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -2206,6 +2271,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -2244,6 +2310,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 4,
@@ -2275,6 +2342,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "제사",
@@ -2314,6 +2382,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "격려",
@@ -2345,6 +2414,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -2373,6 +2443,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -2405,6 +2476,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -2444,6 +2516,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "격려",
@@ -2481,6 +2554,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -2513,6 +2587,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -2543,6 +2618,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -2575,6 +2651,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "제사",
@@ -2615,6 +2692,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "치료"
@@ -2647,6 +2725,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "치료"
@@ -2681,6 +2760,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -2716,6 +2796,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "재야",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -2749,6 +2830,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "저지",
@@ -2786,6 +2868,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -2822,6 +2905,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "업화",
@@ -2860,6 +2944,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "연노",
@@ -2901,6 +2986,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -2932,6 +3018,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "충차",
@@ -2966,6 +3053,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -3000,6 +3088,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "연노",
@@ -3041,6 +3130,7 @@ export const OFFICERS = [
     "corps": "장량",
     "faction": "허창",
     "location": "허창",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "분전"
@@ -3073,6 +3163,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "평원",
     "location": "평원",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -3107,6 +3198,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "허유엄살",
@@ -3148,6 +3240,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -3179,6 +3272,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -3213,6 +3307,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "병귀신속",
@@ -3254,6 +3349,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건녕",
     "location": "건녕",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -3288,6 +3384,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -3325,6 +3422,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -3355,6 +3453,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "철벽",
@@ -3391,6 +3490,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "견성철벽",
@@ -3433,6 +3533,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -3464,6 +3565,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -3503,6 +3605,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계양",
     "location": "계양",
+    "status": "재야",
     "tacticCount": 1,
     "tactics": [
       "화시"
@@ -3535,6 +3638,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -3567,6 +3671,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -3603,6 +3708,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건안",
     "location": "건안",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "급습",
@@ -3636,6 +3742,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "매성",
@@ -3669,6 +3776,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "급습"
@@ -3700,6 +3808,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -3730,6 +3839,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -3769,6 +3879,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "불요불굴",
@@ -3810,6 +3921,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -3842,6 +3954,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -3873,6 +3986,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "묘재연전",
@@ -3914,6 +4028,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -3945,6 +4060,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "저지",
@@ -3978,6 +4094,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -4011,6 +4128,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "저지"
@@ -4041,6 +4159,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -4076,6 +4195,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -4104,6 +4224,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "견제",
@@ -4136,6 +4257,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "화시",
@@ -4176,6 +4298,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -4209,6 +4332,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "호기충천",
@@ -4250,6 +4374,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -4289,6 +4414,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -4324,6 +4450,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -4356,6 +4483,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -4386,6 +4514,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "혼란"
@@ -4419,6 +4548,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "저지",
@@ -4456,6 +4586,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -4486,6 +4617,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "군주",
     "tacticCount": 1,
     "tactics": [
       "격려"
@@ -4519,6 +4651,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -4550,6 +4683,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "경파",
@@ -4590,6 +4724,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -4623,6 +4758,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -4651,6 +4787,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "격려",
@@ -4685,6 +4822,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "격려",
@@ -4718,6 +4856,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -4752,6 +4891,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "치료",
@@ -4783,6 +4923,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -4818,6 +4959,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "저지"
@@ -4850,6 +4992,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -4882,6 +5025,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "개수일촉",
@@ -4921,6 +5065,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "연노"
@@ -4951,6 +5096,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "혼란"
@@ -4981,6 +5127,7 @@ export const OFFICERS = [
     "corps": "유언",
     "faction": "계",
     "location": "계",
+    "status": "일반",
     "tacticCount": 6,
     "tactics": [
       "군신",
@@ -5023,6 +5170,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장사",
     "location": "장사",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -5056,6 +5204,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "소패",
     "location": "소패",
+    "status": "태수",
     "tacticCount": 2,
     "tactics": [
       "경파",
@@ -5091,6 +5240,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "정란",
@@ -5123,6 +5273,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -5155,6 +5306,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "돌격",
@@ -5195,6 +5347,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -5231,6 +5384,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -5262,6 +5416,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "격려",
@@ -5293,6 +5448,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "교란",
@@ -5324,6 +5480,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -5360,6 +5517,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -5395,6 +5553,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "격려",
@@ -5434,6 +5593,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -5463,6 +5623,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "용양용전",
@@ -5500,6 +5661,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "급습",
@@ -5538,6 +5700,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -5568,6 +5731,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -5596,6 +5760,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "평원",
     "location": "평원",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -5628,6 +5793,7 @@ export const OFFICERS = [
     "corps": "마등",
     "faction": "무위",
     "location": "무위",
+    "status": "일반",
     "tacticCount": 5,
     "tactics": [
       "반전필살",
@@ -5669,6 +5835,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -5703,6 +5870,7 @@ export const OFFICERS = [
     "corps": "공손찬",
     "faction": "북평",
     "location": "북평",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -5737,6 +5905,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "평원",
     "location": "평원",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -5771,6 +5940,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북평",
     "location": "북평",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "교란",
@@ -5805,6 +5975,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "업화",
@@ -5845,6 +6016,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -5874,6 +6046,7 @@ export const OFFICERS = [
     "corps": "장량",
     "faction": "무관",
     "location": "무관",
+    "status": "태수",
     "tacticCount": 1,
     "tactics": [
       "철벽"
@@ -5905,6 +6078,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -5933,6 +6107,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -5964,6 +6139,7 @@ export const OFFICERS = [
     "corps": "손견",
     "faction": "하비",
     "location": "하비",
+    "status": "일반",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -6002,6 +6178,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -6033,6 +6210,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "경파"
@@ -6067,6 +6245,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "금범강습",
@@ -6109,6 +6288,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -6145,6 +6325,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북평",
     "location": "북평",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "철벽"
@@ -6176,6 +6357,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "업",
     "location": "업",
+    "status": "일반",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -6205,6 +6387,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "충요의열",
@@ -6243,6 +6426,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -6276,6 +6460,7 @@ export const OFFICERS = [
     "corps": "유언",
     "faction": "계",
     "location": "계",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "매성",
@@ -6309,6 +6494,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "질풍노도",
@@ -6349,6 +6535,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "교지",
     "location": "교지",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "진정",
@@ -6381,6 +6568,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -6415,6 +6603,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "반골인",
@@ -6455,6 +6644,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -6490,6 +6680,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북평",
     "location": "북평",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -6528,6 +6719,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -6562,6 +6754,7 @@ export const OFFICERS = [
     "corps": "정원",
     "faction": "진양",
     "location": "진양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -6593,6 +6786,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -6624,6 +6818,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -6661,6 +6856,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북평",
     "location": "북평",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -6696,6 +6892,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -6731,6 +6928,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -6763,6 +6961,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "경파"
@@ -6795,6 +6994,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -6826,6 +7026,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북평",
     "location": "북평",
+    "status": "재야",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -6862,6 +7063,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -6890,6 +7092,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "기염만장",
@@ -6931,6 +7134,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무릉",
     "location": "무릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -6962,6 +7166,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -6993,6 +7198,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -7025,6 +7231,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "한중",
     "location": "한중",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -7059,6 +7266,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "복양",
     "location": "복양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -7091,6 +7299,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "호뢰관",
     "location": "호뢰관",
+    "status": "태수",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -7124,6 +7333,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "철벽"
@@ -7154,6 +7364,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -7186,6 +7397,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -7215,6 +7427,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -7244,6 +7457,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -7273,6 +7487,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "괴력무비",
@@ -7311,6 +7526,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -7339,6 +7555,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -7375,6 +7592,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "교란"
@@ -7408,6 +7626,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "위령삼첨",
@@ -7447,6 +7666,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -7478,6 +7698,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "분전"
@@ -7511,6 +7732,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -7543,6 +7765,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "장안",
     "location": "장안",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -7574,6 +7797,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "정란",
@@ -7607,6 +7831,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "도발",
@@ -7646,6 +7871,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -7676,6 +7902,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -7709,6 +7936,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영릉",
     "location": "영릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -7745,6 +7973,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "철벽"
@@ -7778,6 +8007,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "투석"
@@ -7811,6 +8041,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강주",
     "location": "강주",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "교월궁",
@@ -7851,6 +8082,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -7887,6 +8119,7 @@ export const OFFICERS = [
     "corps": "공손찬",
     "faction": "북평",
     "location": "북평",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "경파",
@@ -7919,6 +8152,7 @@ export const OFFICERS = [
     "corps": "정원",
     "faction": "진양",
     "location": "진양",
+    "status": "일반",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -7947,6 +8181,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "투석"
@@ -7978,6 +8213,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "급습",
@@ -8013,6 +8249,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "복양",
     "location": "복양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -8045,6 +8282,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -8078,6 +8316,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "재야",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -8114,6 +8353,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "재야",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -8149,6 +8389,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "제사",
@@ -8188,6 +8429,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강주",
     "location": "강주",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -8221,6 +8463,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -8254,6 +8497,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강하",
     "location": "강하",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -8286,6 +8530,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -8317,6 +8562,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "경파",
@@ -8349,6 +8595,7 @@ export const OFFICERS = [
     "corps": "손견",
     "faction": "하비",
     "location": "하비",
+    "status": "일반",
     "tacticCount": 6,
     "tactics": [
       "고육지계",
@@ -8390,6 +8637,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -8425,6 +8673,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "계략이기",
@@ -8466,6 +8715,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "연노",
@@ -8506,6 +8756,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -8536,6 +8787,7 @@ export const OFFICERS = [
     "corps": "공손찬",
     "faction": "북평",
     "location": "북평",
+    "status": "일반",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -8566,6 +8818,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -8599,6 +8852,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "함진영",
@@ -8640,6 +8894,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -8673,6 +8928,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "복양",
     "location": "복양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -8705,6 +8961,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -8738,6 +8995,7 @@ export const OFFICERS = [
     "corps": "정원",
     "faction": "진양",
     "location": "진양",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -8773,6 +9031,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -8805,6 +9064,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강하",
     "location": "강하",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "난사난격",
@@ -8842,6 +9102,7 @@ export const OFFICERS = [
     "corps": "공손찬",
     "faction": "북평",
     "location": "북평",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -8876,6 +9137,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "현조쌍황",
@@ -8915,6 +9177,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -8948,6 +9211,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "급습",
@@ -8982,6 +9246,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -9013,6 +9278,7 @@ export const OFFICERS = [
     "corps": "공손찬",
     "faction": "북평",
     "location": "북평",
+    "status": "군주",
     "tacticCount": 5,
     "tactics": [
       "백마의종",
@@ -9054,6 +9320,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북평",
     "location": "북평",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -9086,6 +9353,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -9124,6 +9392,7 @@ export const OFFICERS = [
     "corps": "공손찬",
     "faction": "북평",
     "location": "북평",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "급습",
@@ -9158,6 +9427,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "업",
     "location": "업",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -9189,6 +9459,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "신궁",
@@ -9229,6 +9500,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건녕",
     "location": "건녕",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "견제"
@@ -9259,6 +9531,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "정란",
@@ -9291,6 +9564,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -9326,6 +9600,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강습"
@@ -9357,6 +9632,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -9392,6 +9668,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -9423,6 +9700,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -9451,6 +9729,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "진류",
     "location": "진류",
+    "status": "태수",
     "tacticCount": 5,
     "tactics": [
       "오와지변",
@@ -9492,6 +9771,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -9527,6 +9807,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -9563,6 +9844,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건안",
     "location": "건안",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -9594,6 +9876,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -9628,6 +9911,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -9662,6 +9946,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -9693,6 +9978,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -9725,6 +10011,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "치료",
@@ -9763,6 +10050,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -9794,6 +10082,7 @@ export const OFFICERS = [
     "corps": "손견",
     "faction": "하비",
     "location": "하비",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -9826,6 +10115,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -9865,6 +10155,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -9896,6 +10187,7 @@ export const OFFICERS = [
     "corps": "손견",
     "faction": "하비",
     "location": "하비",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -9928,6 +10220,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "시상",
     "location": "시상",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -9964,6 +10257,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "수춘",
     "location": "수춘",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -10000,6 +10294,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -10030,6 +10325,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -10066,6 +10362,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "철벽"
@@ -10096,6 +10393,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -10132,6 +10430,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "철벽",
@@ -10166,6 +10465,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "구축"
@@ -10199,6 +10499,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -10235,6 +10536,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -10269,6 +10571,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -10304,6 +10607,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "구축"
@@ -10336,6 +10640,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -10364,6 +10669,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -10396,6 +10702,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -10435,6 +10742,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -10466,6 +10774,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "교란",
@@ -10497,6 +10806,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -10531,6 +10841,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -10559,6 +10870,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "동관",
     "location": "동관",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -10591,6 +10903,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "격려",
@@ -10629,6 +10942,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "진정",
@@ -10665,6 +10979,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -10699,6 +11014,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -10736,6 +11052,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "평원",
     "location": "평원",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -10770,6 +11087,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "치료",
@@ -10806,6 +11124,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "구축"
@@ -10837,6 +11156,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강습"
@@ -10869,6 +11189,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -10900,6 +11221,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "평원",
     "location": "평원",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -10928,6 +11250,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "정란"
@@ -10960,6 +11283,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "구축"
@@ -10991,6 +11315,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -11029,6 +11354,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "대갈"
@@ -11059,6 +11385,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "재야",
     "tacticCount": 3,
     "tactics": [
       "치료",
@@ -11096,6 +11423,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "평원",
     "location": "평원",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -11127,6 +11455,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무릉",
     "location": "무릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "경파",
@@ -11158,6 +11487,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "재야",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -11193,6 +11523,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -11221,6 +11552,7 @@ export const OFFICERS = [
     "corps": "사섭",
     "faction": "교지",
     "location": "교지",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -11256,6 +11588,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "급습",
@@ -11289,6 +11622,7 @@ export const OFFICERS = [
     "corps": "사섭",
     "faction": "교지",
     "location": "교지",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -11323,6 +11657,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "도발",
@@ -11358,6 +11693,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "교지",
     "location": "교지",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "저지"
@@ -11388,6 +11724,7 @@ export const OFFICERS = [
     "corps": "사섭",
     "faction": "교지",
     "location": "교지",
+    "status": "일반",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -11416,6 +11753,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -11446,6 +11784,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -11481,6 +11820,7 @@ export const OFFICERS = [
     "corps": "사섭",
     "faction": "교지",
     "location": "교지",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -11513,6 +11853,7 @@ export const OFFICERS = [
     "corps": "사섭",
     "faction": "교지",
     "location": "교지",
+    "status": "군주",
     "tacticCount": 5,
     "tactics": [
       "도남지익",
@@ -11553,6 +11894,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "경파"
@@ -11583,6 +11925,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "동관",
     "location": "동관",
+    "status": "태수",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -11615,6 +11958,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "신기묘산",
@@ -11658,6 +12002,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -11695,6 +12040,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "침의대략",
@@ -11734,6 +12080,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "고무",
@@ -11767,6 +12114,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "심모원려",
@@ -11806,6 +12154,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -11838,6 +12187,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -11873,6 +12223,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -11906,6 +12257,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -11944,6 +12296,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "격려",
@@ -11980,6 +12333,7 @@ export const OFFICERS = [
     "corps": "사섭",
     "faction": "교지",
     "location": "교지",
+    "status": "일반",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -12008,6 +12362,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "업화"
@@ -12039,6 +12394,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -12067,6 +12423,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -12095,6 +12452,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "교란"
@@ -12127,6 +12485,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -12156,6 +12515,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무릉",
     "location": "무릉",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -12192,6 +12552,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "철벽",
@@ -12227,6 +12588,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건안",
     "location": "건안",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -12258,6 +12620,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "화시"
@@ -12288,6 +12651,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -12323,6 +12687,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -12358,6 +12723,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -12386,6 +12752,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -12419,6 +12786,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "급습",
@@ -12456,6 +12824,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "철벽",
@@ -12488,6 +12857,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "구축"
@@ -12518,6 +12888,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "평원",
     "location": "평원",
+    "status": "일반",
     "tacticCount": 4,
     "tactics": [
       "분전",
@@ -12555,6 +12926,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건안",
     "location": "건안",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -12587,6 +12959,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "치돌",
@@ -12627,6 +13000,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -12665,6 +13039,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영릉",
     "location": "영릉",
+    "status": "재야",
     "tacticCount": 1,
     "tactics": [
       "철벽"
@@ -12697,6 +13072,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "격려",
@@ -12729,6 +13105,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "충차",
@@ -12762,6 +13139,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -12796,6 +13174,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "신화계",
@@ -12838,6 +13217,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -12869,6 +13249,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "급습",
@@ -12909,6 +13290,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -12946,6 +13328,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화신난인",
@@ -12983,6 +13366,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "수춘",
     "location": "수춘",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -13015,6 +13399,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -13045,6 +13430,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "충차"
@@ -13076,6 +13462,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "함곡관",
     "location": "함곡관",
+    "status": "태수",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -13115,6 +13502,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -13150,6 +13538,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "화시",
@@ -13190,6 +13579,7 @@ export const OFFICERS = [
     "corps": "손견",
     "faction": "하비",
     "location": "하비",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -13225,6 +13615,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건녕",
     "location": "건녕",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -13255,6 +13646,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "평원",
     "location": "평원",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -13288,6 +13680,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "왕좌지재",
@@ -13328,6 +13721,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -13356,6 +13750,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -13392,6 +13787,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -13426,6 +13822,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -13461,6 +13858,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -13493,6 +13891,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "혼란"
@@ -13524,6 +13923,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -13555,6 +13955,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "고무",
@@ -13589,6 +13990,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 6,
     "tactics": [
       "천방백계",
@@ -13630,6 +14032,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "수춘",
     "location": "수춘",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "교란",
@@ -13661,6 +14064,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "고무",
@@ -13692,6 +14096,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영릉",
     "location": "영릉",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "연노",
@@ -13734,6 +14139,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "정련책수",
@@ -13776,6 +14182,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "시상",
     "location": "시상",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "혼란"
@@ -13808,6 +14215,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -13836,6 +14244,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -13869,6 +14278,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "격려",
@@ -13903,6 +14313,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "고무",
@@ -13935,6 +14346,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "수춘",
     "location": "수춘",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "제사",
@@ -13974,6 +14386,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영릉",
     "location": "영릉",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -14002,6 +14415,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -14032,6 +14446,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "견제"
@@ -14064,6 +14479,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -14095,6 +14511,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -14124,6 +14541,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -14163,6 +14581,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -14198,6 +14617,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "평원",
     "location": "평원",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -14230,6 +14650,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "수춘",
     "location": "수춘",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -14262,6 +14683,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영릉",
     "location": "영릉",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -14293,6 +14715,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "시상",
     "location": "시상",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -14324,6 +14747,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -14363,6 +14787,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "급습",
@@ -14401,6 +14826,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "매성",
@@ -14434,6 +14860,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "치료"
@@ -14467,6 +14894,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "진천동지",
@@ -14503,6 +14931,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "견제"
@@ -14535,6 +14964,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "기지기책",
@@ -14577,6 +15007,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -14611,6 +15042,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "연노",
@@ -14651,6 +15083,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "정란"
@@ -14682,6 +15115,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -14712,6 +15146,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -14746,6 +15181,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -14779,6 +15215,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -14815,6 +15252,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "공구역격",
@@ -14856,6 +15294,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -14888,6 +15327,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "신산귀모",
@@ -14931,6 +15371,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "진류",
     "location": "진류",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "대갈",
@@ -14963,6 +15404,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "장구직입",
@@ -15004,6 +15446,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -15036,6 +15479,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "치료"
@@ -15066,6 +15510,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -15099,6 +15544,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "명경지수",
@@ -15139,6 +15585,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -15169,6 +15616,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "격려",
@@ -15203,6 +15651,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "위성지계",
@@ -15243,6 +15692,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -15275,6 +15725,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -15311,6 +15762,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "충차"
@@ -15342,6 +15794,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "분전",
@@ -15377,6 +15830,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -15407,6 +15861,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "상용",
     "location": "상용",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -15438,6 +15893,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -15468,6 +15924,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "고무",
@@ -15502,6 +15959,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -15531,6 +15989,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -15562,6 +16021,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "철벽",
@@ -15597,6 +16057,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -15627,6 +16088,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -15656,6 +16118,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "상용",
     "location": "상용",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -15687,6 +16150,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "충렬지귀",
@@ -15726,6 +16190,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "저지",
@@ -15761,6 +16226,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -15794,6 +16260,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -15828,6 +16295,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -15864,6 +16332,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -15896,6 +16365,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "남피",
     "location": "남피",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -15929,6 +16399,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -15958,6 +16429,7 @@ export const OFFICERS = [
     "corps": "유언",
     "faction": "계",
     "location": "계",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -15993,6 +16465,7 @@ export const OFFICERS = [
     "corps": "공손찬",
     "faction": "북평",
     "location": "북평",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -16024,6 +16497,7 @@ export const OFFICERS = [
     "corps": "마등",
     "faction": "무위",
     "location": "무위",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "교란",
@@ -16057,6 +16531,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -16092,6 +16567,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -16124,6 +16600,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -16158,6 +16635,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -16195,6 +16673,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -16226,6 +16705,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "급습",
@@ -16260,6 +16740,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "정란"
@@ -16290,6 +16771,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -16322,6 +16804,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "매성",
@@ -16355,6 +16838,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -16390,6 +16874,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -16424,6 +16909,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "분전"
@@ -16454,6 +16940,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "매성",
@@ -16486,6 +16973,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "매성",
@@ -16519,6 +17007,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "분전"
@@ -16550,6 +17039,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -16586,6 +17076,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -16619,6 +17110,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -16650,6 +17142,7 @@ export const OFFICERS = [
     "corps": "공손찬",
     "faction": "북평",
     "location": "북평",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -16682,6 +17175,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -16716,6 +17210,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -16745,6 +17240,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "화시",
@@ -16786,6 +17282,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "경파",
@@ -16818,6 +17315,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "한중",
     "location": "한중",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -16850,6 +17348,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "저지"
@@ -16880,6 +17379,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -16911,6 +17411,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "제사",
@@ -16950,6 +17451,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -16978,6 +17480,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -17006,6 +17509,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -17036,6 +17540,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "제사",
@@ -17074,6 +17579,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -17106,6 +17612,7 @@ export const OFFICERS = [
     "corps": "정원",
     "faction": "진양",
     "location": "진양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "교란",
@@ -17137,6 +17644,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "견제",
@@ -17168,6 +17676,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -17196,6 +17705,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "철벽",
@@ -17231,6 +17741,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "분전",
@@ -17270,6 +17781,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "재야",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -17305,6 +17817,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "수춘",
     "location": "수춘",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "치료"
@@ -17340,6 +17853,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -17377,6 +17891,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "황수강용",
@@ -17415,6 +17930,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "격려",
@@ -17450,6 +17966,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "돌격",
@@ -17491,6 +18008,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "팔문금쇄",
@@ -17532,6 +18050,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -17563,6 +18082,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -17593,6 +18113,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 6,
     "tactics": [
       "위무지강",
@@ -17636,6 +18157,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -17673,6 +18195,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "충차",
@@ -17708,6 +18231,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -17736,6 +18260,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "진류",
     "location": "진류",
+    "status": "일반",
     "tacticCount": 4,
     "tactics": [
       "분전",
@@ -17774,6 +18299,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "활살자재",
@@ -17814,6 +18340,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -17849,6 +18376,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -17882,6 +18410,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -17912,6 +18441,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "대갈",
@@ -17946,6 +18476,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -17974,6 +18505,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -18008,6 +18540,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "대갈"
@@ -18040,6 +18573,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -18071,6 +18605,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "제사",
@@ -18110,6 +18645,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -18146,6 +18682,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강하",
     "location": "강하",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -18179,6 +18716,7 @@ export const OFFICERS = [
     "corps": "손견",
     "faction": "하비",
     "location": "하비",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -18211,6 +18749,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -18241,6 +18780,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -18274,6 +18814,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -18305,6 +18846,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -18338,6 +18880,7 @@ export const OFFICERS = [
     "corps": "손견",
     "faction": "하비",
     "location": "하비",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -18371,6 +18914,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -18408,6 +18952,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "진류",
     "location": "진류",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -18441,6 +18986,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "격려",
@@ -18475,6 +19021,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -18507,6 +19054,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "충차",
@@ -18542,6 +19090,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "구축",
@@ -18573,6 +19122,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -18605,6 +19155,7 @@ export const OFFICERS = [
     "corps": "손견",
     "faction": "하비",
     "location": "하비",
+    "status": "군주",
     "tacticCount": 5,
     "tactics": [
       "맹호조아",
@@ -18646,6 +19197,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "도발",
@@ -18682,6 +19234,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "대호웅략",
@@ -18723,6 +19276,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "도발"
@@ -18758,6 +19312,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -18795,6 +19350,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -18825,6 +19381,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "호소풍열",
@@ -18867,6 +19424,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -18895,6 +19453,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -18927,6 +19486,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "교란",
@@ -18959,6 +19519,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -18995,6 +19556,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -19033,6 +19595,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "투석",
@@ -19066,6 +19629,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강습"
@@ -19096,6 +19660,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "호궁",
@@ -19131,6 +19696,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -19162,6 +19728,7 @@ export const OFFICERS = [
     "corps": "손견",
     "faction": "하비",
     "location": "하비",
+    "status": "일반",
     "tacticCount": 4,
     "tactics": [
       "진정",
@@ -19198,6 +19765,7 @@ export const OFFICERS = [
     "corps": "장량",
     "faction": "완",
     "location": "완",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "경파"
@@ -19229,6 +19797,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -19264,6 +19833,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "격려",
@@ -19301,6 +19871,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -19333,6 +19904,7 @@ export const OFFICERS = [
     "corps": "손견",
     "faction": "하비",
     "location": "하비",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -19364,6 +19936,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "구축"
@@ -19395,6 +19968,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -19427,6 +20001,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -19465,6 +20040,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "구축",
@@ -19499,6 +20075,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -19532,6 +20109,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -19566,6 +20144,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -19603,6 +20182,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -19631,6 +20211,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -19659,6 +20240,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -19693,6 +20275,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -19722,6 +20305,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "격려",
@@ -19754,6 +20338,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -19785,6 +20370,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "만천과해",
@@ -19826,6 +20412,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -19860,6 +20447,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "경파",
@@ -19891,6 +20479,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강주",
     "location": "강주",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -19921,6 +20510,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -19955,6 +20545,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무릉",
     "location": "무릉",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -19986,6 +20577,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "고무",
@@ -20019,6 +20611,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -20048,6 +20641,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "진류",
     "location": "진류",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -20085,6 +20679,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -20120,6 +20715,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "단기구",
@@ -20161,6 +20757,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "한중",
     "location": "한중",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -20197,6 +20794,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "철벽",
@@ -20232,6 +20830,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "분전"
@@ -20263,6 +20862,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "매성",
@@ -20298,6 +20898,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "남피",
     "location": "남피",
+    "status": "일반",
     "tacticCount": 4,
     "tactics": [
       "급습",
@@ -20337,6 +20938,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -20365,6 +20967,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -20398,6 +21001,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "매성",
@@ -20433,6 +21037,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "혼란",
@@ -20471,6 +21076,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "소패",
     "location": "소패",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -20504,6 +21110,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "평원",
     "location": "평원",
+    "status": "군주",
     "tacticCount": 6,
     "tactics": [
       "태평요술",
@@ -20546,6 +21153,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "견제",
@@ -20585,6 +21193,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "화시"
@@ -20615,6 +21224,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -20649,6 +21259,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "수춘",
     "location": "수춘",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -20681,6 +21292,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "재야",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -20714,6 +21326,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "분전",
@@ -20753,6 +21366,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "경파",
@@ -20786,6 +21400,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "격려",
@@ -20823,6 +21438,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -20856,6 +21472,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "치료",
@@ -20894,6 +21511,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "업",
     "location": "업",
+    "status": "일반",
     "tacticCount": 5,
     "tactics": [
       "백전연마",
@@ -20935,6 +21553,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "견제",
@@ -20966,6 +21585,7 @@ export const OFFICERS = [
     "corps": "장량",
     "faction": "완",
     "location": "완",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -20998,6 +21618,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -21030,6 +21651,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -21060,6 +21682,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -21088,6 +21711,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "교지",
     "location": "교지",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "급습",
@@ -21123,6 +21747,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 4,
     "tactics": [
       "변환요격",
@@ -21159,6 +21784,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -21191,6 +21817,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -21219,6 +21846,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "업",
     "location": "업",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -21254,6 +21882,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -21285,6 +21914,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "저지",
@@ -21319,6 +21949,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -21355,6 +21986,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "혼란",
@@ -21391,6 +22023,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -21419,6 +22052,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "제사",
@@ -21455,6 +22089,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -21487,6 +22122,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "격려",
@@ -21518,6 +22154,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "천변필살",
@@ -21559,6 +22196,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -21592,6 +22230,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -21620,6 +22259,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "경국지무",
@@ -21654,6 +22294,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -21682,6 +22323,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -21717,6 +22359,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -21745,6 +22388,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영안",
     "location": "영안",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -21773,6 +22417,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -21801,6 +22446,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -21831,6 +22477,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -21865,6 +22512,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "연노",
@@ -21901,6 +22549,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "경파",
@@ -21932,6 +22581,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "격려",
@@ -21967,6 +22617,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -21998,6 +22649,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무릉",
     "location": "무릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -22030,6 +22682,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -22067,6 +22720,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -22096,6 +22750,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "재야",
     "tacticCount": 1,
     "tactics": [
       "치료"
@@ -22127,6 +22782,7 @@ export const OFFICERS = [
     "corps": "유언",
     "faction": "계",
     "location": "계",
+    "status": "일반",
     "tacticCount": 5,
     "tactics": [
       "만인적",
@@ -22167,6 +22823,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -22199,6 +22856,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "호익용전",
@@ -22237,6 +22895,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "복양",
     "location": "복양",
+    "status": "태수",
     "tacticCount": 6,
     "tactics": [
       "중황태을",
@@ -22279,6 +22938,7 @@ export const OFFICERS = [
     "corps": "장량",
     "faction": "완",
     "location": "완",
+    "status": "태수",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -22313,6 +22973,7 @@ export const OFFICERS = [
     "corps": "정원",
     "faction": "진양",
     "location": "진양",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -22348,6 +23009,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -22387,6 +23049,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "료래료래",
@@ -22428,6 +23091,7 @@ export const OFFICERS = [
     "corps": "장량",
     "faction": "허창",
     "location": "허창",
+    "status": "도독",
     "tacticCount": 4,
     "tactics": [
       "분전",
@@ -22466,6 +23130,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -22502,6 +23167,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "한중",
     "location": "한중",
+    "status": "재야",
     "tacticCount": 3,
     "tactics": [
       "만법귀일",
@@ -22539,6 +23205,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -22571,6 +23238,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계양",
     "location": "계양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -22603,6 +23271,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -22632,6 +23301,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "시상",
     "location": "시상",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -22663,6 +23333,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "기각지계",
@@ -22702,6 +23373,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -22736,6 +23408,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "치료"
@@ -22770,6 +23443,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -22806,6 +23480,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "급습",
@@ -22841,6 +23516,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -22875,6 +23551,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강주",
     "location": "강주",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -22903,6 +23580,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강하",
     "location": "강하",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "구축"
@@ -22934,6 +23612,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "구축",
@@ -22965,6 +23644,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강주",
     "location": "강주",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -23001,6 +23681,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "구축"
@@ -23033,6 +23714,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "분전",
@@ -23073,6 +23755,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "혼수모어",
@@ -23115,6 +23798,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -23150,6 +23834,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "구축",
@@ -23183,6 +23868,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "분전",
@@ -23220,6 +23906,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -23256,6 +23943,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "업",
     "location": "업",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -23287,6 +23975,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "십면매복",
@@ -23327,6 +24016,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "남피",
     "location": "남피",
+    "status": "태수",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -23359,6 +24049,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "저지",
@@ -23394,6 +24085,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -23423,6 +24115,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "경파",
@@ -23456,6 +24149,7 @@ export const OFFICERS = [
     "corps": "정원",
     "faction": "진양",
     "location": "진양",
+    "status": "군주",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -23491,6 +24185,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "교란",
@@ -23524,6 +24219,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -23561,6 +24257,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북평",
     "location": "북평",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "경파",
@@ -23592,6 +24289,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "도발"
@@ -23624,6 +24322,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "함곡관",
     "location": "함곡관",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -23656,6 +24355,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "경파",
@@ -23687,6 +24387,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -23719,6 +24420,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -23752,6 +24454,7 @@ export const OFFICERS = [
     "corps": "손견",
     "faction": "하비",
     "location": "하비",
+    "status": "일반",
     "tacticCount": 6,
     "tactics": [
       "총명강의",
@@ -23794,6 +24497,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -23825,6 +24529,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "투석"
@@ -23856,6 +24561,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "급습",
@@ -23896,6 +24602,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -23928,6 +24635,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -23962,6 +24670,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "인왕서기",
@@ -24000,6 +24709,7 @@ export const OFFICERS = [
     "corps": "공손찬",
     "faction": "북평",
     "location": "북평",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -24032,6 +24742,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "저지"
@@ -24062,6 +24773,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북평",
     "location": "북평",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -24098,6 +24810,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "격려",
@@ -24138,6 +24851,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "대갈"
@@ -24168,6 +24882,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "규략명련",
@@ -24207,6 +24922,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "철벽"
@@ -24240,6 +24956,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "정란",
@@ -24272,6 +24989,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -24308,6 +25026,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -24342,6 +25061,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "강장진군",
@@ -24385,6 +25105,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -24416,6 +25137,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -24448,6 +25170,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -24483,6 +25206,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "진류",
     "location": "진류",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -24518,6 +25242,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -24548,6 +25273,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "분전",
@@ -24589,6 +25315,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "업화"
@@ -24620,6 +25347,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "교란"
@@ -24651,6 +25379,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -24690,6 +25419,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -24723,6 +25453,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "경파",
@@ -24759,6 +25490,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -24787,6 +25519,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "제사",
@@ -24824,6 +25557,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "업",
     "location": "업",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "격려",
@@ -24858,6 +25592,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -24894,6 +25629,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "군주",
     "tacticCount": 5,
     "tactics": [
       "도산경해",
@@ -24934,6 +25670,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -24969,6 +25706,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "충차"
@@ -24999,6 +25737,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "경파",
@@ -25032,6 +25771,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북평",
     "location": "북평",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "급습",
@@ -25069,6 +25809,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -25097,6 +25838,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -25134,6 +25876,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "교란",
@@ -25168,6 +25911,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -25197,6 +25941,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -25230,6 +25975,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "남피",
     "location": "남피",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -25264,6 +26010,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "구축"
@@ -25295,6 +26042,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "제사",
@@ -25333,6 +26081,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -25365,6 +26114,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -25393,6 +26143,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "철벽",
@@ -25429,6 +26180,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "파죽지세",
@@ -25471,6 +26223,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -25502,6 +26255,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "평원",
     "location": "평원",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -25535,6 +26289,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "정란",
@@ -25569,6 +26324,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "철벽"
@@ -25602,6 +26358,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -25634,6 +26391,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "교란"
@@ -25664,6 +26422,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -25697,6 +26456,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -25729,6 +26489,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "정란",
@@ -25764,6 +26525,7 @@ export const OFFICERS = [
     "corps": "장량",
     "faction": "허창",
     "location": "허창",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "철벽",
@@ -25798,6 +26560,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -25832,6 +26595,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 5,
@@ -25864,6 +26628,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "재기환발",
@@ -25902,6 +26667,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "철기돌",
@@ -25941,6 +26707,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "시상",
     "location": "시상",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "급습",
@@ -25975,6 +26742,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "제사",
@@ -26012,6 +26780,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "신위천관",
@@ -26053,6 +26822,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -26085,6 +26855,7 @@ export const OFFICERS = [
     "corps": "마등",
     "faction": "무위",
     "location": "무위",
+    "status": "군주",
     "tacticCount": 5,
     "tactics": [
       "만마분등",
@@ -26125,6 +26896,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -26155,6 +26927,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "연노",
@@ -26195,6 +26968,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "업화",
@@ -26234,6 +27008,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "정란"
@@ -26264,6 +27039,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영안",
     "location": "영안",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -26292,6 +27068,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "매성",
@@ -26327,6 +27104,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -26355,6 +27133,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -26388,6 +27167,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무릉",
     "location": "무릉",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -26423,6 +27203,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -26462,6 +27243,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -26496,6 +27278,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -26528,6 +27311,7 @@ export const OFFICERS = [
     "corps": "공손찬",
     "faction": "북평",
     "location": "북평",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "견제"
@@ -26558,6 +27342,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -26591,6 +27376,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "교란"
@@ -26623,6 +27409,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강하",
     "location": "강하",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "연노",
@@ -26663,6 +27450,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "경파"
@@ -26694,6 +27482,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강하",
     "location": "강하",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -26730,6 +27519,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "급습"
@@ -26762,6 +27552,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -26792,6 +27583,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -26823,6 +27615,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "치료",
@@ -26859,6 +27652,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -26892,6 +27686,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "하비",
     "location": "하비",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "업화"
@@ -26925,6 +27720,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -26957,6 +27753,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "매성",
@@ -26988,6 +27785,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -27022,6 +27820,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -27053,6 +27852,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "수춘",
     "location": "수춘",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -27083,6 +27883,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -27115,6 +27916,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "교란"
@@ -27145,6 +27947,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -27180,6 +27983,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -27214,6 +28018,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "화시"
@@ -27245,6 +28050,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -27283,6 +28089,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -27313,6 +28120,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "격려",
@@ -27347,6 +28155,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "용왕매진",
@@ -27386,6 +28195,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -27423,6 +28233,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -27455,6 +28266,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "질풍신뢰",
@@ -27495,6 +28307,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북평",
     "location": "북평",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "경파"
@@ -27526,6 +28339,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "분전",
@@ -27566,6 +28380,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "소패",
     "location": "소패",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -27599,6 +28414,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "고무",
@@ -27633,6 +28449,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -27664,6 +28481,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -27696,6 +28514,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -27729,6 +28548,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -27761,6 +28581,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -27795,6 +28616,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -27831,6 +28653,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -27865,6 +28688,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -27899,6 +28723,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강릉",
     "location": "강릉",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "분전",
@@ -27934,6 +28759,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "진류",
     "location": "진류",
+    "status": "일반",
     "tacticCount": 4,
     "tactics": [
       "분전",
@@ -27973,6 +28799,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "기략종횡",
@@ -28015,6 +28842,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "연환지계",
@@ -28057,6 +28885,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "분전"
@@ -28087,6 +28916,7 @@ export const OFFICERS = [
     "corps": "마등",
     "faction": "무위",
     "location": "무위",
+    "status": "일반",
     "tacticCount": 5,
     "tactics": [
       "백마철기",
@@ -28128,6 +28958,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계양",
     "location": "계양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "급습"
@@ -28159,6 +28990,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -28190,6 +29022,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -28223,6 +29056,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -28255,6 +29089,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -28285,6 +29120,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "정란",
@@ -28317,6 +29153,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -28354,6 +29191,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "충차",
@@ -28392,6 +29230,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "저지",
@@ -28428,6 +29267,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -28462,6 +29302,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "치료",
@@ -28495,6 +29336,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "화시",
@@ -28537,6 +29379,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "급습"
@@ -28570,6 +29413,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -28603,6 +29447,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "만왕포효",
@@ -28642,6 +29487,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -28675,6 +29521,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -28705,6 +29552,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강하",
     "location": "강하",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "고무",
@@ -28739,6 +29587,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "제사",
@@ -28778,6 +29627,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -28811,6 +29661,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -28844,6 +29695,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -28876,6 +29728,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -28908,6 +29761,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -28943,6 +29797,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건녕",
     "location": "건녕",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "분전",
@@ -28980,6 +29835,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "도발",
@@ -29018,6 +29874,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "정란"
@@ -29050,6 +29907,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -29082,6 +29940,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -29116,6 +29975,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "위무경문",
@@ -29158,6 +30018,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -29190,6 +30051,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "한중",
     "location": "한중",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -29223,6 +30085,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "업화",
@@ -29255,6 +30118,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -29283,6 +30147,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "교란"
@@ -29314,6 +30179,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -29347,6 +30213,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "안정",
     "location": "안정",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -29382,6 +30249,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "한중",
     "location": "한중",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -29412,6 +30280,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "한중",
     "location": "한중",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -29445,6 +30314,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -29479,6 +30349,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -29511,6 +30382,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "강주",
     "location": "강주",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "정란"
@@ -29544,6 +30416,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -29576,6 +30449,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -29607,6 +30481,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "화시",
@@ -29640,6 +30515,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "한중",
     "location": "한중",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -29671,6 +30547,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "고무",
@@ -29704,6 +30581,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -29732,6 +30610,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "견제",
@@ -29772,6 +30651,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -29807,6 +30687,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -29839,6 +30720,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "재야",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -29869,6 +30751,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영릉",
     "location": "영릉",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -29902,6 +30785,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -29935,6 +30819,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -29963,6 +30848,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "급습",
@@ -29997,6 +30883,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -30033,6 +30920,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "신야",
     "location": "신야",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "충차"
@@ -30065,6 +30953,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "제사",
@@ -30101,6 +30990,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "제사",
@@ -30140,6 +31030,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무릉",
     "location": "무릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -30173,6 +31064,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건녕",
     "location": "건녕",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -30213,6 +31105,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -30250,6 +31143,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "평원",
     "location": "평원",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -30285,6 +31179,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -30316,6 +31211,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "철벽",
@@ -30349,6 +31245,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "견제",
@@ -30385,6 +31282,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -30416,6 +31314,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "업화",
@@ -30453,6 +31352,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "천지통찰",
@@ -30495,6 +31395,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "충차",
@@ -30529,6 +31430,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "극염",
@@ -30572,6 +31474,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "진정"
@@ -30603,6 +31506,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "화시",
@@ -30644,6 +31548,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -30674,6 +31579,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "매성"
@@ -30704,6 +31610,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 4,
     "tactics": [
       "짐독",
@@ -30744,6 +31651,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -30778,6 +31686,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "투석"
@@ -30810,6 +31719,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -30839,6 +31749,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "급습",
@@ -30875,6 +31786,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "정란"
@@ -30906,6 +31818,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "제사",
@@ -30946,6 +31859,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -30978,6 +31892,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "자동",
     "location": "자동",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -31009,6 +31924,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "상용",
     "location": "상용",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -31040,6 +31956,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "화시",
@@ -31073,6 +31990,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장안",
     "location": "장안",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -31106,6 +32024,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -31137,6 +32056,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "경파"
@@ -31168,6 +32088,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -31199,6 +32120,7 @@ export const OFFICERS = [
     "corps": "동탁",
     "faction": "천수",
     "location": "천수",
+    "status": "일반",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -31231,6 +32153,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "철벽",
@@ -31266,6 +32189,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -31296,6 +32220,7 @@ export const OFFICERS = [
     "corps": "유언",
     "faction": "계",
     "location": "계",
+    "status": "군주",
     "tacticCount": 5,
     "tactics": [
       "업화",
@@ -31336,6 +32261,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -31369,6 +32295,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "장안",
     "location": "장안",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -31400,6 +32327,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -31434,6 +32362,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -31468,6 +32397,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "구축"
@@ -31501,6 +32431,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -31532,6 +32463,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "장안",
     "location": "장안",
+    "status": "태수",
     "tacticCount": 3,
     "tactics": [
       "부전굴적",
@@ -31570,6 +32502,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -31605,6 +32538,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영릉",
     "location": "영릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -31637,6 +32571,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -31673,6 +32608,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "낙양",
     "location": "낙양",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "도발"
@@ -31703,6 +32639,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -31736,6 +32673,7 @@ export const OFFICERS = [
     "corps": "유언",
     "faction": "계",
     "location": "계",
+    "status": "일반",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 2,
@@ -31766,6 +32704,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -31804,6 +32743,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "급습"
@@ -31834,6 +32774,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "대갈",
@@ -31866,6 +32807,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "철벽"
@@ -31901,6 +32843,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -31931,6 +32874,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영릉",
     "location": "영릉",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -31963,6 +32907,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "천의무봉"
@@ -31996,6 +32941,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "시람"
@@ -32027,6 +32973,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "진류",
     "location": "진류",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "화시"
@@ -32060,6 +33007,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "대갈"
@@ -32091,6 +33039,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영릉",
     "location": "영릉",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 3,
@@ -32121,6 +33070,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영릉",
     "location": "영릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -32156,6 +33106,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "교란",
@@ -32191,6 +33142,7 @@ export const OFFICERS = [
     "corps": "유언",
     "faction": "계",
     "location": "계",
+    "status": "일반",
     "tacticCount": 4,
     "tactics": [
       "대기대덕",
@@ -32230,6 +33182,7 @@ export const OFFICERS = [
     "corps": "하진",
     "faction": "장안",
     "location": "장안",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "팔준지예",
@@ -32268,6 +33221,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -32302,6 +33256,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "영릉",
     "location": "영릉",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "연노",
@@ -32336,6 +33291,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -32374,6 +33330,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -32407,6 +33364,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "복양",
     "location": "복양",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "돌격",
@@ -32441,6 +33399,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "장사",
     "location": "장사",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "돌격",
@@ -32479,6 +33438,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -32513,6 +33473,7 @@ export const OFFICERS = [
     "corps": "유언",
     "faction": "계",
     "location": "계",
+    "status": "일반",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -32541,6 +33502,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "수춘",
     "location": "수춘",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "업화",
@@ -32580,6 +33542,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북해",
     "location": "북해",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "견제",
@@ -32614,6 +33577,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 1,
@@ -32642,6 +33606,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "회계",
     "location": "회계",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -32676,6 +33641,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "남피",
     "location": "남피",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "분전"
@@ -32707,6 +33673,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "건업",
     "location": "건업",
+    "status": "미등장",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 4,
@@ -32738,6 +33705,7 @@ export const OFFICERS = [
     "corps": "장각",
     "faction": "소패",
     "location": "소패",
+    "status": "일반",
     "tacticCount": 3,
     "tactics": [
       "분전",
@@ -32773,6 +33741,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무위",
     "location": "무위",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "급습"
@@ -32803,6 +33772,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "분전",
@@ -32834,6 +33804,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "허창",
     "location": "허창",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -32870,6 +33841,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "천수",
     "location": "천수",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "저지"
@@ -32900,6 +33872,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미발견",
     "tacticCount": 4,
     "tactics": [
       "급습",
@@ -32938,6 +33911,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "오",
     "location": "오",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "사사삼백",
@@ -32978,6 +33952,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "저지",
@@ -33010,6 +33985,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "무릉",
     "location": "무릉",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -33042,6 +34018,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "운남",
     "location": "운남",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "저지",
@@ -33077,6 +34054,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "고무"
@@ -33110,6 +34088,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "연노",
@@ -33147,6 +34126,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "복양",
     "location": "복양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "연노",
@@ -33181,6 +34161,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -33211,6 +34192,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양양",
     "location": "양양",
+    "status": "미발견",
     "tacticCount": 2,
     "tactics": [
       "제사",
@@ -33242,6 +34224,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -33272,6 +34255,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "업",
     "location": "업",
+    "status": "미발견",
     "tacticCount": 1,
     "tactics": [
       "돌격"
@@ -33302,6 +34286,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "광릉",
     "location": "광릉",
+    "status": "미발견",
     "tacticCount": 5,
     "tactics": [
       "제사",
@@ -33341,6 +34326,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 4,
     "tactics": [
       "화시",
@@ -33379,6 +34365,7 @@ export const OFFICERS = [
     "corps": "정원",
     "faction": "진양",
     "location": "진양",
+    "status": "일반",
     "tacticCount": 5,
     "tactics": [
       "천하무쌍",
@@ -33420,6 +34407,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여남",
     "location": "여남",
+    "status": "미등장",
     "tacticCount": 6,
     "tactics": [
       "수문연무",
@@ -33462,6 +34450,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "돌격",
@@ -33494,6 +34483,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "양평",
     "location": "양평",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "혼란",
@@ -33525,6 +34515,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진양",
     "location": "진양",
+    "status": "미등장",
     "tacticCount": 2,
     "tactics": [
       "도발",
@@ -33557,6 +34548,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "성도",
     "location": "성도",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -33593,6 +34585,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "계",
     "location": "계",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "대갈",
@@ -33630,6 +34623,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "완",
     "location": "완",
+    "status": "미발견",
     "tacticCount": 3,
     "tactics": [
       "저지",
@@ -33665,6 +34659,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "소패",
     "location": "소패",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "투석",
@@ -33700,6 +34695,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "북평",
     "location": "북평",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "제사"
@@ -33732,6 +34728,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 5,
     "tactics": [
       "명찰추호",
@@ -33773,6 +34770,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "여강",
     "location": "여강",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "업화",
@@ -33808,6 +34806,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "진류",
     "location": "진류",
+    "status": "미등장",
     "tacticCount": 3,
     "tactics": [
       "제사",
@@ -33841,6 +34840,7 @@ export const OFFICERS = [
     "corps": "노식",
     "faction": "업",
     "location": "업",
+    "status": "도독",
     "tacticCount": 6,
     "tactics": [
       "이일대로",
@@ -33883,6 +34883,7 @@ export const OFFICERS = [
     "corps": "오환선우",
     "faction": "오환",
     "location": "오환",
+    "status": "군주",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -33917,6 +34918,7 @@ export const OFFICERS = [
     "corps": "오환선우",
     "faction": "오환",
     "location": "오환",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -33950,6 +34952,7 @@ export const OFFICERS = [
     "corps": "오환선우",
     "faction": "오환",
     "location": "오환",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -33983,6 +34986,7 @@ export const OFFICERS = [
     "corps": "오환선우",
     "faction": "오환",
     "location": "오환",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34016,6 +35020,7 @@ export const OFFICERS = [
     "corps": "오환선우",
     "faction": "오환",
     "location": "오환",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34049,6 +35054,7 @@ export const OFFICERS = [
     "corps": "오환선우",
     "faction": "오환",
     "location": "오환",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34082,6 +35088,7 @@ export const OFFICERS = [
     "corps": "오환선우",
     "faction": "오환",
     "location": "오환",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34115,6 +35122,7 @@ export const OFFICERS = [
     "corps": "오환선우",
     "faction": "오환",
     "location": "오환",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34148,6 +35156,7 @@ export const OFFICERS = [
     "corps": "오환선우",
     "faction": "오환",
     "location": "오환",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34181,6 +35190,7 @@ export const OFFICERS = [
     "corps": "오환선우",
     "faction": "오환",
     "location": "오환",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34214,6 +35224,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34247,6 +35258,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34280,6 +35292,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34313,6 +35326,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34346,6 +35360,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34379,6 +35394,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34412,6 +35428,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34445,6 +35462,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34478,6 +35496,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34511,6 +35530,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "돌기"
@@ -34544,6 +35564,7 @@ export const OFFICERS = [
     "corps": "선비대인",
     "faction": "선비",
     "location": "선비",
+    "status": "군주",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34577,6 +35598,7 @@ export const OFFICERS = [
     "corps": "선비대인",
     "faction": "선비",
     "location": "선비",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34610,6 +35632,7 @@ export const OFFICERS = [
     "corps": "선비대인",
     "faction": "선비",
     "location": "선비",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34643,6 +35666,7 @@ export const OFFICERS = [
     "corps": "선비대인",
     "faction": "선비",
     "location": "선비",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34676,6 +35700,7 @@ export const OFFICERS = [
     "corps": "선비대인",
     "faction": "선비",
     "location": "선비",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34709,6 +35734,7 @@ export const OFFICERS = [
     "corps": "선비대인",
     "faction": "선비",
     "location": "선비",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34742,6 +35768,7 @@ export const OFFICERS = [
     "corps": "선비대인",
     "faction": "선비",
     "location": "선비",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34775,6 +35802,7 @@ export const OFFICERS = [
     "corps": "선비대인",
     "faction": "선비",
     "location": "선비",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34808,6 +35836,7 @@ export const OFFICERS = [
     "corps": "선비대인",
     "faction": "선비",
     "location": "선비",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34841,6 +35870,7 @@ export const OFFICERS = [
     "corps": "선비대인",
     "faction": "선비",
     "location": "선비",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34874,6 +35904,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34907,6 +35938,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34940,6 +35972,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -34973,6 +36006,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -35006,6 +36040,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -35039,6 +36074,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -35072,6 +36108,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -35105,6 +36142,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -35138,6 +36176,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -35171,6 +36210,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "궁기"
@@ -35204,6 +36244,7 @@ export const OFFICERS = [
     "corps": "강족장",
     "faction": "강",
     "location": "강",
+    "status": "군주",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35237,6 +36278,7 @@ export const OFFICERS = [
     "corps": "강족장",
     "faction": "강",
     "location": "강",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35270,6 +36312,7 @@ export const OFFICERS = [
     "corps": "강족장",
     "faction": "강",
     "location": "강",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35303,6 +36346,7 @@ export const OFFICERS = [
     "corps": "강족장",
     "faction": "강",
     "location": "강",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35336,6 +36380,7 @@ export const OFFICERS = [
     "corps": "강족장",
     "faction": "강",
     "location": "강",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35369,6 +36414,7 @@ export const OFFICERS = [
     "corps": "강족장",
     "faction": "강",
     "location": "강",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35402,6 +36448,7 @@ export const OFFICERS = [
     "corps": "강족장",
     "faction": "강",
     "location": "강",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35435,6 +36482,7 @@ export const OFFICERS = [
     "corps": "강족장",
     "faction": "강",
     "location": "강",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35468,6 +36516,7 @@ export const OFFICERS = [
     "corps": "강족장",
     "faction": "강",
     "location": "강",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35501,6 +36550,7 @@ export const OFFICERS = [
     "corps": "강족장",
     "faction": "강",
     "location": "강",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35534,6 +36584,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35567,6 +36618,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35600,6 +36652,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35633,6 +36686,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35666,6 +36720,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35699,6 +36754,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35732,6 +36788,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35765,6 +36822,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35798,6 +36856,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35831,6 +36890,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "전차"
@@ -35864,6 +36924,7 @@ export const OFFICERS = [
     "corps": "산월두령",
     "faction": "산월",
     "location": "산월",
+    "status": "군주",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -35897,6 +36958,7 @@ export const OFFICERS = [
     "corps": "산월두령",
     "faction": "산월",
     "location": "산월",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -35930,6 +36992,7 @@ export const OFFICERS = [
     "corps": "산월두령",
     "faction": "산월",
     "location": "산월",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -35963,6 +37026,7 @@ export const OFFICERS = [
     "corps": "산월두령",
     "faction": "산월",
     "location": "산월",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -35996,6 +37060,7 @@ export const OFFICERS = [
     "corps": "산월두령",
     "faction": "산월",
     "location": "산월",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36029,6 +37094,7 @@ export const OFFICERS = [
     "corps": "산월두령",
     "faction": "산월",
     "location": "산월",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36062,6 +37128,7 @@ export const OFFICERS = [
     "corps": "산월두령",
     "faction": "산월",
     "location": "산월",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36095,6 +37162,7 @@ export const OFFICERS = [
     "corps": "산월두령",
     "faction": "산월",
     "location": "산월",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36128,6 +37196,7 @@ export const OFFICERS = [
     "corps": "산월두령",
     "faction": "산월",
     "location": "산월",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36161,6 +37230,7 @@ export const OFFICERS = [
     "corps": "산월두령",
     "faction": "산월",
     "location": "산월",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36194,6 +37264,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36227,6 +37298,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36260,6 +37332,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36293,6 +37366,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36326,6 +37400,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36359,6 +37434,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36392,6 +37468,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36425,6 +37502,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36458,6 +37536,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36491,6 +37570,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "강기"
@@ -36524,6 +37604,7 @@ export const OFFICERS = [
     "corps": "남만대왕",
     "faction": "남만",
     "location": "남만",
+    "status": "군주",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36557,6 +37638,7 @@ export const OFFICERS = [
     "corps": "남만대왕",
     "faction": "남만",
     "location": "남만",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36590,6 +37672,7 @@ export const OFFICERS = [
     "corps": "남만대왕",
     "faction": "남만",
     "location": "남만",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36623,6 +37706,7 @@ export const OFFICERS = [
     "corps": "남만대왕",
     "faction": "남만",
     "location": "남만",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36656,6 +37740,7 @@ export const OFFICERS = [
     "corps": "남만대왕",
     "faction": "남만",
     "location": "남만",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36689,6 +37774,7 @@ export const OFFICERS = [
     "corps": "남만대왕",
     "faction": "남만",
     "location": "남만",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36722,6 +37808,7 @@ export const OFFICERS = [
     "corps": "남만대왕",
     "faction": "남만",
     "location": "남만",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36755,6 +37842,7 @@ export const OFFICERS = [
     "corps": "남만대왕",
     "faction": "남만",
     "location": "남만",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36788,6 +37876,7 @@ export const OFFICERS = [
     "corps": "남만대왕",
     "faction": "남만",
     "location": "남만",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36821,6 +37910,7 @@ export const OFFICERS = [
     "corps": "남만대왕",
     "faction": "남만",
     "location": "남만",
+    "status": "일반",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36854,6 +37944,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36887,6 +37978,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36920,6 +38012,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36953,6 +38046,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -36986,6 +38080,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -37019,6 +38114,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -37052,6 +38148,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -37085,6 +38182,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -37118,6 +38216,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -37151,6 +38250,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "미등장",
     "tacticCount": 1,
     "tactics": [
       "상병"
@@ -37184,6 +38284,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37208,6 +38309,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37232,6 +38334,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "낙양",
     "location": "낙양",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37256,6 +38359,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37280,6 +38384,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37304,6 +38409,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37328,6 +38434,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37352,6 +38459,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37376,6 +38484,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37400,6 +38509,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37424,6 +38534,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37448,6 +38559,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37472,6 +38584,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37496,6 +38609,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37520,6 +38634,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37544,6 +38659,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37568,6 +38684,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37592,6 +38709,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37616,6 +38734,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37640,6 +38759,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37664,6 +38784,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37688,6 +38809,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37712,6 +38834,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37736,6 +38859,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37760,6 +38884,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37784,6 +38909,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37808,6 +38934,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37832,6 +38959,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37856,6 +38984,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37880,6 +39009,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37904,6 +39034,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37928,6 +39059,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37952,6 +39084,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -37976,6 +39109,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38000,6 +39134,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38024,6 +39159,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38048,6 +39184,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38072,6 +39209,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38096,6 +39234,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38120,6 +39259,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38144,6 +39284,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38168,6 +39309,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38192,6 +39334,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38216,6 +39359,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38240,6 +39384,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38264,6 +39409,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38288,6 +39434,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38312,6 +39459,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38336,6 +39484,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38360,6 +39509,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38384,6 +39534,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38408,6 +39559,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38432,6 +39584,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38456,6 +39609,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38480,6 +39634,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38504,6 +39659,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38528,6 +39684,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38552,6 +39709,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38576,6 +39734,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38600,6 +39759,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38624,6 +39784,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38648,6 +39809,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38672,6 +39834,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38696,6 +39859,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38720,6 +39884,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38744,6 +39909,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38768,6 +39934,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38792,6 +39959,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38816,6 +39984,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38840,6 +40009,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38864,6 +40034,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38888,6 +40059,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38912,6 +40084,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38936,6 +40109,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38960,6 +40134,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -38984,6 +40159,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39008,6 +40184,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39032,6 +40209,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39056,6 +40234,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39080,6 +40259,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39104,6 +40284,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39128,6 +40309,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39152,6 +40334,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39176,6 +40359,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39200,6 +40384,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39224,6 +40409,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39248,6 +40434,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39272,6 +40459,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39296,6 +40484,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39320,6 +40509,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39344,6 +40534,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39368,6 +40559,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39392,6 +40584,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39416,6 +40609,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39440,6 +40634,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39464,6 +40659,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39488,6 +40684,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39512,6 +40709,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39536,6 +40734,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,
@@ -39560,6 +40759,7 @@ export const OFFICERS = [
     "corps": "",
     "faction": "",
     "location": "",
+    "status": "무효",
     "tacticCount": 0,
     "tactics": [],
     "traitCount": 0,

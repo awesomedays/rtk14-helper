@@ -29,6 +29,7 @@ const COL = {
   corps: 11,       // 군단
   faction: 12,     // 소속
   location: 13,    // 소재
+  status: 14,      // 신분
   leadership: 18,  // 통솔
   power: 19,       // 무력
   intelligence: 20,// 지력
@@ -99,6 +100,7 @@ function parseCharacters() {
       corps: (cols[COL.corps] || '').trim(),
       faction: (cols[COL.faction] || '').trim(),
       location: (cols[COL.location] || '').trim(),
+      status: (cols[COL.status] || '').trim(),
       tacticCount: tactics.length,
       tactics,
       traitCount: traits.length,

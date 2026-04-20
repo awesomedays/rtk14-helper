@@ -204,6 +204,24 @@ function init() {
     renderer.renderSearchTable();
   });
 
+  // 더미/이민족 표시 토글 (체크 = 표시 = state.hide* false)
+  const dummyCheckbox = document.getElementById('search-show-dummy');
+  const ethnicCheckbox = document.getElementById('search-show-ethnic');
+  dummyCheckbox.checked = !state.searchHideDummy;
+  ethnicCheckbox.checked = !state.searchHideEthnic;
+  dummyCheckbox.addEventListener('change', () => {
+    state.searchHideDummy = !dummyCheckbox.checked;
+    persistence.saveSearchFilters();
+    state.searchShown = PAGE_SIZE;
+    renderer.renderSearchTable();
+  });
+  ethnicCheckbox.addEventListener('change', () => {
+    state.searchHideEthnic = !ethnicCheckbox.checked;
+    persistence.saveSearchFilters();
+    state.searchShown = PAGE_SIZE;
+    renderer.renderSearchTable();
+  });
+
   // Search table sorting
   document.getElementById('search-table').addEventListener('click', (e) => {
     const th = e.target.closest('th.sortable');
