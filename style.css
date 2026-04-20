@@ -509,6 +509,9 @@ body {
   background: var(--bg-secondary);
   z-index: 4;
 }
+#tab-roster .roster-add {
+  z-index: 5;
+}
 .roster-scroll-area::-webkit-scrollbar {
   display: none;
 }
@@ -2604,6 +2607,25 @@ tr:hover .row-remove {
   background: var(--bg-hover);
   color: var(--text-primary);
 }
+.config-group {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  margin-bottom: 20px;
+}
+.config-group:last-child {
+  margin-bottom: 0;
+}
+.config-group__title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 0 0 8px 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.02em;
+}
 .config-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2614,6 +2636,10 @@ tr:hover .row-remove {
   align-items: center;
   gap: 6px;
   min-height: 30px;
+}
+.config-row--full {
+  grid-column: 1 / -1;
+  align-items: flex-start;
 }
 .config-label {
   font-size: 0.82rem;

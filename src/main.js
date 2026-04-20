@@ -1673,6 +1673,34 @@ function init() {
     persistence.saveAssignmentConfig();
     renderer.syncAssignmentConfigUI();
   });
+
+  // ===== 수명/사망 설정 =====
+
+  document.getElementById('cfg-current-year').addEventListener('change', (e) => {
+    const val = e.target.value.trim();
+    state.currentYear = val === '' ? null : parseInt(val);
+    state.lifespanExtendedIds = new Set();
+    persistence.saveCurrentYear();
+    persistence.saveLifespanExtended();
+    renderer.renderDyingList();
+  });
+
+  document.getElementById('cfg-lifespan-mode').addEventListener('change', (e) => {
+    state.lifespanMode = e.target.value;
+    state.lifespanExtendedIds = new Set();
+    persistence.saveLifespanMode();
+    persistence.saveLifespanExtended();
+    renderer.renderDyingList();
+  });
+
+  document.getElementById('cfg-dying-list').addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-tag__close[data-extend-id]');
+    if (!btn) return;
+    const id = parseInt(btn.dataset.extendId);
+    state.lifespanExtendedIds.add(id);
+    persistence.saveLifespanExtended();
+    renderer.renderDyingList();
+  });
 }
 
 document.addEventListener('DOMContentLoaded', init);

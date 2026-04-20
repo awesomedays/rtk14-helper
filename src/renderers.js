@@ -1,8 +1,8 @@
 // ===== UI RENDERER =====
 
-import { AFFAIRS_CONFIG, THRESHOLDS, TRADE_NATION_NAMES, LIMITS, SORT_KEYS, TRADE_OVERFLOW_MODES, DEFAULT_ASSIGNMENT_CONFIG } from './config.js';
+import { AFFAIRS_CONFIG, THRESHOLDS, TRADE_NATION_NAMES, LIMITS, SORT_KEYS, TRADE_OVERFLOW_MODES, LIFESPAN_MODES, DEFAULT_ASSIGNMENT_CONFIG } from './config.js';
 import { OFFICERS, CITIES, ALL_TRAITS, TRAITS_META, FORMATIONS_META, TACTICS_META, RELATIONSHIPS } from '../data.js';
-import { getCityRegionSlots } from './assignment.js';
+import { getCityRegionSlots, getEffectiveDeathYear } from './assignment.js';
 
 export class UIRenderer {
   constructor(appState, officerService) {
@@ -782,6 +782,14 @@ export class UIRenderer {
         .join('');
     }
 
+    // Populate lifespan mode select
+    const lifespanEl = document.getElementById('cfg-lifespan-mode');
+    if (lifespanEl) {
+      lifespanEl.innerHTML = Object.entries(LIFESPAN_MODES)
+        .map(([k, v]) => `<option value="${k}">${v}</option>`)
+        .join('');
+    }
+
     // Set current values
     this.syncAssignmentConfigUI();
   }
@@ -807,6 +815,38 @@ export class UIRenderer {
     if (targetRow) {
       targetRow.style.display = cfg.tradeOverflowMode === 'closest' ? '' : 'none';
     }
+
+    // 수명 설정 값
+    set('cfg-current-year', this.state.currentYear ?? '');
+    set('cfg-lifespan-mode', this.state.lifespanMode);
+    this.renderDyingList();
+  }
+
+  renderDyingList() {
+    const row = document.getElementById('cfg-dying-row');
+    const list = document.getElementById('cfg-dying-list');
+    if (!row || !list) return;
+
+    const { currentYear, lifespanMode, lifespanExtendedIds, rosterIds } = this.state;
+    if (currentYear == null) {
+      row.style.display = 'none';
+      list.innerHTML = '';
+      return;
+    }
+
+    row.style.display = '';
+    const dying = rosterIds
+      .map(id => OFFICERS.find(o => o.id === id))
+      .filter(o => o && getEffectiveDeathYear(o, lifespanMode) === currentYear && !lifespanExtendedIds.has(o.id));
+
+    if (dying.length === 0) {
+      list.innerHTML = '<span class="text-muted" style="font-size:0.82rem;">없음</span>';
+      return;
+    }
+
+    list.innerHTML = dying.map(o =>
+      `<span class="filter-tag filter-tag--적색">${o.name}<button class="filter-tag__close" data-extend-id="${o.id}" title="수명연장">×</button></span>`
+    ).join('');
   }
 
   renderAssignmentResults(result) {
@@ -893,6 +933,28 @@ export class UIRenderer {
       html += '</div>';
     }
 
+    // 사망 예정 섹션 (미배정 바로 위)
+    if (result.dyingThisYear && result.dyingThisYear.length > 0) {
+      const year = this.state.currentYear;
+      html += '<div class="admin-section"><h3 class="admin-section__title">사망 예정 (' + year + '년 · ' + result.dyingThisYear.length + '명)</h3>';
+      html += '<table class="unassigned-table"><thead><tr>';
+      html += '<th>이름</th><th>통솔</th><th>무력</th><th>지력</th><th>정치</th><th>매력</th>';
+      html += '</tr></thead><tbody>';
+      for (const id of result.dyingThisYear) {
+        const o = OFFICERS.find(x => x.id === id);
+        if (!o) continue;
+        html += `<tr>`;
+        html += `<td><span class="officer-name" data-id="${o.id}">${o.name}</span></td>`;
+        html += `<td class="col-stat-sm ${this.getStatClass(o.leadership)}">${o.leadership}</td>`;
+        html += `<td class="col-stat-sm ${this.getStatClass(o.power)}">${o.power}</td>`;
+        html += `<td class="col-stat-sm ${this.getStatClass(o.intelligence)}">${o.intelligence}</td>`;
+        html += `<td class="col-stat-sm ${this.getStatClass(o.politics)}">${o.politics}</td>`;
+        html += `<td class="col-stat-sm ${this.getStatClass(o.charm)}">${o.charm}</td>`;
+        html += `</tr>`;
+      }
+      html += '</tbody></table></div>';
+    }
+
     // 미배정 섹션 (테이블 형태)
     if (result.unassigned.length > 0) {
       html += '<div class="admin-section"><h3 class="admin-section__title">미배정 (' + result.unassigned.length + '명)</h3>';
@@ -964,6 +1026,26 @@ export class UIRenderer {
           if (!existingIds.has(memberId)) {
             entry.officers.push({ id: memberId, role: `군단:${corps.name}` });
             existingIds.add(memberId);
+          }
+        }
+      }
+    }
+
+    // 사망 예정·미배정 무장은 1순위 도시 목록에 합류 (가나다순 정렬에 섞여 호출 편의)
+    if (result.cities.length > 0) {
+      const firstEntry = cityMap.get(result.cities[0].cityId);
+      if (firstEntry) {
+        const existingIds = new Set(firstEntry.officers.map(o => o.id));
+        for (const id of (result.dyingThisYear || [])) {
+          if (!existingIds.has(id)) {
+            firstEntry.officers.push({ id, role: '사망 예정' });
+            existingIds.add(id);
+          }
+        }
+        for (const id of (result.unassigned || [])) {
+          if (!existingIds.has(id)) {
+            firstEntry.officers.push({ id, role: '미배정' });
+            existingIds.add(id);
           }
         }
       }

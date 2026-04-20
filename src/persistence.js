@@ -14,6 +14,9 @@ const KEYS = {
   appointment: 'rtk14_appointment',
   assignmentConfig: 'rtk14_assignment_config',
   tacticsOverrides: 'rtk14_officer_tactics',
+  currentYear: 'rtk14_current_year',
+  lifespanMode: 'rtk14_lifespan_mode',
+  lifespanExtended: 'rtk14_lifespan_extended',
   theme: 'rtk14_theme',
   searchFilters: 'rtk14_search_filters',
 };
@@ -79,6 +82,18 @@ export class PersistenceManager {
       hideDummy: this.state.searchHideDummy,
       hideEthnic: this.state.searchHideEthnic,
     }));
+  }
+
+  saveCurrentYear() {
+    localStorage.setItem(KEYS.currentYear, JSON.stringify(this.state.currentYear));
+  }
+
+  saveLifespanMode() {
+    localStorage.setItem(KEYS.lifespanMode, JSON.stringify(this.state.lifespanMode));
+  }
+
+  saveLifespanExtended() {
+    localStorage.setItem(KEYS.lifespanExtended, JSON.stringify([...this.state.lifespanExtendedIds]));
   }
 
   saveTheme(value) {
@@ -197,6 +212,27 @@ export class PersistenceManager {
     } catch (e) { /* ignore */ }
   }
 
+  loadCurrentYear() {
+    try {
+      const saved = localStorage.getItem(KEYS.currentYear);
+      if (saved) this.state.currentYear = JSON.parse(saved);
+    } catch (e) { /* ignore */ }
+  }
+
+  loadLifespanMode() {
+    try {
+      const saved = localStorage.getItem(KEYS.lifespanMode);
+      if (saved) this.state.lifespanMode = JSON.parse(saved);
+    } catch (e) { /* ignore */ }
+  }
+
+  loadLifespanExtended() {
+    try {
+      const saved = localStorage.getItem(KEYS.lifespanExtended);
+      if (saved) this.state.lifespanExtendedIds = new Set(JSON.parse(saved));
+    } catch (e) { /* ignore */ }
+  }
+
   loadAll() {
     this.loadRoster();
     this.loadCities();
@@ -210,6 +246,9 @@ export class PersistenceManager {
     this.loadAssignmentConfig();
     this.loadTacticsOverrides();
     this.loadSearchFilters();
+    this.loadCurrentYear();
+    this.loadLifespanMode();
+    this.loadLifespanExtended();
   }
 
   // ===== Export / Import =====

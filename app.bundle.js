@@ -41931,6 +41931,12 @@ const TRADE_OVERFLOW_MODES = {
   desc: '내림차순',
 };
 
+const LIFESPAN_MODES = {
+  realistic: '사실',
+  longLived: '장수',
+  none: '수명없음',
+};
+
 const DEFAULT_ASSIGNMENT_CONFIG = {
   adminPoolStat: 'ip',
   adminPoolMinValue: 145,
@@ -41986,6 +41992,10 @@ class AppState {
     this.cityRecruitDisabled = {};
     this.assignmentResult = null;
     this.assignmentConfig = { ...DEFAULT_ASSIGNMENT_CONFIG };
+    // 수명/사망 설정
+    this.currentYear = null;
+    this.lifespanMode = 'realistic';
+    this.lifespanExtendedIds = new Set();
     // 호출현황
     this.summonedIds = new Set();
     // 임명현황
@@ -42031,6 +42041,9 @@ const KEYS = {
   appointment: 'rtk14_appointment',
   assignmentConfig: 'rtk14_assignment_config',
   tacticsOverrides: 'rtk14_officer_tactics',
+  currentYear: 'rtk14_current_year',
+  lifespanMode: 'rtk14_lifespan_mode',
+  lifespanExtended: 'rtk14_lifespan_extended',
   theme: 'rtk14_theme',
   searchFilters: 'rtk14_search_filters',
 };
@@ -42096,6 +42109,18 @@ class PersistenceManager {
       hideDummy: this.state.searchHideDummy,
       hideEthnic: this.state.searchHideEthnic,
     }));
+  }
+
+  saveCurrentYear() {
+    localStorage.setItem(KEYS.currentYear, JSON.stringify(this.state.currentYear));
+  }
+
+  saveLifespanMode() {
+    localStorage.setItem(KEYS.lifespanMode, JSON.stringify(this.state.lifespanMode));
+  }
+
+  saveLifespanExtended() {
+    localStorage.setItem(KEYS.lifespanExtended, JSON.stringify([...this.state.lifespanExtendedIds]));
   }
 
   saveTheme(value) {
@@ -42214,6 +42239,27 @@ class PersistenceManager {
     } catch (e) { /* ignore */ }
   }
 
+  loadCurrentYear() {
+    try {
+      const saved = localStorage.getItem(KEYS.currentYear);
+      if (saved) this.state.currentYear = JSON.parse(saved);
+    } catch (e) { /* ignore */ }
+  }
+
+  loadLifespanMode() {
+    try {
+      const saved = localStorage.getItem(KEYS.lifespanMode);
+      if (saved) this.state.lifespanMode = JSON.parse(saved);
+    } catch (e) { /* ignore */ }
+  }
+
+  loadLifespanExtended() {
+    try {
+      const saved = localStorage.getItem(KEYS.lifespanExtended);
+      if (saved) this.state.lifespanExtendedIds = new Set(JSON.parse(saved));
+    } catch (e) { /* ignore */ }
+  }
+
   loadAll() {
     this.loadRoster();
     this.loadCities();
@@ -42227,6 +42273,9 @@ class PersistenceManager {
     this.loadAssignmentConfig();
     this.loadTacticsOverrides();
     this.loadSearchFilters();
+    this.loadCurrentYear();
+    this.loadLifespanMode();
+    this.loadLifespanExtended();
   }
 
   // ===== Export / Import =====
@@ -42477,6 +42526,12 @@ function getCityRegionSlots(state, city) {
   return (override !== undefined && override !== null) ? override : city.regionSlots;
 }
 
+function getEffectiveDeathYear(officer, lifespanMode) {
+  if (lifespanMode === 'none') return Infinity;
+  if (lifespanMode === 'longLived') return officer.deathYear + 20;
+  return officer.deathYear;
+}
+
 class AssignmentEngine {
   constructor(appState) {
     this.state = appState;
@@ -42494,6 +42549,20 @@ class AssignmentEngine {
       .filter(id => !assignedToCorps.has(id) && !manualTradeIds.has(id))
       .map(id => OFFICERS.find(o => o.id === id))
       .filter(Boolean);
+
+    // 사망 예정(현재 연도에 실효 사망년 도달) 무장을 pool에서 분리
+    const dyingThisYear = [];
+    const { currentYear, lifespanMode, lifespanExtendedIds } = this.state;
+    if (currentYear != null) {
+      pool = pool.filter(o => {
+        const eff = getEffectiveDeathYear(o, lifespanMode);
+        if (eff === currentYear && !lifespanExtendedIds.has(o.id)) {
+          dyingThisYear.push(o.id);
+          return false;
+        }
+        return true;
+      });
+    }
 
     // 방어군단 멤버를 도시별로 사전 수집 (지역내정요원으로 배정)
     const cityDefenseMap = new Map();
@@ -42539,7 +42608,8 @@ class AssignmentEngine {
         regionalAdmins: [],
         defenseAdmins: cityDefenseMap.get(c.id) || []
       })),
-      unassigned: []
+      unassigned: [],
+      dyingThisYear
     };
 
     // ===== 분류 단계 =====
@@ -43531,6 +43601,14 @@ class UIRenderer {
         .join('');
     }
 
+    // Populate lifespan mode select
+    const lifespanEl = document.getElementById('cfg-lifespan-mode');
+    if (lifespanEl) {
+      lifespanEl.innerHTML = Object.entries(LIFESPAN_MODES)
+        .map(([k, v]) => `<option value="${k}">${v}</option>`)
+        .join('');
+    }
+
     // Set current values
     this.syncAssignmentConfigUI();
   }
@@ -43556,6 +43634,38 @@ class UIRenderer {
     if (targetRow) {
       targetRow.style.display = cfg.tradeOverflowMode === 'closest' ? '' : 'none';
     }
+
+    // 수명 설정 값
+    set('cfg-current-year', this.state.currentYear ?? '');
+    set('cfg-lifespan-mode', this.state.lifespanMode);
+    this.renderDyingList();
+  }
+
+  renderDyingList() {
+    const row = document.getElementById('cfg-dying-row');
+    const list = document.getElementById('cfg-dying-list');
+    if (!row || !list) return;
+
+    const { currentYear, lifespanMode, lifespanExtendedIds, rosterIds } = this.state;
+    if (currentYear == null) {
+      row.style.display = 'none';
+      list.innerHTML = '';
+      return;
+    }
+
+    row.style.display = '';
+    const dying = rosterIds
+      .map(id => OFFICERS.find(o => o.id === id))
+      .filter(o => o && getEffectiveDeathYear(o, lifespanMode) === currentYear && !lifespanExtendedIds.has(o.id));
+
+    if (dying.length === 0) {
+      list.innerHTML = '<span class="text-muted" style="font-size:0.82rem;">없음</span>';
+      return;
+    }
+
+    list.innerHTML = dying.map(o =>
+      `<span class="filter-tag filter-tag--적색">${o.name}<button class="filter-tag__close" data-extend-id="${o.id}" title="수명연장">×</button></span>`
+    ).join('');
   }
 
   renderAssignmentResults(result) {
@@ -43642,6 +43752,28 @@ class UIRenderer {
       html += '</div>';
     }
 
+    // 사망 예정 섹션 (미배정 바로 위)
+    if (result.dyingThisYear && result.dyingThisYear.length > 0) {
+      const year = this.state.currentYear;
+      html += '<div class="admin-section"><h3 class="admin-section__title">사망 예정 (' + year + '년 · ' + result.dyingThisYear.length + '명)</h3>';
+      html += '<table class="unassigned-table"><thead><tr>';
+      html += '<th>이름</th><th>통솔</th><th>무력</th><th>지력</th><th>정치</th><th>매력</th>';
+      html += '</tr></thead><tbody>';
+      for (const id of result.dyingThisYear) {
+        const o = OFFICERS.find(x => x.id === id);
+        if (!o) continue;
+        html += `<tr>`;
+        html += `<td><span class="officer-name" data-id="${o.id}">${o.name}</span></td>`;
+        html += `<td class="col-stat-sm ${this.getStatClass(o.leadership)}">${o.leadership}</td>`;
+        html += `<td class="col-stat-sm ${this.getStatClass(o.power)}">${o.power}</td>`;
+        html += `<td class="col-stat-sm ${this.getStatClass(o.intelligence)}">${o.intelligence}</td>`;
+        html += `<td class="col-stat-sm ${this.getStatClass(o.politics)}">${o.politics}</td>`;
+        html += `<td class="col-stat-sm ${this.getStatClass(o.charm)}">${o.charm}</td>`;
+        html += `</tr>`;
+      }
+      html += '</tbody></table></div>';
+    }
+
     // 미배정 섹션 (테이블 형태)
     if (result.unassigned.length > 0) {
       html += '<div class="admin-section"><h3 class="admin-section__title">미배정 (' + result.unassigned.length + '명)</h3>';
@@ -43713,6 +43845,26 @@ class UIRenderer {
           if (!existingIds.has(memberId)) {
             entry.officers.push({ id: memberId, role: `군단:${corps.name}` });
             existingIds.add(memberId);
+          }
+        }
+      }
+    }
+
+    // 사망 예정·미배정 무장은 1순위 도시 목록에 합류 (가나다순 정렬에 섞여 호출 편의)
+    if (result.cities.length > 0) {
+      const firstEntry = cityMap.get(result.cities[0].cityId);
+      if (firstEntry) {
+        const existingIds = new Set(firstEntry.officers.map(o => o.id));
+        for (const id of (result.dyingThisYear || [])) {
+          if (!existingIds.has(id)) {
+            firstEntry.officers.push({ id, role: '사망 예정' });
+            existingIds.add(id);
+          }
+        }
+        for (const id of (result.unassigned || [])) {
+          if (!existingIds.has(id)) {
+            firstEntry.officers.push({ id, role: '미배정' });
+            existingIds.add(id);
           }
         }
       }
@@ -45649,6 +45801,34 @@ function init() {
     state.assignmentConfig = { ...DEFAULT_ASSIGNMENT_CONFIG };
     persistence.saveAssignmentConfig();
     renderer.syncAssignmentConfigUI();
+  });
+
+  // ===== 수명/사망 설정 =====
+
+  document.getElementById('cfg-current-year').addEventListener('change', (e) => {
+    const val = e.target.value.trim();
+    state.currentYear = val === '' ? null : parseInt(val);
+    state.lifespanExtendedIds = new Set();
+    persistence.saveCurrentYear();
+    persistence.saveLifespanExtended();
+    renderer.renderDyingList();
+  });
+
+  document.getElementById('cfg-lifespan-mode').addEventListener('change', (e) => {
+    state.lifespanMode = e.target.value;
+    state.lifespanExtendedIds = new Set();
+    persistence.saveLifespanMode();
+    persistence.saveLifespanExtended();
+    renderer.renderDyingList();
+  });
+
+  document.getElementById('cfg-dying-list').addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-tag__close[data-extend-id]');
+    if (!btn) return;
+    const id = parseInt(btn.dataset.extendId);
+    state.lifespanExtendedIds.add(id);
+    persistence.saveLifespanExtended();
+    renderer.renderDyingList();
   });
 }
 

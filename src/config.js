@@ -120,6 +120,12 @@ export const TRADE_OVERFLOW_MODES = {
   desc: '내림차순',
 };
 
+export const LIFESPAN_MODES = {
+  realistic: '사실',
+  longLived: '장수',
+  none: '수명없음',
+};
+
 export const DEFAULT_ASSIGNMENT_CONFIG = {
   adminPoolStat: 'ip',
   adminPoolMinValue: 145,

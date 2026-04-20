@@ -36,6 +36,10 @@ export class AppState {
     this.cityRecruitDisabled = {};
     this.assignmentResult = null;
     this.assignmentConfig = { ...DEFAULT_ASSIGNMENT_CONFIG };
+    // 수명/사망 설정
+    this.currentYear = null;
+    this.lifespanMode = 'realistic';
+    this.lifespanExtendedIds = new Set();
     // 호출현황
     this.summonedIds = new Set();
     // 임명현황

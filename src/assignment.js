@@ -35,6 +35,12 @@ export function getCityRegionSlots(state, city) {
   return (override !== undefined && override !== null) ? override : city.regionSlots;
 }
 
+export function getEffectiveDeathYear(officer, lifespanMode) {
+  if (lifespanMode === 'none') return Infinity;
+  if (lifespanMode === 'longLived') return officer.deathYear + 20;
+  return officer.deathYear;
+}
+
 export class AssignmentEngine {
   constructor(appState) {
     this.state = appState;
@@ -52,6 +58,20 @@ export class AssignmentEngine {
       .filter(id => !assignedToCorps.has(id) && !manualTradeIds.has(id))
       .map(id => OFFICERS.find(o => o.id === id))
       .filter(Boolean);
+
+    // 사망 예정(현재 연도에 실효 사망년 도달) 무장을 pool에서 분리
+    const dyingThisYear = [];
+    const { currentYear, lifespanMode, lifespanExtendedIds } = this.state;
+    if (currentYear != null) {
+      pool = pool.filter(o => {
+        const eff = getEffectiveDeathYear(o, lifespanMode);
+        if (eff === currentYear && !lifespanExtendedIds.has(o.id)) {
+          dyingThisYear.push(o.id);
+          return false;
+        }
+        return true;
+      });
+    }
 
     // 방어군단 멤버를 도시별로 사전 수집 (지역내정요원으로 배정)
     const cityDefenseMap = new Map();
@@ -97,7 +117,8 @@ export class AssignmentEngine {
         regionalAdmins: [],
         defenseAdmins: cityDefenseMap.get(c.id) || []
       })),
-      unassigned: []
+      unassigned: [],
+      dyingThisYear
     };
 
     // ===== 분류 단계 =====

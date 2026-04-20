@@ -313,66 +313,94 @@
           <h3 class="admin-section__title">배정 설정 <button class="btn-reset" id="assignment-config-reset">기본값 복원</button></h3>
           <div class="collapsible-section__body">
             <div class="collapsible-section__inner">
-              <div class="config-grid">
-                <div class="config-row">
-                  <span class="config-label">내정풀 진입</span>
-                  <select id="cfg-admin-pool-stat" class="config-select"></select>
-                  <span class="config-sep">&ge;</span>
-                  <input type="number" id="cfg-admin-pool-min" class="config-input" min="0" max="300">
-                </div>
-                <div class="config-row">
-                  <span class="config-label">태수 선발</span>
-                  <select id="cfg-governor-sort" class="config-select"></select>
-                </div>
-                <div class="config-row">
-                  <span class="config-label">모병 개성</span>
-                  <select id="cfg-recruit-trait" class="config-select config-select--trait"></select>
-                </div>
-                <div class="config-row">
-                  <span class="config-label">모병 정렬</span>
-                  <select id="cfg-recruit-sort" class="config-select"></select>
-                </div>
-                <div class="config-row">
-                  <span class="config-label">훈련 개성</span>
-                  <select id="cfg-train-trait" class="config-select config-select--trait"></select>
-                </div>
-                <div class="config-row">
-                  <span class="config-label">훈련 정렬</span>
-                  <select id="cfg-train-sort" class="config-select"></select>
-                </div>
-                <div class="config-row">
-                  <span class="config-label">교역 개성</span>
-                  <select id="cfg-trade-trait" class="config-select config-select--trait"></select>
-                </div>
-                <div class="config-row">
-                  <span class="config-label">교역 정렬</span>
-                  <select id="cfg-trade-sort" class="config-select"></select>
-                </div>
-                <div class="config-row">
-                  <span class="config-label">교역 잔여 모드</span>
-                  <select id="cfg-trade-overflow-mode" class="config-select"></select>
-                </div>
-                <div class="config-row" id="cfg-trade-target-row">
-                  <span class="config-label">교역 목표값</span>
-                  <input type="number" id="cfg-trade-target-value" class="config-input" min="0" max="300">
-                </div>
-                <div class="config-row">
-                  <span class="config-label">나라당 최대 교역</span>
-                  <input type="number" id="cfg-max-traders" class="config-input" min="1" max="20">
-                  <span class="config-sep">명</span>
-                </div>
-              </div>
-              <div class="admin-trade-section">
-                <div class="trade-nation-group">
-                  <span class="config-label">교역 국가</span>
-                  <div class="trade-checkboxes">
-                    <label class="trade-checkbox"><input type="checkbox" id="trade-ansik"> 안식국</label>
-                    <label class="trade-checkbox"><input type="checkbox" id="trade-cheonchuk"> 천축국</label>
-                    <label class="trade-checkbox"><input type="checkbox" id="trade-daejin"> 대진국</label>
-                    <label class="trade-checkbox"><input type="checkbox" id="trade-guisang"> 귀상국</label>
+              <div class="config-group">
+                <h4 class="config-group__title">시나리오</h4>
+                <div class="config-grid">
+                  <div class="config-row">
+                    <span class="config-label">현재 연도</span>
+                    <input type="number" id="cfg-current-year" class="config-input" min="100" max="400" placeholder="예: 265">
+                    <span class="config-sep">년</span>
+                  </div>
+                  <div class="config-row">
+                    <span class="config-label">수명 설정</span>
+                    <select id="cfg-lifespan-mode" class="config-select"></select>
+                  </div>
+                  <div class="config-row config-row--full" id="cfg-dying-row" style="display:none">
+                    <span class="config-label">사망 예정</span>
+                    <div class="filter-tags" id="cfg-dying-list"></div>
                   </div>
                 </div>
-                <div id="trade-manual-config"></div>
+              </div>
+
+              <div class="config-group">
+                <h4 class="config-group__title">도시 내정</h4>
+                <div class="config-grid">
+                  <div class="config-row">
+                    <span class="config-label">내정풀 진입</span>
+                    <select id="cfg-admin-pool-stat" class="config-select"></select>
+                    <span class="config-sep">&ge;</span>
+                    <input type="number" id="cfg-admin-pool-min" class="config-input" min="0" max="300">
+                  </div>
+                  <div class="config-row">
+                    <span class="config-label">태수 선발</span>
+                    <select id="cfg-governor-sort" class="config-select"></select>
+                  </div>
+                  <div class="config-row">
+                    <span class="config-label">모병 개성</span>
+                    <select id="cfg-recruit-trait" class="config-select config-select--trait"></select>
+                  </div>
+                  <div class="config-row">
+                    <span class="config-label">모병 정렬</span>
+                    <select id="cfg-recruit-sort" class="config-select"></select>
+                  </div>
+                  <div class="config-row">
+                    <span class="config-label">훈련 개성</span>
+                    <select id="cfg-train-trait" class="config-select config-select--trait"></select>
+                  </div>
+                  <div class="config-row">
+                    <span class="config-label">훈련 정렬</span>
+                    <select id="cfg-train-sort" class="config-select"></select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="config-group">
+                <h4 class="config-group__title">교역</h4>
+                <div class="config-grid">
+                  <div class="config-row">
+                    <span class="config-label">교역 개성</span>
+                    <select id="cfg-trade-trait" class="config-select config-select--trait"></select>
+                  </div>
+                  <div class="config-row">
+                    <span class="config-label">교역 정렬</span>
+                    <select id="cfg-trade-sort" class="config-select"></select>
+                  </div>
+                  <div class="config-row">
+                    <span class="config-label">교역 잔여 모드</span>
+                    <select id="cfg-trade-overflow-mode" class="config-select"></select>
+                  </div>
+                  <div class="config-row" id="cfg-trade-target-row">
+                    <span class="config-label">교역 목표값</span>
+                    <input type="number" id="cfg-trade-target-value" class="config-input" min="0" max="300">
+                  </div>
+                  <div class="config-row">
+                    <span class="config-label">나라당 최대 교역</span>
+                    <input type="number" id="cfg-max-traders" class="config-input" min="1" max="20">
+                    <span class="config-sep">명</span>
+                  </div>
+                </div>
+                <div class="admin-trade-section">
+                  <div class="trade-nation-group">
+                    <span class="config-label">교역 국가</span>
+                    <div class="trade-checkboxes">
+                      <label class="trade-checkbox"><input type="checkbox" id="trade-ansik"> 안식국</label>
+                      <label class="trade-checkbox"><input type="checkbox" id="trade-cheonchuk"> 천축국</label>
+                      <label class="trade-checkbox"><input type="checkbox" id="trade-daejin"> 대진국</label>
+                      <label class="trade-checkbox"><input type="checkbox" id="trade-guisang"> 귀상국</label>
+                    </div>
+                  </div>
+                  <div id="trade-manual-config"></div>
+                </div>
               </div>
             </div>
           </div>
