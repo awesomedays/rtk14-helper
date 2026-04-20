@@ -302,17 +302,23 @@ body {
   background: var(--bg-primary);
 }
 
-.search-filter-bar {
+.search-range-bar {
   flex-direction: column;
-  max-width: 900px;
+  max-width: 700px;
+  gap: 12px;
+  margin-bottom: 12px;
 }
-.search-filter-bar .filter-row {
+.search-range-bar .filter-row {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  align-items: flex-end;
   justify-content: center;
+  align-items: flex-end;
   width: 100%;
+}
+.search-range-bar .filter-group--wide {
+  flex: 0 0 auto;
+  width: 320px;
 }
 
 .range-inputs {
@@ -331,8 +337,6 @@ body {
 
 .filter-group { display: flex; flex-direction: column; gap: 4px; }
 .filter-group--wide { flex: 1; min-width: 200px; }
-
-.search-filter-bar .filter-group--wide { flex: 0 0 auto; width: 300px; }
 
 .filter-group label {
   font-size: 0.8rem;
@@ -555,6 +559,56 @@ body {
   left: 0;
   z-index: 1;
   border-right: 1px solid var(--border-dark);
+}
+
+/* ===== Search Table — Sticky First Column (mirror of roster) ===== */
+#search-table tbody td { background: var(--bg-secondary); }
+#search-table tbody td:nth-child(2) { background: var(--bg-primary); }
+#search-table tbody tr:hover td {
+  background: linear-gradient(var(--bg-hover), var(--bg-hover)), var(--bg-secondary);
+}
+#search-table tbody tr:hover td:nth-child(2) {
+  background: linear-gradient(var(--bg-hover), var(--bg-hover)), var(--bg-primary);
+}
+#search-table thead th:nth-child(2) {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  border-right: 1px solid var(--border-dark);
+}
+#search-table tbody td:nth-child(2) {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  border-right: 1px solid var(--border-dark);
+}
+
+.search-scroll-area {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.search-scroll-area::-webkit-scrollbar {
+  display: none;
+}
+#tab-search .table-wrap { overflow: visible; }
+#tab-search .result-count-row {
+  position: sticky;
+  left: 0;
+  width: calc(min(100vw, 1400px) - 48px);
+  max-width: 100%;
+  background: var(--bg-secondary);
+  z-index: 4;
+}
+#tab-search .search-range-bar {
+  position: sticky;
+  left: 0;
+  z-index: 4;
+  background: #ececec;
+  border: 1px solid var(--border-dark);
+}
+[data-theme="dark"] #tab-search .search-range-bar {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
 }
 
 .col-group-start {
@@ -2341,7 +2395,9 @@ tr:hover .row-remove {
 @media (max-width: 768px) {
   .main { padding: 12px; }
   #tab-roster .roster-add,
-  #tab-roster .result-count-row {
+  #tab-roster .result-count-row,
+  #tab-search .search-range-bar,
+  #tab-search .result-count-row {
     width: calc(100vw - 24px);
   }
   .affair-selector { gap: 6px; }

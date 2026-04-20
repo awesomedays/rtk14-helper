@@ -45,9 +45,6 @@ function init() {
   renderer.populateDropdown('opt-corps', CORPS_LIST);
   renderer.populateDropdown('opt-location', LOCATIONS_LIST);
   renderer.populateDropdown('search-location', LOCATIONS_LIST);
-  renderer.populateDropdown('search-trait', ALL_TRAITS);
-  renderer.populateDropdown('search-formation', Object.keys(FORMATIONS_META));
-  renderer.populateDropdown('search-tactic', ALL_TACTICS_LIST);
 
   // ===== 2-tier tab system =====
 
@@ -181,8 +178,7 @@ function init() {
   searchNameInput.addEventListener('input', handleSearchInput);
   searchNameInput.addEventListener('compositionend', handleSearchInput);
 
-  ['search-location', 'search-trait', 'search-formation', 'search-tactic',
-   'search-affinity-min', 'search-affinity-max', 'search-appear-min', 'search-appear-max'].forEach(id => {
+  ['search-location', 'search-affinity-min', 'search-affinity-max', 'search-appear-min', 'search-appear-max'].forEach(id => {
     const el = document.getElementById(id);
     const eventType = el.tagName === 'SELECT' ? 'change' : 'input';
     el.addEventListener(eventType, () => {
@@ -193,10 +189,12 @@ function init() {
 
   document.getElementById('search-reset').addEventListener('click', () => {
     searchNameInput.value = '';
-    ['search-location', 'search-trait', 'search-formation', 'search-tactic',
-     'search-affinity-min', 'search-affinity-max', 'search-appear-min', 'search-appear-max'].forEach(id => {
+    ['search-location', 'search-affinity-min', 'search-affinity-max', 'search-appear-min', 'search-appear-max'].forEach(id => {
       document.getElementById(id).value = '';
     });
+    state.searchTraitFilters = [];
+    state.searchFormationFilters = [];
+    state.searchTacticsFilters = [];
     state.searchShown = PAGE_SIZE;
     renderer.renderSearchTable();
   });
@@ -217,6 +215,42 @@ function init() {
       state.searchSort = { key, dir: 'desc' };
     }
     renderer.renderSearchTable();
+  });
+
+  // Search tbody — badge click toggles filter
+  document.getElementById('search-tbody').addEventListener('click', (e) => {
+    const traitBadge = e.target.closest('.trait-badge');
+    if (traitBadge && traitBadge.dataset.trait) {
+      const trait = traitBadge.dataset.trait;
+      const idx = state.searchTraitFilters.indexOf(trait);
+      if (idx >= 0) state.searchTraitFilters.splice(idx, 1);
+      else state.searchTraitFilters.push(trait);
+      state.searchShown = PAGE_SIZE;
+      renderer.renderSearchTable();
+      return;
+    }
+
+    const formBadge = e.target.closest('.formation-badge');
+    if (formBadge && formBadge.dataset.formation) {
+      const formation = formBadge.dataset.formation;
+      const idx = state.searchFormationFilters.indexOf(formation);
+      if (idx >= 0) state.searchFormationFilters.splice(idx, 1);
+      else state.searchFormationFilters.push(formation);
+      state.searchShown = PAGE_SIZE;
+      renderer.renderSearchTable();
+      return;
+    }
+
+    const tacticBadge = e.target.closest('.tactic-badge');
+    if (tacticBadge && tacticBadge.dataset.tactic) {
+      const tactic = tacticBadge.dataset.tactic;
+      const idx = state.searchTacticsFilters.indexOf(tactic);
+      if (idx >= 0) state.searchTacticsFilters.splice(idx, 1);
+      else state.searchTacticsFilters.push(tactic);
+      state.searchShown = PAGE_SIZE;
+      renderer.renderSearchTable();
+      return;
+    }
   });
 
   // ===== Officer name clicks (delegation) =====
@@ -670,7 +704,6 @@ function init() {
       input.value = '';
       acList.innerHTML = '';
       acList.classList.remove('show');
-      renderer.renderRoster();
     });
   }
 
@@ -682,7 +715,10 @@ function init() {
     allItems: ALL_TRAITS,
     getFilters: () => state.rosterTraitFilters,
     addFilter: (name) => {
-      if (!state.rosterTraitFilters.includes(name)) state.rosterTraitFilters.push(name);
+      if (!state.rosterTraitFilters.includes(name)) {
+        state.rosterTraitFilters.push(name);
+        renderer.renderRoster();
+      }
     }
   });
 
@@ -692,7 +728,10 @@ function init() {
     allItems: ALL_FORMATIONS,
     getFilters: () => state.rosterFormationFilters,
     addFilter: (name) => {
-      if (!state.rosterFormationFilters.includes(name)) state.rosterFormationFilters.push(name);
+      if (!state.rosterFormationFilters.includes(name)) {
+        state.rosterFormationFilters.push(name);
+        renderer.renderRoster();
+      }
     }
   });
 
@@ -702,8 +741,85 @@ function init() {
     allItems: ALL_TACTICS_LIST,
     getFilters: () => state.rosterTacticsFilters,
     addFilter: (name) => {
-      if (!state.rosterTacticsFilters.includes(name)) state.rosterTacticsFilters.push(name);
+      if (!state.rosterTacticsFilters.includes(name)) {
+        state.rosterTacticsFilters.push(name);
+        renderer.renderRoster();
+      }
     }
+  });
+
+  // 무장 검색 탭 헤더 필터 (개성/진형/전법)
+  initFilterSearch({
+    inputId: 'search-trait-filter-input',
+    autocompleteId: 'search-trait-filter-autocomplete',
+    allItems: ALL_TRAITS,
+    getFilters: () => state.searchTraitFilters,
+    addFilter: (name) => {
+      if (!state.searchTraitFilters.includes(name)) {
+        state.searchTraitFilters.push(name);
+        state.searchShown = PAGE_SIZE;
+        renderer.renderSearchTable();
+      }
+    }
+  });
+
+  initFilterSearch({
+    inputId: 'search-formation-filter-input',
+    autocompleteId: 'search-formation-filter-autocomplete',
+    allItems: ALL_FORMATIONS,
+    getFilters: () => state.searchFormationFilters,
+    addFilter: (name) => {
+      if (!state.searchFormationFilters.includes(name)) {
+        state.searchFormationFilters.push(name);
+        state.searchShown = PAGE_SIZE;
+        renderer.renderSearchTable();
+      }
+    }
+  });
+
+  initFilterSearch({
+    inputId: 'search-tactic-filter-input',
+    autocompleteId: 'search-tactic-filter-autocomplete',
+    allItems: ALL_TACTICS_LIST,
+    getFilters: () => state.searchTacticsFilters,
+    addFilter: (name) => {
+      if (!state.searchTacticsFilters.includes(name)) {
+        state.searchTacticsFilters.push(name);
+        state.searchShown = PAGE_SIZE;
+        renderer.renderSearchTable();
+      }
+    }
+  });
+
+  // 무장 검색 필터 태그 제거 핸들러
+  document.getElementById('search-trait-filter-tags').addEventListener('click', (e) => {
+    const closeBtn = e.target.closest('.filter-tag__close');
+    if (!closeBtn) return;
+    const trait = closeBtn.dataset.trait;
+    const idx = state.searchTraitFilters.indexOf(trait);
+    if (idx >= 0) state.searchTraitFilters.splice(idx, 1);
+    state.searchShown = PAGE_SIZE;
+    renderer.renderSearchTable();
+  });
+
+  document.getElementById('search-formation-filter-tags').addEventListener('click', (e) => {
+    const closeBtn = e.target.closest('.filter-tag__close');
+    if (!closeBtn) return;
+    const formation = closeBtn.dataset.formation;
+    const idx = state.searchFormationFilters.indexOf(formation);
+    if (idx >= 0) state.searchFormationFilters.splice(idx, 1);
+    state.searchShown = PAGE_SIZE;
+    renderer.renderSearchTable();
+  });
+
+  document.getElementById('search-tactic-filter-tags').addEventListener('click', (e) => {
+    const closeBtn = e.target.closest('.filter-tag__close');
+    if (!closeBtn) return;
+    const tactic = closeBtn.dataset.tactic;
+    const idx = state.searchTacticsFilters.indexOf(tactic);
+    if (idx >= 0) state.searchTacticsFilters.splice(idx, 1);
+    state.searchShown = PAGE_SIZE;
+    renderer.renderSearchTable();
   });
 
   // Relation filter search (ID-based, not name-based)

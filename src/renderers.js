@@ -178,24 +178,93 @@ export class UIRenderer {
   renderSearchTable() {
     const filters = this.officerService.getSearchFilters();
     let officers = this.officerService.filterForSearch(OFFICERS, filters);
+    const totalCount = officers.length;
     officers = this.officerService.sortOfficers(officers, this.state.searchSort.key, this.state.searchSort.dir, this.state.currentAffair);
 
-    document.getElementById('search-count').textContent = `${officers.length}명의 무장`;
+    const traitFilters = this.state.searchTraitFilters;
+    const formationFilters = this.state.searchFormationFilters;
+    const tacticsFilters = this.state.searchTacticsFilters;
+    const hasFilter = !!(filters.name || filters.location ||
+      filters.affinityMin !== null || filters.affinityMax !== null ||
+      filters.appearMin !== null || filters.appearMax !== null ||
+      traitFilters.length || formationFilters.length || tacticsFilters.length);
+
+    const searchCount = document.getElementById('search-count');
+    if (hasFilter) {
+      searchCount.innerHTML = `검색 결과: <strong class="filter-count">${totalCount}명</strong> / ${OFFICERS.length}명`;
+    } else {
+      searchCount.textContent = `전체 무장: ${OFFICERS.length}명`;
+    }
+
+    const traitTagsContainer = document.getElementById('search-trait-filter-tags');
+    traitTagsContainer.innerHTML = traitFilters.map(f => {
+      const meta = TRAITS_META[f];
+      const tierCls = meta ? `filter-tag--${meta.tier}` : '';
+      return `<span class="filter-tag ${tierCls}"><span class="filter-tag__name">${f}</span><button class="filter-tag__close" data-trait="${f}">&times;</button></span>`;
+    }).join('');
+
+    const formationTagsContainer = document.getElementById('search-formation-filter-tags');
+    formationTagsContainer.innerHTML = formationFilters.map(f =>
+      `<span class="filter-tag filter-tag--formation"><span class="filter-tag__name">${f}</span><button class="filter-tag__close" data-formation="${f}">&times;</button></span>`
+    ).join('');
+
+    const tacticsTagsContainer = document.getElementById('search-tactic-filter-tags');
+    tacticsTagsContainer.innerHTML = tacticsFilters.map(f => {
+      const meta = TACTICS_META[f];
+      const cls = meta && meta.unique ? 'filter-tag--tactic-unique' : 'filter-tag--tactic';
+      return `<span class="filter-tag ${cls}"><span class="filter-tag__name">${f}</span><button class="filter-tag__close" data-tactic="${f}">&times;</button></span>`;
+    }).join('');
 
     const shown = officers.slice(0, this.state.searchShown);
     const tbody = document.getElementById('search-tbody');
+    if (shown.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="13" style="text-align:center;padding:24px;color:var(--text-muted)">해당 조건을 만족하는 무장이 없습니다.</td></tr>';
+      const loadMore = document.getElementById('search-load-more');
+      loadMore.style.display = 'none';
+      this.updateSortIndicators('search-table', this.state.searchSort);
+      return;
+    }
+
     tbody.innerHTML = shown.map(o => {
+      const badgeHtml = (o.traits || []).map(t => {
+        const html = this.traitBadgeHtml(t);
+        if (traitFilters.length > 0 && traitFilters.includes(t)) {
+          return html.replace('class="trait-badge', 'class="trait-badge trait-badge--active');
+        }
+        return html;
+      }).join('');
+
+      const formationHtml = (o.formations || []).map(f => {
+        const html = this.formationBadgeHtml(f);
+        if (formationFilters.length > 0 && formationFilters.includes(f)) {
+          return html.replace('class="formation-badge', 'class="formation-badge formation-badge--active');
+        }
+        return html;
+      }).join('');
+
+      const tacticHtml = (o.tactics || []).map(t => {
+        const html = this.tacticBadgeHtml(t);
+        if (tacticsFilters.length > 0 && tacticsFilters.includes(t)) {
+          return html.replace('class="tactic-badge', 'class="tactic-badge tactic-badge--active');
+        }
+        return html;
+      }).join('');
+
       return `<tr>
       <td class="col-id">${o.id}</td>
       <td><span class="officer-name" data-id="${o.id}">${o.name}</span></td>
-      <td class="col-stat ${this.getStatClass(o.leadership)}">${o.leadership}</td>
-      <td class="col-stat ${this.getStatClass(o.power)}">${o.power}</td>
-      <td class="col-stat ${this.getStatClass(o.intelligence)}">${o.intelligence}</td>
-      <td class="col-stat ${this.getStatClass(o.politics)}">${o.politics}</td>
-      <td class="col-stat ${this.getStatClass(o.charm)}">${o.charm}</td>
-      <td class="col-total ${this.getStatClass(o.total / 5)}">${o.total}</td>
-      <td><div class="trait-badges">${o.traits.map(t => this.traitBadgeHtml(t)).join('')}</div></td>
-      <td>${o.corps || '재야'}</td>
+      <td class="col-stat-sm col-group-start ${this.getStatClass(o.leadership)}">${o.leadership}</td>
+      <td class="col-stat-sm ${this.getStatClass(o.power)}">${o.power}</td>
+      <td class="col-stat-sm ${this.getStatClass(o.intelligence)}">${o.intelligence}</td>
+      <td class="col-stat-sm ${this.getStatClass(o.politics)}">${o.politics}</td>
+      <td class="col-stat-sm ${this.getStatClass(o.charm)}">${o.charm}</td>
+      <td class="col-stat col-group-start ${this.getSumStatClass((o.leadership + o.power) / 2)}">${o.leadership + o.power}</td>
+      <td class="col-stat ${this.getSumStatClass((o.intelligence + o.politics) / 2)}">${o.intelligence + o.politics}</td>
+      <td class="col-stat col-group-start">${o.appearYear ? o.appearYear + '년' : '-'}</td>
+      <td class="col-stat">${o.deathYear ? o.deathYear + '년' : '-'}</td>
+      <td class="col-group-start"><div class="trait-badges">${badgeHtml}</div></td>
+      <td class="col-group-start"><div class="formation-badges">${formationHtml}</div></td>
+      <td class="col-group-start"><div class="tactic-badges">${tacticHtml}</div></td>
     </tr>`;
     }).join('');
 

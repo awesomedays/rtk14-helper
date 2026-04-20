@@ -1,6 +1,7 @@
 // ===== OFFICER SERVICE =====
 
 import { AFFAIRS_CONFIG } from './config.js';
+import { state } from './state.js';
 
 // ===== Korean Initial Consonant Search =====
 
@@ -57,13 +58,13 @@ export class OfficerService {
     return {
       name: document.getElementById('search-name').value.trim(),
       location: document.getElementById('search-location').value,
-      trait: document.getElementById('search-trait').value,
-      formation: document.getElementById('search-formation').value,
-      tactic: document.getElementById('search-tactic').value,
       affinityMin: isNaN(affMin) ? null : affMin,
       affinityMax: isNaN(affMax) ? null : affMax,
       appearMin: isNaN(yearMin) ? null : yearMin,
       appearMax: isNaN(yearMax) ? null : yearMax,
+      traitFilters: state.searchTraitFilters,
+      formationFilters: state.searchFormationFilters,
+      tacticsFilters: state.searchTacticsFilters,
     };
   }
 
@@ -81,13 +82,13 @@ export class OfficerService {
     return officers.filter(o => {
       if (!matchesName(o, filters.name)) return false;
       if (filters.location && o.location !== filters.location) return false;
-      if (filters.trait && !o.traits.includes(filters.trait)) return false;
-      if (filters.formation && !(o.formations || []).includes(filters.formation)) return false;
-      if (filters.tactic && !(o.tactics || []).includes(filters.tactic)) return false;
       if (filters.affinityMin !== null && o.affinity < filters.affinityMin) return false;
       if (filters.affinityMax !== null && o.affinity > filters.affinityMax) return false;
       if (filters.appearMin !== null && o.appearYear < filters.appearMin) return false;
       if (filters.appearMax !== null && o.appearYear > filters.appearMax) return false;
+      if (filters.traitFilters && filters.traitFilters.length && !filters.traitFilters.every(t => o.traits.includes(t))) return false;
+      if (filters.formationFilters && filters.formationFilters.length && !filters.formationFilters.every(f => (o.formations || []).includes(f))) return false;
+      if (filters.tacticsFilters && filters.tacticsFilters.length && !filters.tacticsFilters.every(t => (o.tactics || []).includes(t))) return false;
       return true;
     });
   }

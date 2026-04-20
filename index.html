@@ -82,27 +82,15 @@
 
     <!-- 무장 검색 탭 -->
     <section id="tab-search" class="tab-content">
-      <div class="filter-bar search-filter-bar">
+      <div class="search-scroll-area">
+      <div class="filter-bar search-range-bar">
         <div class="filter-row">
           <div class="filter-group filter-group--wide">
             <label for="search-name">이름 검색</label>
-            <input type="text" id="search-name" placeholder="이름 또는 초성 (예: ㅈㄱㄹ)">
+            <input type="text" id="search-name" placeholder="이름 또는 초성 (예: ㅈㄱㄹ)" autocomplete="off">
           </div>
-          <button class="btn-reset" id="search-reset">초기화</button>
         </div>
         <div class="filter-row">
-          <div class="filter-group">
-            <label for="search-trait">개성</label>
-            <select id="search-trait"><option value="">전체</option></select>
-          </div>
-          <div class="filter-group">
-            <label for="search-formation">진형</label>
-            <select id="search-formation"><option value="">전체</option></select>
-          </div>
-          <div class="filter-group">
-            <label for="search-tactic">전법</label>
-            <select id="search-tactic"><option value="">전체</option></select>
-          </div>
           <div class="filter-group">
             <label for="search-location">소재</label>
             <select id="search-location"><option value="">전체</option></select>
@@ -126,27 +114,57 @@
         </div>
       </div>
 
-      <div class="result-count" id="search-count"></div>
+      <div class="result-count-row">
+        <span id="search-count"></span>
+        <span class="filter-tags" id="search-trait-filter-tags"></span>
+        <span class="filter-tags" id="search-formation-filter-tags"></span>
+        <span class="filter-tags" id="search-tactic-filter-tags"></span>
+        <button class="btn-reset-inline" id="search-reset">초기화</button>
+      </div>
+
       <div class="table-wrap">
         <table class="data-table" id="search-table">
           <thead>
             <tr>
               <th class="col-id sortable" data-sort="id">번호</th>
               <th class="col-name sortable" data-sort="name">무장</th>
-              <th class="col-stat sortable" data-sort="leadership">통솔</th>
-              <th class="col-stat sortable" data-sort="power">무력</th>
-              <th class="col-stat sortable" data-sort="intelligence">지력</th>
-              <th class="col-stat sortable" data-sort="politics">정치</th>
-              <th class="col-stat sortable" data-sort="charm">매력</th>
-              <th class="col-total sortable" data-sort="total">합계</th>
-              <th class="col-traits-sm">개성</th>
-              <th class="col-corps sortable" data-sort="corps">군단</th>
+              <th class="col-stat-sm col-group-start sortable" data-sort="leadership">통솔</th>
+              <th class="col-stat-sm sortable" data-sort="power">무력</th>
+              <th class="col-stat-sm sortable" data-sort="intelligence">지력</th>
+              <th class="col-stat-sm sortable" data-sort="politics">정치</th>
+              <th class="col-stat-sm sortable" data-sort="charm">매력</th>
+              <th class="col-stat col-group-start sortable" data-sort="lp">통무</th>
+              <th class="col-stat sortable" data-sort="ip">지정</th>
+              <th class="col-stat col-group-start sortable" data-sort="appearYear">등장년</th>
+              <th class="col-stat sortable" data-sort="deathYear">사망년</th>
+              <th class="col-traits-sm col-group-start th-filter">
+                <div class="th-filter__label">개성</div>
+                <div class="th-filter__search">
+                  <input type="text" class="th-filter__input" id="search-trait-filter-input" placeholder="검색..." autocomplete="off">
+                  <div class="autocomplete-list" id="search-trait-filter-autocomplete"></div>
+                </div>
+              </th>
+              <th class="col-traits-sm col-group-start th-filter">
+                <div class="th-filter__label">진형</div>
+                <div class="th-filter__search">
+                  <input type="text" class="th-filter__input" id="search-formation-filter-input" placeholder="검색..." autocomplete="off">
+                  <div class="autocomplete-list" id="search-formation-filter-autocomplete"></div>
+                </div>
+              </th>
+              <th class="col-traits-sm col-group-start th-filter">
+                <div class="th-filter__label">전법</div>
+                <div class="th-filter__search">
+                  <input type="text" class="th-filter__input" id="search-tactic-filter-input" placeholder="검색..." autocomplete="off">
+                  <div class="autocomplete-list" id="search-tactic-filter-autocomplete"></div>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody id="search-tbody"></tbody>
         </table>
       </div>
       <button class="btn-load-more" id="search-load-more" style="display:none">더 보기</button>
+      </div>
     </section>
 
     <!-- 무장 비교 탭 -->
